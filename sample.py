@@ -16,7 +16,7 @@ def prev_page():
 # ページ1: TED動画ページ
 if st.session_state.page == 1:
     st.title("TED動画を見る")
-    st.video("https://www.youtube.com/watch?v=3E7hkPZ-HTk")
+    st.video("https://www.youtube.com/watch?v=YXn-eNPzlo8")
     col1, col2 = st.columns(2)
     with col1:
         st.button("戻る", on_click=prev_page, disabled=True)  # 最初のページは戻れない
