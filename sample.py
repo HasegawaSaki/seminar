@@ -137,8 +137,10 @@ Trust is an essential ingredient to a happy relationship.
 # ページ3: ChatGPTとの会話ページ
 elif st.session_state.page == 3:
     st.title("ChatGPTと会話")
+    
+    # 既存のapi_keyとclientの定義は正しい
     api_key = st.secrets["API_KEY"]
-    openai.api_key = api_key
+    client = openai.OpenAI(api_key=api_key)
 
     if "messages" not in st.session_state:
         st.session_state.messages = []
@@ -157,11 +159,12 @@ elif st.session_state.page == 3:
         # ChatGPT API呼び出し
         with st.chat_message("assistant"):
             with st.spinner("ChatGPTが考え中..."):
-                response = openai.ChatCompletion.create(
+                # ここを修正: 古い create メソッドから新しい client.chat.completions.create() へ変更
+                response = client.chat.completions.create(
                     model="gpt-3.5-turbo",
                     messages=st.session_state.messages
                 )
-                reply = response["choices"][0]["message"]["content"]
+                reply = response.choices[0].message.content
                 st.markdown(reply)
         st.session_state.messages.append({"role": "assistant", "content": reply})
 
@@ -170,7 +173,7 @@ elif st.session_state.page == 3:
         st.button("戻る", on_click=prev_page)
     with col2:
         st.button("次へ", on_click=next_page)
-
+        
 # ページ4: アンケートページ
 elif st.session_state.page == 4:
     st.title("アンケート")
