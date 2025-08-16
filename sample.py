@@ -137,7 +137,7 @@ Trust is an essential ingredient to a happy relationship.
 # ページ3: ChatGPTとの会話ページ
 elif st.session_state.page == 3:
     st.title("ChatGPTと会話")
-    api_key = "YOUR_API_KEY_HERE"  # ←正しいAPIキーに置き換える
+    api_key = st.secrets["API_KEY"]
     openai.api_key = api_key
 
     if "messages" not in st.session_state:
