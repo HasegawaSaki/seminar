@@ -137,7 +137,6 @@ Trust is an essential ingredient to a happy relationship.
 # ページ3: ChatGPTとの会話ページ
 elif st.session_state.page == 3:
     st.title("ChatGPTと会話")
-    
     # 既存のapi_keyとclientの定義は正しい
     api_key = st.secrets["API_KEY"]
     client = openai.OpenAI(api_key=api_key)
@@ -149,11 +148,6 @@ elif st.session_state.page == 3:
             I am a university student (B2 level English). I watched a TED Talk about 'Why do we dream?' and I want to practice a conversation with a classmate about it. Please help me to practice conversation to classmate .you are classmate.
 
 Use clear, natural English at B2 level. The tone should be friendly and casual, like students talking after class.please reply to shortly
-
-process
-1. you start conversation with "what's the main topic of this movie?"
-2. user input the what she thinks
-3. you reply 
 
 This is the Tedtalk moovie script
 
@@ -184,13 +178,15 @@ Liam: Good idea! Sweet dreams, Maria!
 Maria: You too, Liam!
 
             """
-            }
+            },
+            {"role": "assistant", "content": "What's the main topic of this movie?"}
         ]
 
     # 過去の会話を表示
     for message in st.session_state.messages:
-        with st.chat_message(message["role"]):
-            st.markdown(message["content"])
+        if message["role"] != "system":
+            with st.chat_message(message["role"]):
+                st.markdown(message["content"])
 
     # ユーザー入力
     if prompt := st.chat_input("質問や感想を入力してください"):
