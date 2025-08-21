@@ -201,6 +201,7 @@ Maria: You too, Liam!
         # ChatGPT API呼び出し
         with st.chat_message("assistant"):
             with st.spinner("ChatGPTが考え中..."):
+                st.write(st.session_state.messages) # デバッグ用にメッセージ全体を表示
                 # ここを修正: 古い create メソッドから新しい client.chat.completions.create() へ変更
                 response = client.chat.completions.create(
                     model="gpt-3.5-turbo",
