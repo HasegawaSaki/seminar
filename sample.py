@@ -207,7 +207,7 @@ elif st.session_state.page == "survey":
 
 # ---------------- ルート2: TED動画 ----------------
 elif st.session_state.page == "video2":
-    st.title("TED動画（ルート2）")
+    st.title("TED動画を見る")
     st.video("https://www.youtube.com/watch?v=1VA4rIkpSp8")  # ルート2用動画URLを入れてください
     col1, col2 = st.columns(2)
     with col1:
@@ -217,7 +217,7 @@ elif st.session_state.page == "video2":
 
 # ---------------- ルート2: 解説ページ ----------------
 elif st.session_state.page == "explanation2":
-    st.title("解説 2")
+    st.title("解説")
     st.write("※準備中")
     col1, col2 = st.columns(2)
     with col1:
