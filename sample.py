@@ -374,8 +374,6 @@ elif st.session_state.page == "survey":
     col1, col2 = st.columns(2)
     with col1:
         st.button("戻る", on_click="chat1")
-    with col2:
-        st.button("次へ", on_click=next_page, disabled=True)  # 最終ページは次へ無効
     
     st.button("ホームに戻る", on_click=lambda: go_to("home"))
 
