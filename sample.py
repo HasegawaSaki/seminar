@@ -310,7 +310,7 @@ elif st.session_state.page == "survey2":
 
     col1, col2 = st.columns(2)
     with col1:
-        st.button("戻る", on_click="chat2")
+        st.button("戻る", on_click=lambda: go_to("chat2"))
     
     st.button("ホームに戻る", on_click=lambda: go_to("home"))
 
