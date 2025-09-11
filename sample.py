@@ -27,9 +27,11 @@ def push_to_github(filename, content):
 
 # セッション変数の初期化
 if "route" not in st.session_state:
-    st.session_state.route = None  # 1 または 2
+    st.session_state.route = None
 if "page" not in st.session_state:
-    st.session_state.page = "home"
+    st.session_state.page = "home"  # 初期ページをホームに設定
+if "role" not in st.session_state:
+    st.session_state.role = None  # 'teacher' or 'classmate'
 if "username" not in st.session_state:
     st.session_state.username = ""
 if "date" not in st.session_state:
@@ -41,35 +43,44 @@ def go_to(page_name, route=None):
         st.session_state.route = route
     st.session_state.page = page_name
 
+def set_role(role):
+    st.session_state.role = role
+
 # ---------------- ホームページ ----------------
 if st.session_state.page == "home":
-    st.title("ホーム")
-    
+    # 1. 学習の目的
+    st.subheader("1. 学習の目的")
+    st.session_state.role = st.radio(
+        "目的を選んでください",
+        ["サポート（先生）", "実践的（クラスメイト）"],
+        index=None,
+        key="role_radio"
+    )
 
-    # 名前と日付の入力欄
-    st.session_state.username = st.text_input("お名前を入力してください")
+    # 2. 名前入力
+    st.subheader("2. お名前")
+    st.session_state.username = st.text_input("名前を入力", placeholder="山田 太郎")
 
-
-    st.write("あなたの英語力は？")
-    
-    def go_to_with_check(target_page, route):
-    # 空欄、または空白のみの場合はエラー
-        if not st.session_state.username.strip():
-            st.warning("⚠️ 名前を入力してください")
-        else:
-            go_to(target_page, route)
-
+    # 3. レベル選択
+    st.subheader("3. レベルを選択")
     col1, col2 = st.columns(2)
     with col1:
-        st.button("B2レベル", on_click=lambda: go_to_with_check("video1", 1))
+        st.button("B2レベル", 
+                  on_click=go_to, 
+                  args=("video1", 1),
+                  use_container_width=True,
+                  disabled=not (st.session_state.role and st.session_state.username.strip()))
     with col2:
-        st.button("C1レベル", on_click=lambda: go_to_with_check("video2", 2))
-
-
+        st.button("C1レベル", 
+                  on_click=go_to, 
+                  args=("video2", 2),
+                  use_container_width=True,
+                  disabled=not (st.session_state.role and st.session_state.username.strip()))
+        
 # ---------------- ルート1: TED動画 ----------------
 elif st.session_state.page == "video1":
     st.title("TED動画を見る")
-    st.video("https://www.youtube.com/watch?v=YXn-eNPzlo8")  # ルート1用動画
+    st.video("https://www.youtube.com/watch?v=YXn-eNPzlo8")
     col1, col2 = st.columns(2)
     with col1:
         st.button("戻る", on_click=lambda: go_to("home"))
@@ -79,7 +90,6 @@ elif st.session_state.page == "video1":
 # ---------------- ルート1: 解説ページ ----------------
 elif st.session_state.page == "explanation1":
     st.title("解説")
-    # Step 1: 全文翻訳
     st.subheader("全文翻訳と解説")
     with st.expander("本文と翻訳を表示"):
         st.write("""
@@ -161,13 +171,16 @@ elif st.session_state.page == "explanation1":
 
 # ---------------- ルート1: 会話ページ ----------------
 elif st.session_state.page == "chat1":
-    st.title("会話")
-    st.title("ChatGPTと会話")
+    st.title("Discussion")
     api_key = st.secrets["API_KEY"]
     client = openai.OpenAI(api_key=api_key)
 
     if "messages" not in st.session_state:
-        level = "B2"
+        if st.session_state.role == 'teacher':
+            role_prompt = "The conversation is intelligent and easy to understand. The goal is to help the user improve their English skills and deepen their understanding of the video's content."
+        else:
+            role_prompt = "The conversation is casual. Shares personal feelings and experiences."
+
         script_file = "script/scr-dream.txt"
         conv_file = "sample-conversation/conv-dream.txt"
 
@@ -176,42 +189,33 @@ elif st.session_state.page == "chat1":
         with open(conv_file, "r", encoding="utf-8") as f:
             conversation_example = f.read()
 
-        system_prompt = f"""
-I am a university student ({level} level English). I watched a TED Talk about 'Why do we dream?' and I want to practice a conversation with a classmate about it. Please help me to practice conversation to classmate .you are classmate.
+        system_prompt = f'''
+<Rules>
+- We had a conversation about the topic.
+- The conversation starts with the user answering the question, "what did you think of the TED Talk about ?"
+- You reply shortly (2~3 sentences), 
+- Keep the English clear 
 
-Use clear, natural English at {level} level. The tone should be friendly and casual, like students talking after class.please reply to shortly
-Uses simple, easy-to-understand English. The conversation is broken down into shorter sentences.
-
-This is the Tedtalk moovie script
-
-
+<Role>
+{role_prompt}
 {script}
-
-This is the TED Talk script we are university students. (CFER level is {level}) we are going to conversation with class mate so please create conversation of this situation
-
-
-I think the conversation is so good like below
-
 {conversation_example}
-"""
+'''
         st.session_state.messages = [
             {"role": "system", "content": system_prompt},
-            {"role": "assistant", "content": "What's the main topic of this movie?"}
+            {"role": "assistant", "content": "What did you think of the video?"}
         ]
 
-    # 過去の会話を表示
     for message in st.session_state.messages:
         if message["role"] != "system":
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
 
-    # ユーザー入力
     if prompt := st.chat_input("質問や感想を入力してください"):
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.markdown(prompt)
 
-        # ChatGPT API呼び出し
         with st.chat_message("assistant"):
             with st.spinner("ChatGPTが考え中..."):
                 response = client.chat.completions.create(
@@ -222,7 +226,6 @@ I think the conversation is so good like below
                 st.markdown(reply)
         st.session_state.messages.append({"role": "assistant", "content": reply})
         
-        # --------------- ログ保存 ----------------
         if st.session_state.username and st.session_state.date:
             filename = f"{st.session_state.username}_{st.session_state.date}.txt"
             with open(filename, "a", encoding="utf-8") as f:
@@ -255,10 +258,8 @@ elif st.session_state.page == "survey":
             file_name=f"{st.session_state.username}_{st.session_state.date}.txt",
             mime="text/plain"
         )
-        # GitHubに送信する新しいボタン
         if st.button("🚀 ログを送信（GitHubに保存）"):
-            jst = zoneinfo.ZoneInfo("Asia/Tokyo")
-            now = datetime.now(jst)
+            now = datetime.now(zoneinfo.ZoneInfo("Asia/Tokyo"))
             filename = f"{st.session_state.username}_{now.strftime('%Y%m%d_%H%M%S')}.txt"
             response = push_to_github(filename, log_text)
             if response.status_code in [200, 201]:
@@ -275,7 +276,7 @@ elif st.session_state.page == "survey":
 # ---------------- ルート2: TED動画 ----------------
 elif st.session_state.page == "video2":
     st.title("TED動画を見る")
-    st.video("https://www.youtube.com/watch?v=1VA4rIkpSp8")  # ルート2用動画URLを入れてください
+    st.video("https://www.youtube.com/watch?v=1VA4rIkpSp8")
     col1, col2 = st.columns(2)
     with col1:
         st.button("戻る", on_click=lambda: go_to("home"))
@@ -294,14 +295,16 @@ elif st.session_state.page == "explanation2":
 
 # ---------------- ルート2: 会話ページ ----------------
 elif st.session_state.page == "chat2":
-    st.title("会話")
     st.title("ChatGPTと会話")
-    # 既存のapi_keyとclientの定義は正しい
     api_key = st.secrets["API_KEY"]
     client = openai.OpenAI(api_key=api_key)
 
     if "messages" not in st.session_state:
-        level = "C1"
+        if st.session_state.role == 'teacher':
+            role_prompt = "The conversation is intelligent and easy to understand. The goal is to help the user improve their English skills and deepen their understanding of the video's content."
+        else:
+            role_prompt = "The conversation is casual. Shares personal feelings and experiences."
+
         script_file = "script/scr-freight.txt"
         conv_file = "sample-conversation/conv-freight.txt"
 
@@ -310,42 +313,35 @@ elif st.session_state.page == "chat2":
         with open(conv_file, "r", encoding="utf-8") as f:
             conversation_example = f.read()
 
-        system_prompt = f"""
-I am a university student ({level} level English). I watched a TED Talk and I want to practice a conversation with a classmate about it. Please help me to practice conversation to classmate .you are classmate.
+        system_prompt = f'''
+<Rules>
+- We had a conversation about the topic.
+- The conversation starts with the user answering the question, "what did you think of the TED Talk about ?"
+- You reply shortly (2~3 sentences), 
+- Keep the English clear 
+- Uses specialized terminology related to the video. The conversation delves deeper into the video's content.
 
-Use clear, natural English at {level} level. The tone should be friendly and casual, like students talking after class.please reply to shortly
-Uses specialized terminology related to the video. The conversation delves deeper into the video's content.
-
-This is the Tedtalk moovie script
-
+<Role>
+{role_prompt}
 
 {script}
-
-This is the TED Talk script we are university students. (CFER level is {level}) we are going to conversation with class mate so please create conversation of this situation
-
-
-I think the conversation is so good like below
-
 {conversation_example}
-"""
+'''
         st.session_state.messages = [
             {"role": "system", "content": system_prompt},
-            {"role": "assistant", "content": "What's the main topic of this movie?"}
+            {"role": "assistant", "content": "What did you think of the video?"}
         ]
 
-    # 過去の会話を表示
     for message in st.session_state.messages:
         if message["role"] != "system":
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
 
-    # ユーザー入力
     if prompt := st.chat_input("質問や感想を入力してください"):
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.markdown(prompt)
 
-        # ChatGPT API呼び出し
         with st.chat_message("assistant"):
             with st.spinner("ChatGPTが考え中..."):
                 response = client.chat.completions.create(
@@ -355,6 +351,7 @@ I think the conversation is so good like below
                 reply = response.choices[0].message.content
                 st.markdown(reply)
         st.session_state.messages.append({"role": "assistant", "content": reply})
+        
     col1, col2 = st.columns(2)
     with col1:
         st.button("戻る", on_click=lambda: go_to("explanation2"))
@@ -372,5 +369,3 @@ elif st.session_state.page == "survey2":
         st.button("戻る", on_click=lambda: go_to("chat2"))
     
     st.button("ホームに戻る", on_click=lambda: go_to("home"))
-
-
