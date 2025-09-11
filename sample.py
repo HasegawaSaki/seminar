@@ -250,8 +250,7 @@ elif st.session_state.page == "survey":
         st.download_button(
             label="💾 会話ログをダウンロード",
             data=log_text,
-            now = datetime.datetime.now(),
-            filename = f"{st.session_state.username}_{now.strftime('%Y%m%d_%H%M%S')}.txt",
+            file_name=f"{st.session_state.username}_{st.session_state.date}.txt",
             mime="text/plain"
         )
         # GitHubに送信する新しいボタン
