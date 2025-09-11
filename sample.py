@@ -321,13 +321,10 @@ def survey_page():
     col1, col2 = st.columns(2)
 
     with col1:
-        if st.button("チャットに戻る"):
-            go_to("chat")
+        st.button("チャットに戻る", on_click=lambda: go_to("chat"))
 
     with col2:
-        if st.button("ホームに戻る"):
-            reset_chat()
-            go_to("home")
+        st.button("ホームに戻る", on_click=lambda: (reset_chat(), go_to("home")))
 
 # ================== ページ遷移 ==================
 if st.session_state.page == "home":
