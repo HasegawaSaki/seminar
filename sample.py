@@ -1,5 +1,26 @@
 import streamlit as st
 import openai
+import requests
+import base64
+
+def push_to_github(filename, content):
+    token = st.secrets["GITHUB_TOKEN"]
+    repo = st.secrets["GITHUB_REPO"]
+    branch = st.secrets["GITHUB_BRANCH"]
+
+    url = f"https://api.github.com/repos/{repo}/contents/{filename}"
+    message = f"Add chat log {filename}"
+    b64_content = base64.b64encode(content.encode("utf-8")).decode("utf-8")
+
+    headers = {"Authorization": f"token {token}"}
+    data = {
+        "message": message,
+        "content": b64_content,
+        "branch": branch
+    }
+
+    response = requests.put(url, headers=headers, json=data)
+    return response
 
 # セッション変数の初期化
 if "route" not in st.session_state:
@@ -231,6 +252,14 @@ elif st.session_state.page == "survey":
             file_name=f"{st.session_state.username}_{st.session_state.date}.txt",
             mime="text/plain"
         )
+        # GitHubに送信する新しいボタン
+        if st.button("🚀 ログを送信（GitHubに保存）"):
+            filename = f"{st.session_state.username}_{st.session_state.date}.txt"
+            response = push_to_github(filename, log_text)
+            if response.status_code in [200, 201]:
+                st.success(f"✅ {filename} をGitHubに保存しました！")
+            else:
+                st.error(f"❌ 送信失敗: {response.json()}")
         
     col1, col2 = st.columns(2)
     with col1:
