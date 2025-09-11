@@ -198,7 +198,7 @@ Maria: You too, Liam!
                 st.markdown(reply)
         st.session_state.messages.append({"role": "assistant", "content": reply})
         
-        --------------- ログ保存 ----------------
+        # --------------- ログ保存 ----------------
         if st.session_state.username and st.session_state.date:
             filename = f"{st.session_state.username}_{st.session_state.date}.txt"
             with open(filename, "a", encoding="utf-8") as f:
