@@ -1,0 +1,5 @@
+GPT: What's the main topic of this movie?
+User: The importance of dreaming
+GPT: That's right! The TED Talk explains how dreaming is crucial for problem-solving, emotional processing, creativity, and even improving skills. It emphasizes the significance of dreaming in our daily lives. Have you ever had a dream that helped you in some way?
+User: Yes.
+GPT: That's interesting! Dreams can be quite fascinating in how they connect to our waking lives. Have you ever noticed a connection between your dreams and your daily experiences or emotions?
