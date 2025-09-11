@@ -217,6 +217,21 @@ elif st.session_state.page == "survey":
     st.write("以下のリンクからアンケートにお答えください。")
     st.markdown("[Googleフォームはこちら](https://docs.google.com/forms/d/xxxxxx)")
 
+    if "messages" in st.session_state:
+        log_text = ""
+        for m in st.session_state.messages:
+            if m["role"] == "user":
+                log_text += f"User: {m['content']}\n"
+            elif m["role"] == "assistant":
+                log_text += f"GPT: {m['content']}\n"
+
+        st.download_button(
+            label="💾 会話ログをダウンロード",
+            data=log_text,
+            file_name=f"{st.session_state.username}_{st.session_state.date}.txt",
+            mime="text/plain"
+        )
+        
     col1, col2 = st.columns(2)
     with col1:
         st.button("戻る", on_click=lambda: go_to("chat1"))
