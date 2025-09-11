@@ -33,7 +33,8 @@ if "page" not in st.session_state:
 if "username" not in st.session_state:
     st.session_state.username = ""
 if "date" not in st.session_state:
-    st.session_state.date = ""
+    jst = zoneinfo.ZoneInfo("Asia/Tokyo")
+    st.session_state.date = datetime.now(jst).strftime("%Y%m%d")
 
 def go_to(page_name, route=None):
     if route:
@@ -47,15 +48,23 @@ if st.session_state.page == "home":
 
     # 名前と日付の入力欄
     st.session_state.username = st.text_input("お名前を入力してください")
-    st.session_state.date = st.date_input("日付を選択してください")
+
 
     st.write("あなたの英語力は？")
     
+    def go_to_with_check(target_page, route):
+    # 空欄、または空白のみの場合はエラー
+        if not st.session_state.username.strip():
+            st.warning("⚠️ 名前を入力してください")
+        else:
+            go_to(target_page, route)
+
     col1, col2 = st.columns(2)
     with col1:
-        st.button("B2レベル", on_click=lambda: go_to("video1", route=1))
+        st.button("B2レベル", on_click=lambda: go_to_with_check("video1", 1))
     with col2:
-        st.button("C1レベル", on_click=lambda: go_to("video2", route=2))
+        st.button("C1レベル", on_click=lambda: go_to_with_check("video2", 2))
+
 
 # ---------------- ルート1: TED動画 ----------------
 elif st.session_state.page == "video1":
