@@ -6,6 +6,10 @@ if "route" not in st.session_state:
     st.session_state.route = None  # 1 または 2
 if "page" not in st.session_state:
     st.session_state.page = "home"
+if "username" not in st.session_state:
+    st.session_state.username = ""
+if "date" not in st.session_state:
+    st.session_state.date = ""
 
 def go_to(page_name, route=None):
     if route:
@@ -16,6 +20,11 @@ def go_to(page_name, route=None):
 if st.session_state.page == "home":
     st.title("ホーム")
     st.write("あなたの英語力は？")
+
+    # 名前と日付の入力欄
+    st.session_state.username = st.text_input("お名前を入力してください")
+    st.session_state.date = st.date_input("日付を選択してください")
+    
     col1, col2 = st.columns(2)
     with col1:
         st.button("B2レベル", on_click=lambda: go_to("video1", route=1))
