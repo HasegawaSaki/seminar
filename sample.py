@@ -261,7 +261,7 @@ def chat_page():
         st.session_state.messages = [
             {"role": "system", 
              "content": get_system_prompt(st.session_state.level, st.session_state.purpose)},
-            {"role": "assistant", "content": "Hey! What did you think about the TED Talk?"}
+            {"role": "assistant", "content": "What's the main topic of this movie?"}
         ]
     # 過去の会話を表示
     for msg in st.session_state.messages:
