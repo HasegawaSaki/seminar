@@ -1,3 +1,0 @@
-GPT: What's the main topic of this movie?
-User: Dreaming
-GPT: Hey, Liam! What did you think about the TED Talk on dreaming?
