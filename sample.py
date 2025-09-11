@@ -2,6 +2,7 @@ import streamlit as st
 import openai
 import requests
 import base64
+import datetime
 
 def push_to_github(filename, content):
     token = st.secrets["GITHUB_TOKEN"]
@@ -249,12 +250,14 @@ elif st.session_state.page == "survey":
         st.download_button(
             label="💾 会話ログをダウンロード",
             data=log_text,
-            file_name=f"{st.session_state.username}_{st.session_state.date}.txt",
+            now = datetime.datetime.now(),
+            filename = f"{st.session_state.username}_{now.strftime('%Y%m%d_%H%M%S')}.txt",
             mime="text/plain"
         )
         # GitHubに送信する新しいボタン
         if st.button("🚀 ログを送信（GitHubに保存）"):
-            filename = f"{st.session_state.username}_{st.session_state.date}.txt"
+            now = datetime.datetime.now()
+            filename = f"{st.session_state.username}_{now.strftime('%Y%m%d_%H%M%S')}.txt"
             response = push_to_github(filename, log_text)
             if response.status_code in [200, 201]:
                 st.success(f"✅ {filename} をGitHubに保存しました！")
