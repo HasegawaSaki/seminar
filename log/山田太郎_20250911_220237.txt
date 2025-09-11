@@ -1,0 +1,3 @@
+GPT: What's the main topic of this movie?
+User: Dreaming
+GPT: Yes, the main topic of the TED Talk was about dreaming and the different benefits it provides, like creativity and emotional processing. Did you find the information surprising or intriguing?
