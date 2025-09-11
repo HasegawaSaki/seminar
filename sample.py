@@ -19,11 +19,13 @@ def go_to(page_name, route=None):
 # ---------------- ホームページ ----------------
 if st.session_state.page == "home":
     st.title("ホーム")
-    st.write("あなたの英語力は？")
+    
 
     # 名前と日付の入力欄
     st.session_state.username = st.text_input("お名前を入力してください")
     st.session_state.date = st.date_input("日付を選択してください")
+
+    st.write("あなたの英語力は？")
     
     col1, col2 = st.columns(2)
     with col1:
