@@ -1,0 +1,3 @@
+GPT: What's the main topic of this movie?
+User: Dreaming
+GPT: Yes, that's right! The TED Talk discussed why we dream and the various benefits of dreaming. Did you find the idea of dreaming helping to solve problems and process emotions interesting?
