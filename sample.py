@@ -25,6 +25,8 @@ def push_to_github(filename, content):
 
     response = requests.put(url, headers=headers, json=data)
     return response
+if "purpose" not in st.session_state:
+    st.session_state.purpose = "楽しく会話"
 # --------ページ遷移管理 --------
 if "page" not in st.session_state:
     st.session_state.page = "home"
