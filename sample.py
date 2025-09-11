@@ -268,7 +268,7 @@ elif st.session_state.page == "survey":
         if st.button("🚀 ログを送信（GitHubに保存）"):
             jst = zoneinfo.ZoneInfo("Asia/Tokyo")
             now = datetime.now(jst)
-            filename = f"{st.session_state.username}_{now.strftime('%Y%m%d_%H%M%S')}.txt"
+            filename = f"log/{st.session_state.username}_{now.strftime('%Y%m%d_%H%M%S')}.txt"
             response = push_to_github(filename, log_text)
             if response.status_code in [200, 201]:
                 st.success(f"✅ {filename} をGitHubに保存しました！")
