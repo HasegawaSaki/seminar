@@ -47,7 +47,7 @@ if st.session_state.page == "home":
     
 
     # 名前と日付の入力欄
-    st.session_state.username = st.text_input("お名前を入力してください")
+    st.session_state.username = st.text_input("名前を入力してください")
 
 
     st.write("あなたの英語力は？")
