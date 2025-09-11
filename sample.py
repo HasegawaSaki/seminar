@@ -258,12 +258,13 @@ elif st.session_state.page == "survey":
             elif m["role"] == "assistant":
                 log_text += f"GPT: {m['content']}\n"
 
-        st.download_button(
-            label="💾 会話ログをダウンロード",
-            data=log_text,
-            file_name=f"{st.session_state.username}_{st.session_state.date}.txt",
-            mime="text/plain"
-        )
+        # st.download_button(
+        #     label="💾 会話ログをダウンロード",
+        #     data=log_text,
+        #     file_name=f"{st.session_state.username}_{st.session_state.date}.txt",
+        #     mime="text/plain"
+        # )
+        
         # GitHubに送信する新しいボタン
         if st.button("🚀 ログを送信（GitHubに保存）"):
             jst = zoneinfo.ZoneInfo("Asia/Tokyo")
