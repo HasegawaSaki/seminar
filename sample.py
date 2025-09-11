@@ -58,7 +58,12 @@ if st.session_state.page == "home":
             st.warning("⚠️ 名前を入力してください")
         else:
             go_to(target_page, route)
-
+    st.subheader("ディスカッションの目的を選んでください")
+    purpose = st.radio(
+    "目的を選択してください",
+    ["楽しく会話", "英語力の向上"],
+    key="purpose"
+    )
     col1, col2 = st.columns(2)
     with col1:
         st.button("B2レベル", on_click=lambda: go_to_with_check("video1", 1))
