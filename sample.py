@@ -49,6 +49,10 @@ def go_to(page, level=None, purpose=None):
         st.session_state.purpose = purpose
     st.session_state.page = page
 
+def reset_chat():
+    if "messages" in st.session_state:
+        st.session_state.messages = []
+
 # --------プロンプト分岐--------
 def get_system_prompt(level, purpose):
     if level == "B2" and purpose == "楽しく会話":
@@ -313,8 +317,17 @@ def survey_page():
             else:
                 st.error(f"❌ 送信失敗: {response.json()}")
 
-    st.button("ホームに戻る", on_click=lambda: go_to("home"))
+    st.markdown("---")
+    col1, col2 = st.columns(2)
 
+    with col1:
+        if st.button("チャットに戻る"):
+            go_to("chat")
+
+    with col2:
+        if st.button("ホームに戻る"):
+            reset_chat()
+            go_to("home")
 
 # ================== ページ遷移 ==================
 if st.session_state.page == "home":
