@@ -58,9 +58,8 @@ if st.session_state.page == "home":
             st.warning("⚠️ 名前を入力してください")
         else:
             go_to(target_page, route)
-    st.subheader("ディスカッションの目的を選んでください")
+    st.write("ディスカッションの目的を選んでください")
     purpose = st.radio(
-    "目的を選択してください",
     ["楽しく会話", "英語力の向上"],
     key="purpose"
     )
