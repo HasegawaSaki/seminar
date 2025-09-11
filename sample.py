@@ -3,6 +3,8 @@ import openai
 import requests
 import base64
 import datetime
+from datetime import datetime
+import zoneinfo
 
 def push_to_github(filename, content):
     token = st.secrets["GITHUB_TOKEN"]
@@ -255,7 +257,8 @@ elif st.session_state.page == "survey":
         )
         # GitHubに送信する新しいボタン
         if st.button("🚀 ログを送信（GitHubに保存）"):
-            now = datetime.datetime.now()
+            jst = zoneinfo.ZoneInfo("Asia/Tokyo")
+            now = datetime.now(jst)
             filename = f"{st.session_state.username}_{now.strftime('%Y%m%d_%H%M%S')}.txt"
             response = push_to_github(filename, log_text)
             if response.status_code in [200, 201]:
