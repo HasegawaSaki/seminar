@@ -1,0 +1,3 @@
+GPT: What's the main topic of this movie?
+User: Dreaming
+GPT: Yes, the main topic of the TED Talk was "Why do we dream?" - The speaker talked about how dreaming can help with problem-solving, emotional processing, and even improving skills. It was really fascinating to learn about the different aspects of dreaming, right?

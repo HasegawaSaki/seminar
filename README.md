@@ -1,1 +1,1 @@
-# seminor
+# seminar
