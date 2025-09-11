@@ -197,6 +197,13 @@ Maria: You too, Liam!
                 reply = response.choices[0].message.content
                 st.markdown(reply)
         st.session_state.messages.append({"role": "assistant", "content": reply})
+        
+        --------------- ログ保存 ----------------
+        if st.session_state.username and st.session_state.date:
+            filename = f"{st.session_state.username}_{st.session_state.date}.txt"
+            with open(filename, "a", encoding="utf-8") as f:
+                f.write(f"User: {prompt}\n")
+                f.write(f"GPT: {reply}\n\n")
 
     col1, col2 = st.columns(2)
     with col1:
