@@ -49,6 +49,11 @@ if st.session_state.page == "home":
     # 名前と日付の入力欄
     st.session_state.username = st.text_input("名前を入力してください", placeholder="例）山田太郎")
 
+    purpose = st.radio(
+        "ディスカッションの目的を選んでください",
+        ["楽しく会話", "英語力の向上"],
+        key="purpose"
+    )
 
     st.write("あなたの英語力は？")
     
@@ -58,12 +63,7 @@ if st.session_state.page == "home":
             st.warning("⚠️ 名前を入力してください")
         else:
             go_to(target_page, route)
-    st.write("ディスカッションの目的を選んでください")
-    purpose = st.radio(
-        "",
-        ["楽しく会話", "英語力の向上"],
-        key="purpose"
-    )
+    
     col1, col2 = st.columns(2)
     with col1:
         st.button("B2レベル", on_click=lambda: go_to_with_check("video1", 1))
