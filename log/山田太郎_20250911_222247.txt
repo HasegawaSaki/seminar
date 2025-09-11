@@ -1,0 +1,5 @@
+GPT: What's the main topic of this movie?
+User: The importance of dreaming.
+GPT: Yeah, it talked about how dreaming can be beneficial for problem-solving, emotional processing, and even skill improvement. It's quite fascinating how much our dreams can impact our waking lives, isn't it?
+User: Yeah!
+GPT: It really makes you think about how our minds work when we're asleep. Do you ever have vivid dreams that stick with you during the day?
