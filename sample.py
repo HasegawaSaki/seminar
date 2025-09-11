@@ -60,6 +60,7 @@ if st.session_state.page == "home":
             go_to(target_page, route)
     st.write("ディスカッションの目的を選んでください")
     purpose = st.radio(
+        "",
         ["楽しく会話", "英語力の向上"],
         key="purpose"
     )
