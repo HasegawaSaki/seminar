@@ -6,7 +6,7 @@ import datetime
 from datetime import datetime
 import zoneinfo
 
-# GitHub関数
+# --------GitHub関数--------
 def push_to_github(filename, content):
     token = st.secrets["GITHUB_TOKEN"]
     repo = st.secrets["GITHUB_REPO"]
@@ -41,7 +41,6 @@ if "level" not in st.session_state:
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-
 def go_to(page, level=None, purpose=None):
     if level:
         st.session_state.level = level
@@ -49,6 +48,7 @@ def go_to(page, level=None, purpose=None):
         st.session_state.purpose = purpose
     st.session_state.page = page
 
+# --------チャットリセット--------
 def reset_chat():
     if "messages" in st.session_state:
         st.session_state.messages = []
@@ -247,7 +247,7 @@ def explanation_page():
         st.table(phrase_data)
 
     else:
-        st.markdown("ここにC1用の解説文を入れます。")
+        st.markdown("C1解説準備中")
 
     col1, col2 = st.columns(2)
     with col1:
@@ -324,9 +324,10 @@ def survey_page():
         st.button("チャットに戻る", on_click=lambda: go_to("chat"))
 
     with col2:
-        st.button("ホームに戻る", on_click=lambda: (reset_chat(), go_to("home")))
+        # ホームに戻る際にチャットをログをリセット
+        st.button("ホームに戻る", on_click=lambda: (reset_chat(), go_to("home"))) 
 
-# ================== ページ遷移 ==================
+# -------- ページ遷移 --------
 if st.session_state.page == "home":
     home_page()
 elif st.session_state.page == "video":
