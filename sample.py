@@ -52,89 +52,84 @@ def go_to(page, level=None, purpose=None):
 def reset_chat():
     if "messages" in st.session_state:
         st.session_state.messages = []
-
 # --------プロンプト分岐--------
 def get_system_prompt(level, purpose):
+    if st.session_state.purpose == '楽しく会話':
+        role_prompt = "The conversation is intelligent and easy to understand. The goal is to help the user improve their English skills and deepen their understanding of the video's content."
+    else:
+        role_prompt = "The conversation is casual. Shares personal feelings and experiences."
+    
     if level == "B2" and purpose == "楽しく会話":
-        return """
-            I am a university student (B2 level English). I watched a TED Talk about 'Why do we dream?' and I want to practice a conversation with a classmate about it. Please help me to practice conversation to classmate .you are classmate.
-
-Use clear, natural English at B2 level. The tone should be friendly and casual, like students talking after class.please reply to shortly
-
-This is the Tedtalk moovie script
-
-
-Why do we dream? 00:02 [Sleeping with Science] 00:07 Well, we dream for at least several different reasons. One key benefit is creativity. Sleep, including dream sleep, is associated with an enhanced ability to solve next-day problems. It's almost as though we go to sleep with the pieces of the jigsaw, but we wake up with the puzzle complete. 00:28 The second benefit of REM-sleep dreaming is emotional first aid. REM sleep takes the painful sting out of difficult emotional experiences so that when we come back the next day, we feel better about those painful events. You can almost think of dreaming as a form of overnight therapy. It's not time that heals all wounds, but it's time during dream sleep that provides emotional convalescence. 00:59 Now, it's not just that you dream. It's also what you dream about that seems to make a difference. Scientists have discovered that after learning a virtual maze, for example, those individuals who slept but critically also dreamed about the maze were the only ones who ended up being better at navigating the maze when they woke up. And this same principle is true for our mental health. For example, people going through a difficult or traumatic experience such as a divorce, and who are dreaming about that event, go on to gain resolution to their depression relative to those who were dreaming but not dreaming about the events themselves. 01:46 
-
-All of which means that sleep and the very act of dreaming itself appears to be an essential ingredient to so much of our waking lives. 01:58 We dream, therefore we are. This is the TED Talk script we are university students. (CFER level is B2) we are going to conversation with class mate so please create conversation of this situation
-
-
-I think the conversation is so good like below
-
-Maria:Hey Liam, what did you think of the TED Talk about dreaming?
-Liam: I thought it was really interesting. I didn’t know that dreaming could help us solve problems. That part about the jigsaw puzzle really made sense.
-Maria: Yeah, I liked that example too. It’s like your brain keeps working while you sleep. Do you ever get creative ideas after you wake up?
-Liam: Actually, yes! Sometimes I wake up with a new idea for my project. Maybe that’s dream creativity in action!
-Maria: Could be! I also found it surprising that REM sleep helps with emotions. Like, how dreaming works like therapy.
-Liam: Right! He said it's not just time that heals, but dream time. That was a powerful point. So dreaming helps us feel better after emotional experiences?
-Maria: Exactly. I think that’s why we feel a little better after a hard day—dreaming helps process those feelings.
-Liam: Did you hear the part about people dreaming about a maze? The ones who dreamed about it actually improved their skills.
-Maria: Yes! That was amazing. So maybe if we dream about exams, we’ll do better? [laughs]
-Liam: Haha, I wish! But seriously, it shows that what we dream about is important—not just the fact that we dream.
-Maria: True. He also mentioned people dreaming about trauma, like divorce, and how that helped them recover from depression.
-Liam: That shows how connected dreaming is to mental health. I never thought dreams had such a strong effect on our real life.
-Maria: Me neither. It makes me want to learn more about REM sleep. Do you remember the final line? “We dream, therefore we are.”
-Liam: Yeah, that was deep. It’s like dreaming is a key part of being human.
-Maria: I agree. Anyway, I’ll try to get more sleep tonight. Maybe I’ll solve all my problems in a dream!
-Liam: Good idea! Sweet dreams, Maria!
-Maria: You too, Liam!
-
-            """
-
+        with open("script/scr-dream.txt", "r", encoding="utf-8") as f:
+            script = f.read()
+        with open("sample-conversation/conv-dream.txt", "r", encoding="utf-8") as f:
+            conversation_example = f.read()
+        
+        return f'''
+<Rules>
+- We had a conversation about the topic.
+- The conversation starts with the user answering the question, "what did you think of the TED Talk about ?"
+- You reply shortly (2~3 sentences),
+- Keep the English clear
+<Role>
+{role_prompt}
+{script}
+{conversation_example}
+'''
 
     elif level == "B2" and purpose == "英語力の向上":
-        return """
-            I am a university student (B2 level English). I watched a TED Talk about 'Why do we dream?' and I want to practice a conversation with a classmate about it. Please help me to practice conversation to classmate .you are classmate.
-
-Use clear, natural English at B2 level. The tone should be friendly and casual, like students talking after class.please reply to shortly
-
-This is the Tedtalk moovie script
-
-
-Why do we dream? 00:02 [Sleeping with Science] 00:07 Well, we dream for at least several different reasons. One key benefit is creativity. Sleep, including dream sleep, is associated with an enhanced ability to solve next-day problems. It's almost as though we go to sleep with the pieces of the jigsaw, but we wake up with the puzzle complete. 00:28 The second benefit of REM-sleep dreaming is emotional first aid. REM sleep takes the painful sting out of difficult emotional experiences so that when we come back the next day, we feel better about those painful events. You can almost think of dreaming as a form of overnight therapy. It's not time that heals all wounds, but it's time during dream sleep that provides emotional convalescence. 00:59 Now, it's not just that you dream. It's also what you dream about that seems to make a difference. Scientists have discovered that after learning a virtual maze, for example, those individuals who slept but critically also dreamed about the maze were the only ones who ended up being better at navigating the maze when they woke up. And this same principle is true for our mental health. For example, people going through a difficult or traumatic experience such as a divorce, and who are dreaming about that event, go on to gain resolution to their depression relative to those who were dreaming but not dreaming about the events themselves. 01:46 
-
-All of which means that sleep and the very act of dreaming itself appears to be an essential ingredient to so much of our waking lives. 01:58 We dream, therefore we are. This is the TED Talk script we are university students. (CFER level is B2) we are going to conversation with class mate so please create conversation of this situation
-
-
-I think the conversation is so good like below
-
-Maria:Hey Liam, what did you think of the TED Talk about dreaming?
-Liam: I thought it was really interesting. I didn’t know that dreaming could help us solve problems. That part about the jigsaw puzzle really made sense.
-Maria: Yeah, I liked that example too. It’s like your brain keeps working while you sleep. Do you ever get creative ideas after you wake up?
-Liam: Actually, yes! Sometimes I wake up with a new idea for my project. Maybe that’s dream creativity in action!
-Maria: Could be! I also found it surprising that REM sleep helps with emotions. Like, how dreaming works like therapy.
-Liam: Right! He said it's not just time that heals, but dream time. That was a powerful point. So dreaming helps us feel better after emotional experiences?
-Maria: Exactly. I think that’s why we feel a little better after a hard day—dreaming helps process those feelings.
-Liam: Did you hear the part about people dreaming about a maze? The ones who dreamed about it actually improved their skills.
-Maria: Yes! That was amazing. So maybe if we dream about exams, we’ll do better? [laughs]
-Liam: Haha, I wish! But seriously, it shows that what we dream about is important—not just the fact that we dream.
-Maria: True. He also mentioned people dreaming about trauma, like divorce, and how that helped them recover from depression.
-Liam: That shows how connected dreaming is to mental health. I never thought dreams had such a strong effect on our real life.
-Maria: Me neither. It makes me want to learn more about REM sleep. Do you remember the final line? “We dream, therefore we are.”
-Liam: Yeah, that was deep. It’s like dreaming is a key part of being human.
-Maria: I agree. Anyway, I’ll try to get more sleep tonight. Maybe I’ll solve all my problems in a dream!
-Liam: Good idea! Sweet dreams, Maria!
-Maria: You too, Liam!
-
-            """
+        with open("script/scr-dream.txt", "r", encoding="utf-8") as f:
+            script = f.read()
+        with open("sample-conversation/conv-dream.txt", "r", encoding="utf-8") as f:
+            conversation_example = f.read()
+        
+        return f'''
+<Rules>
+- We had a conversation about the topic.
+- The conversation starts with the user answering the question, "what did you think of the TED Talk about ?"
+- You reply shortly (2~3 sentences),
+- Keep the English clear
+<Role>
+{role_prompt}
+{script}
+{conversation_example}
+'''
 
     elif level == "C1" and purpose == "楽しく会話":
-        return """ここに C1 ✖️ 楽しく会話 用のプロンプトを貼る"""
+        with open("script/scr-freight.txt", "r", encoding="utf-8") as f:
+            script = f.read()
+        with open("sample-conversation/conv-freight.txt", "r", encoding="utf-8") as f:
+            conversation_example = f.read()
+        
+        return f'''
+<Rules>
+- We had a conversation about the topic.
+- The conversation starts with the user answering the question, "what did you think of the TED Talk about ?"
+- You reply shortly (2~3 sentences),
+- Keep the English clear
+<Role>
+{role_prompt}
+{script}
+{conversation_example}
+'''
 
     elif level == "C1" and purpose == "英語力の向上":
-        return """ここに C1 ✖️ 英語力の向上 用のプロンプトを貼る"""
-
-
+        with open("script/scr-freight.txt", "r", encoding="utf-8") as f:
+            script = f.read()
+        with open("sample-conversation/conv-freight.txt", "r", encoding="utf-8") as f:
+            conversation_example = f.read()
+        
+        return f'''
+<Rules>
+- We had a conversation about the topic.
+- The conversation starts with the user answering the question, "what did you think of the TED Talk about ?"
+- You reply shortly (2~3 sentences),
+- Keep the English clear
+<Role>
+{role_prompt}
+{script}
+{conversation_example}
+'''
 # ================== 各ページ描画 ==================
 def home_page():
     st.title("ホーム")
