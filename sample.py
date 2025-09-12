@@ -26,16 +26,13 @@ def push_to_github(filename, content):
     response = requests.put(url, headers=headers, json=data)
     return response
 
-if "purpose" not in st.session_state:
-    st.session_state.purpose = "楽しく会話"
-
 # --------ページ遷移管理 --------
 if "page" not in st.session_state:
     st.session_state.page = "home"
 if "username" not in st.session_state:
     st.session_state.username = ""
 if "purpose" not in st.session_state:
-    st.session_state.purpose = ""
+    st.session_state.purpose = "楽しく会話"
 if "level" not in st.session_state:
     st.session_state.level = ""
 if "messages" not in st.session_state:
@@ -52,12 +49,13 @@ def go_to(page, level=None, purpose=None):
 def reset_chat():
     if "messages" in st.session_state:
         st.session_state.messages = []
+        
 # --------プロンプト分岐--------
 def get_system_prompt(level, purpose):
-    if st.session_state.purpose == '楽しく会話':
-        role_prompt = "The conversation is intelligent and easy to understand. The goal is to help the user improve their English skills and deepen their understanding of the video's content."
+    if purpose == '楽しく会話':
+        role_prompt = "The conversation is casual. Shares personal feelings and experiences. if the user asks questions, answer them so briefly(1-2sentense). The goal is to have fun and enjoy the conversation. please emphathize with the user's comments,and sometimes offer your own opininon as if your were a friend."
     else:
-        role_prompt = "The conversation is casual. Shares personal feelings and experiences."
+        role_prompt = "You are English teacher. The conversation is intelligent and easy to understand. The goal is to help the user improve their English skills and deepen their understanding of the video's content. please correct the user's grammar and vocabulary mistakes, and provide explanations for any difficult words or phrases used in the video."
     
     if level == "B2" and purpose == "楽しく会話":
         with open("script/scr-dream.txt", "r", encoding="utf-8") as f:
@@ -135,7 +133,8 @@ def home_page():
     st.title("ホーム")
     st.session_state.username = st.text_input("名前を入力してください", placeholder="例）山田太郎")
 
-    purpose = st.radio("ディスカッションの目的を選んでください", ["楽しく会話", "英語力の向上"], key="purpose")
+    purpose = st.radio("ディスカッションの目的を選んでください", ["楽しく会話", "英語力の向上"])
+
 
     def go_with_check(level):
         if not st.session_state.username.strip():
@@ -151,6 +150,10 @@ def home_page():
 
 
 def video_page():
+    # 👇 選択された値を確認
+    st.write("現在選択されている目的:", st.session_state.purpose)
+    
+    
     st.title(f"{st.session_state.level} レベル - TED動画")
     if st.session_state.level == "B2":
         st.video("https://www.youtube.com/watch?v=YXn-eNPzlo8")
@@ -159,12 +162,15 @@ def video_page():
 
     col1, col2 = st.columns(2)
     with col1:
-        st.button("戻る", on_click=lambda: go_to("home"))
+        st.button("戻る", on_click=lambda: (reset_chat(), go_to("home")))
     with col2:
         st.button("次へ", on_click=lambda: go_to("explanation"))
 
 
 def explanation_page():
+        # 👇 選択された値を確認
+    st.write("現在選択されている目的:", st.session_state.purpose)
+    
     st.title(f"{st.session_state.level} レベル - 解説")
     if st.session_state.level == "B2":
         # Step 1: 全文翻訳
@@ -245,6 +251,7 @@ def explanation_page():
         st.markdown("C1解説準備中")
 
     col1, col2 = st.columns(2)
+    
     with col1:
         st.button("戻る", on_click=lambda: go_to("video"))
     with col2:
@@ -252,16 +259,24 @@ def explanation_page():
 
 
 def chat_page():
+    st.write("現在選択されている目的:", st.session_state.purpose)
     st.title(f"{st.session_state.level} - {st.session_state.purpose}")
     api_key = st.secrets["API_KEY"]
     client = openai.OpenAI(api_key=api_key)
 
+    # --- system プロンプトを毎回更新する版 ---
     if not st.session_state.messages:
         st.session_state.messages = [
-            {"role": "system", 
+            {"role": "system",
              "content": get_system_prompt(st.session_state.level, st.session_state.purpose)},
-            {"role": "assistant", "content": "What's the main topic of this movie?"}
+            {"role": "assistant", "content": "what did you think of the TED Talk about?"}
         ]
+    else:
+        if st.session_state.messages[0]["role"] == "system":
+            st.session_state.messages[0]["content"] = get_system_prompt(
+                st.session_state.level, st.session_state.purpose
+            )
+
     # 過去の会話を表示
     for msg in st.session_state.messages:
         if msg["role"] != "system":
@@ -317,7 +332,6 @@ def survey_page():
 
     with col1:
         st.button("チャットに戻る", on_click=lambda: go_to("chat"))
-
     with col2:
         # ホームに戻る際にチャットをログをリセット
         st.button("ホームに戻る", on_click=lambda: (reset_chat(), go_to("home"))) 
