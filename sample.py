@@ -26,16 +26,13 @@ def push_to_github(filename, content):
     response = requests.put(url, headers=headers, json=data)
     return response
 
-if "purpose" not in st.session_state:
-    st.session_state.purpose = "楽しく会話"
-
 # --------ページ遷移管理 --------
 if "page" not in st.session_state:
     st.session_state.page = "home"
 if "username" not in st.session_state:
     st.session_state.username = ""
 if "purpose" not in st.session_state:
-    st.session_state.purpose = ""
+    st.session_state.purpose = "楽しく会話"
 if "level" not in st.session_state:
     st.session_state.level = ""
 if "messages" not in st.session_state:
@@ -52,95 +49,92 @@ def go_to(page, level=None, purpose=None):
 def reset_chat():
     if "messages" in st.session_state:
         st.session_state.messages = []
-
+        
 # --------プロンプト分岐--------
 def get_system_prompt(level, purpose):
+    if purpose == '楽しく会話':
+        role_prompt = "The conversation is casual. Shares personal feelings and experiences. if the user asks questions, answer them so briefly(1-2sentense). The goal is to have fun and enjoy the conversation. please emphathize with the user's comments,and sometimes offer your own opininon as if your were a friend."
+    else:
+        role_prompt = "You are English teacher. The conversation is intelligent and easy to understand. The goal is to help the user improve their English skills and deepen their understanding of the video's content. please correct the user's grammar and vocabulary mistakes, and provide explanations for any difficult words or phrases used in the video."
+    
     if level == "B2" and purpose == "楽しく会話":
-        return """
-            I am a university student (B2 level English). I watched a TED Talk about 'Why do we dream?' and I want to practice a conversation with a classmate about it. Please help me to practice conversation to classmate .you are classmate.
-
-Use clear, natural English at B2 level. The tone should be friendly and casual, like students talking after class.please reply to shortly
-
-This is the Tedtalk moovie script
-
-
-Why do we dream? 00:02 [Sleeping with Science] 00:07 Well, we dream for at least several different reasons. One key benefit is creativity. Sleep, including dream sleep, is associated with an enhanced ability to solve next-day problems. It's almost as though we go to sleep with the pieces of the jigsaw, but we wake up with the puzzle complete. 00:28 The second benefit of REM-sleep dreaming is emotional first aid. REM sleep takes the painful sting out of difficult emotional experiences so that when we come back the next day, we feel better about those painful events. You can almost think of dreaming as a form of overnight therapy. It's not time that heals all wounds, but it's time during dream sleep that provides emotional convalescence. 00:59 Now, it's not just that you dream. It's also what you dream about that seems to make a difference. Scientists have discovered that after learning a virtual maze, for example, those individuals who slept but critically also dreamed about the maze were the only ones who ended up being better at navigating the maze when they woke up. And this same principle is true for our mental health. For example, people going through a difficult or traumatic experience such as a divorce, and who are dreaming about that event, go on to gain resolution to their depression relative to those who were dreaming but not dreaming about the events themselves. 01:46 
-
-All of which means that sleep and the very act of dreaming itself appears to be an essential ingredient to so much of our waking lives. 01:58 We dream, therefore we are. This is the TED Talk script we are university students. (CFER level is B2) we are going to conversation with class mate so please create conversation of this situation
-
-
-I think the conversation is so good like below
-
-Maria:Hey Liam, what did you think of the TED Talk about dreaming?
-Liam: I thought it was really interesting. I didn’t know that dreaming could help us solve problems. That part about the jigsaw puzzle really made sense.
-Maria: Yeah, I liked that example too. It’s like your brain keeps working while you sleep. Do you ever get creative ideas after you wake up?
-Liam: Actually, yes! Sometimes I wake up with a new idea for my project. Maybe that’s dream creativity in action!
-Maria: Could be! I also found it surprising that REM sleep helps with emotions. Like, how dreaming works like therapy.
-Liam: Right! He said it's not just time that heals, but dream time. That was a powerful point. So dreaming helps us feel better after emotional experiences?
-Maria: Exactly. I think that’s why we feel a little better after a hard day—dreaming helps process those feelings.
-Liam: Did you hear the part about people dreaming about a maze? The ones who dreamed about it actually improved their skills.
-Maria: Yes! That was amazing. So maybe if we dream about exams, we’ll do better? [laughs]
-Liam: Haha, I wish! But seriously, it shows that what we dream about is important—not just the fact that we dream.
-Maria: True. He also mentioned people dreaming about trauma, like divorce, and how that helped them recover from depression.
-Liam: That shows how connected dreaming is to mental health. I never thought dreams had such a strong effect on our real life.
-Maria: Me neither. It makes me want to learn more about REM sleep. Do you remember the final line? “We dream, therefore we are.”
-Liam: Yeah, that was deep. It’s like dreaming is a key part of being human.
-Maria: I agree. Anyway, I’ll try to get more sleep tonight. Maybe I’ll solve all my problems in a dream!
-Liam: Good idea! Sweet dreams, Maria!
-Maria: You too, Liam!
-
-            """
-
+        with open("script/scr-dream.txt", "r", encoding="utf-8") as f:
+            script = f.read()
+        with open("sample-conversation/conv-dream.txt", "r", encoding="utf-8") as f:
+            conversation_example = f.read()
+        
+        return f'''
+<Rules>
+- We had a conversation about the topic.
+- The conversation starts with the user answering the question, "what did you think of the TED Talk about ?"
+- You reply shortly (2~3 sentences),
+- Keep the English clear
+<Role>
+{role_prompt}
+{script}
+{conversation_example}
+'''
 
     elif level == "B2" and purpose == "英語力の向上":
-        return """
-            I am a university student (B2 level English). I watched a TED Talk about 'Why do we dream?' and I want to practice a conversation with a classmate about it. Please help me to practice conversation to classmate .you are classmate.
-
-Use clear, natural English at B2 level. The tone should be friendly and casual, like students talking after class.please reply to shortly
-
-This is the Tedtalk moovie script
-
-
-Why do we dream? 00:02 [Sleeping with Science] 00:07 Well, we dream for at least several different reasons. One key benefit is creativity. Sleep, including dream sleep, is associated with an enhanced ability to solve next-day problems. It's almost as though we go to sleep with the pieces of the jigsaw, but we wake up with the puzzle complete. 00:28 The second benefit of REM-sleep dreaming is emotional first aid. REM sleep takes the painful sting out of difficult emotional experiences so that when we come back the next day, we feel better about those painful events. You can almost think of dreaming as a form of overnight therapy. It's not time that heals all wounds, but it's time during dream sleep that provides emotional convalescence. 00:59 Now, it's not just that you dream. It's also what you dream about that seems to make a difference. Scientists have discovered that after learning a virtual maze, for example, those individuals who slept but critically also dreamed about the maze were the only ones who ended up being better at navigating the maze when they woke up. And this same principle is true for our mental health. For example, people going through a difficult or traumatic experience such as a divorce, and who are dreaming about that event, go on to gain resolution to their depression relative to those who were dreaming but not dreaming about the events themselves. 01:46 
-
-All of which means that sleep and the very act of dreaming itself appears to be an essential ingredient to so much of our waking lives. 01:58 We dream, therefore we are. This is the TED Talk script we are university students. (CFER level is B2) we are going to conversation with class mate so please create conversation of this situation
-
-
-I think the conversation is so good like below
-
-Maria:Hey Liam, what did you think of the TED Talk about dreaming?
-Liam: I thought it was really interesting. I didn’t know that dreaming could help us solve problems. That part about the jigsaw puzzle really made sense.
-Maria: Yeah, I liked that example too. It’s like your brain keeps working while you sleep. Do you ever get creative ideas after you wake up?
-Liam: Actually, yes! Sometimes I wake up with a new idea for my project. Maybe that’s dream creativity in action!
-Maria: Could be! I also found it surprising that REM sleep helps with emotions. Like, how dreaming works like therapy.
-Liam: Right! He said it's not just time that heals, but dream time. That was a powerful point. So dreaming helps us feel better after emotional experiences?
-Maria: Exactly. I think that’s why we feel a little better after a hard day—dreaming helps process those feelings.
-Liam: Did you hear the part about people dreaming about a maze? The ones who dreamed about it actually improved their skills.
-Maria: Yes! That was amazing. So maybe if we dream about exams, we’ll do better? [laughs]
-Liam: Haha, I wish! But seriously, it shows that what we dream about is important—not just the fact that we dream.
-Maria: True. He also mentioned people dreaming about trauma, like divorce, and how that helped them recover from depression.
-Liam: That shows how connected dreaming is to mental health. I never thought dreams had such a strong effect on our real life.
-Maria: Me neither. It makes me want to learn more about REM sleep. Do you remember the final line? “We dream, therefore we are.”
-Liam: Yeah, that was deep. It’s like dreaming is a key part of being human.
-Maria: I agree. Anyway, I’ll try to get more sleep tonight. Maybe I’ll solve all my problems in a dream!
-Liam: Good idea! Sweet dreams, Maria!
-Maria: You too, Liam!
-
-            """
+        with open("script/scr-dream.txt", "r", encoding="utf-8") as f:
+            script = f.read()
+        with open("sample-conversation/conv-dream.txt", "r", encoding="utf-8") as f:
+            conversation_example = f.read()
+        
+        return f'''
+<Rules>
+- We had a conversation about the topic.
+- The conversation starts with the user answering the question, "what did you think of the TED Talk about ?"
+- You reply shortly (2~3 sentences),
+- Keep the English clear
+<Role>
+{role_prompt}
+{script}
+{conversation_example}
+'''
 
     elif level == "C1" and purpose == "楽しく会話":
-        return """ここに C1 ✖️ 楽しく会話 用のプロンプトを貼る"""
+        with open("script/scr-freight.txt", "r", encoding="utf-8") as f:
+            script = f.read()
+        with open("sample-conversation/conv-freight.txt", "r", encoding="utf-8") as f:
+            conversation_example = f.read()
+        
+        return f'''
+<Rules>
+- We had a conversation about the topic.
+- The conversation starts with the user answering the question, "what did you think of the TED Talk about ?"
+- You reply shortly (2~3 sentences),
+- Keep the English clear
+<Role>
+{role_prompt}
+{script}
+{conversation_example}
+'''
 
     elif level == "C1" and purpose == "英語力の向上":
-        return """ここに C1 ✖️ 英語力の向上 用のプロンプトを貼る"""
-
-
+        with open("script/scr-freight.txt", "r", encoding="utf-8") as f:
+            script = f.read()
+        with open("sample-conversation/conv-freight.txt", "r", encoding="utf-8") as f:
+            conversation_example = f.read()
+        
+        return f'''
+<Rules>
+- We had a conversation about the topic.
+- The conversation starts with the user answering the question, "what did you think of the TED Talk about ?"
+- You reply shortly (2~3 sentences),
+- Keep the English clear
+<Role>
+{role_prompt}
+{script}
+{conversation_example}
+'''
 # ================== 各ページ描画 ==================
 def home_page():
     st.title("ホーム")
     st.session_state.username = st.text_input("名前を入力してください", placeholder="例）山田太郎")
 
-    purpose = st.radio("ディスカッションの目的を選んでください", ["楽しく会話", "英語力の向上"], key="purpose")
+    purpose = st.radio("ディスカッションの目的を選んでください", ["楽しく会話", "英語力の向上"])
+
 
     def go_with_check(level):
         if not st.session_state.username.strip():
@@ -156,6 +150,10 @@ def home_page():
 
 
 def video_page():
+    # 👇 選択された値を確認
+    st.write("現在選択されている目的:", st.session_state.purpose)
+    
+    
     st.title(f"{st.session_state.level} レベル - TED動画")
     if st.session_state.level == "B2":
         st.video("https://www.youtube.com/watch?v=YXn-eNPzlo8")
@@ -164,12 +162,15 @@ def video_page():
 
     col1, col2 = st.columns(2)
     with col1:
-        st.button("戻る", on_click=lambda: go_to("home"))
+        st.button("戻る", on_click=lambda: (reset_chat(), go_to("home")))
     with col2:
         st.button("次へ", on_click=lambda: go_to("explanation"))
 
 
 def explanation_page():
+        # 👇 選択された値を確認
+    st.write("現在選択されている目的:", st.session_state.purpose)
+    
     st.title(f"{st.session_state.level} レベル - 解説")
     if st.session_state.level == "B2":
         # Step 1: 全文翻訳
@@ -250,6 +251,7 @@ def explanation_page():
         st.markdown("C1解説準備中")
 
     col1, col2 = st.columns(2)
+    
     with col1:
         st.button("戻る", on_click=lambda: go_to("video"))
     with col2:
@@ -257,16 +259,24 @@ def explanation_page():
 
 
 def chat_page():
+    st.write("現在選択されている目的:", st.session_state.purpose)
     st.title(f"{st.session_state.level} - {st.session_state.purpose}")
     api_key = st.secrets["API_KEY"]
     client = openai.OpenAI(api_key=api_key)
 
+    # --- system プロンプトを毎回更新する版 ---
     if not st.session_state.messages:
         st.session_state.messages = [
-            {"role": "system", 
+            {"role": "system",
              "content": get_system_prompt(st.session_state.level, st.session_state.purpose)},
-            {"role": "assistant", "content": "What's the main topic of this movie?"}
+            {"role": "assistant", "content": "what did you think of the TED Talk about?"}
         ]
+    else:
+        if st.session_state.messages[0]["role"] == "system":
+            st.session_state.messages[0]["content"] = get_system_prompt(
+                st.session_state.level, st.session_state.purpose
+            )
+
     # 過去の会話を表示
     for msg in st.session_state.messages:
         if msg["role"] != "system":
@@ -322,7 +332,6 @@ def survey_page():
 
     with col1:
         st.button("チャットに戻る", on_click=lambda: go_to("chat"))
-
     with col2:
         # ホームに戻る際にチャットをログをリセット
         st.button("ホームに戻る", on_click=lambda: (reset_chat(), go_to("home"))) 
