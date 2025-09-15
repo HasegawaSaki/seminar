@@ -372,7 +372,7 @@ def survey_page():
         #     if response.status_code in [200, 201]:
         #         st.success(f"✅ {filename} をGitHubに保存しました！")
         #     else:
-        #         st.error(f"❌ 送信失敗: {response.json()}")
+        #         st.error(f"❌ 送信失敗。前ページに戻り、再試行してください。: {response.json()}")
 
     st.markdown("---")
     col1, col2 = st.columns(2)
