@@ -322,7 +322,7 @@ def chat_page():
                 st.session_state.chat_duration = f"{minutes}分{seconds}秒"
             go_to("survey")
 
-        st.button("次へ", on_click=lambda: go_to("survey"))
+        st.button("次へ", on_click=go_survey)
 
 
 def survey_page():
