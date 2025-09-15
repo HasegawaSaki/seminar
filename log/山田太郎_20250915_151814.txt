@@ -1,7 +1,0 @@
-レベル: B2
-目的: 楽しく会話
-GPT: what did you think of the TED Talk about?
-User: Dreaming is important
-GPT: Yes, it's fascinating how much impact our dreams can have on our creativity and emotional well-being. Have you noticed any interesting dreams lately?
-
-⏱ チャット滞在時間: 0分14秒
