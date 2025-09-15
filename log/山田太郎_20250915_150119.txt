@@ -1,7 +1,0 @@
-GPT: what did you think of the TED Talk about?
-User: Dreaming is important for organizing memories
-GPT: Yeah, it's fascinating how dreams play a role in memory consolidation. Have you noticed any specific memories becoming clearer after dreaming about them?
-User: Yes, I have.
-GPT: That's cool! It's like your brain is tidying up while you sleep. Dreaming does some impressive work behind the scenes.
-
-⏱ チャット滞在時間: 0分44秒
