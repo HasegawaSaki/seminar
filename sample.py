@@ -37,6 +37,10 @@ if "level" not in st.session_state:
     st.session_state.level = ""
 if "messages" not in st.session_state:
     st.session_state.messages = []
+if "chat_start_time" not in st.session_state:
+    st.session_state.chat_start_time = None
+if "chat_duration" not in st.session_state:
+    st.session_state.chat_duration = None
 
 def go_to(page, level=None, purpose=None):
     if level:
@@ -49,6 +53,9 @@ def go_to(page, level=None, purpose=None):
 def reset_chat():
     if "messages" in st.session_state:
         st.session_state.messages = []
+        st.session_state.username = ""
+        st.session_state.chat_start_time = None
+        st.session_state.chat_duration = None
         
 # --------プロンプト分岐--------
 def get_system_prompt(level, purpose):
@@ -259,6 +266,10 @@ def explanation_page():
 
 
 def chat_page():
+    # チャットページに初めて入ったときだけ開始時間を記録
+    if st.session_state.chat_start_time is None:
+        st.session_state.chat_start_time = datetime.now()
+        
     st.write("現在選択されている目的:", st.session_state.purpose)
     st.title(f"{st.session_state.level} - {st.session_state.purpose}")
     api_key = st.secrets["API_KEY"]
@@ -303,6 +314,14 @@ def chat_page():
     with col1:
         st.button("戻る", on_click=lambda: go_to("explanation"))
     with col2:
+        def go_survey():
+            start = st.session_state.chat_start_time
+            if start:
+                elapsed = datetime.now() - start
+                minutes, seconds = divmod(int(elapsed.total_seconds()), 60)
+                st.session_state.chat_duration = f"{minutes}分{seconds}秒"
+            go_to("survey")
+
         st.button("次へ", on_click=lambda: go_to("survey"))
 
 
@@ -316,6 +335,10 @@ def survey_page():
             if m["role"] != "system":
                 prefix = "User" if m["role"] == "user" else "GPT"
                 log_text += f"{prefix}: {m['content']}\n"
+
+        # チャット滞在時間を追加
+        if st.session_state.chat_duration:
+            log_text += f"\n⏱ チャット滞在時間: {st.session_state.chat_duration}\n"
 
         if st.button("🚀 ログを送信（GitHubに保存）"):
             jst = zoneinfo.ZoneInfo("Asia/Tokyo")
