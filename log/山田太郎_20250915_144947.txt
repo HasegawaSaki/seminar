@@ -1,0 +1,3 @@
+GPT: what did you think of the TED Talk about?
+User: Dreaming is important for organizing memories
+GPT: Absolutely! Dreaming helps with memory consolidation and processing information from the day. It's fascinating how our brains use dreams to make sense of our experiences.
