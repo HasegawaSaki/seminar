@@ -1,7 +1,0 @@
-GPT: what did you think of the TED Talk about?
-User: I found the talk fascinating because it showed how much waste exists in the freight system, and I think the idea of “carpooling for trucks” is both innovative and necessary for reducing emissions.
-GPT: I found the talk fascinating because it showed how much waste exists in the freight system, and I think the idea of “carpooling for trucks” is both innovative and necessary for reducing emissions.
-User: Yeah, I felt the same way. It’s amazing how such a simple idea like filling trucks more efficiently can have such a huge impact on both the environment and the economy.
-GPT: Yeah, I felt the same way. It’s amazing how such a simple idea like filling trucks more efficiently can have such a huge impact on both the environment and the economy.
-
-⏱ チャット滞在時間: 2分14秒
