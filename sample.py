@@ -328,6 +328,7 @@ def chat_page():
             purpose = st.session_state.get("purpose", "未選択")
             log_text += f"レベル: {level}\n"
             log_text += f"目的: {purpose}\n"
+            log_text += f"\n"
             
             for m in st.session_state.messages:
                 if m["role"] != "system":
