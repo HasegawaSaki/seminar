@@ -315,11 +315,35 @@ def chat_page():
         st.button("戻る", on_click=lambda: go_to("explanation"))
     with col2:
         def go_survey():
+            # 1. チャット時間を計算
             start = st.session_state.chat_start_time
             if start:
                 elapsed = datetime.now() - start
                 minutes, seconds = divmod(int(elapsed.total_seconds()), 60)
                 st.session_state.chat_duration = f"{minutes}分{seconds}秒"
+    
+            # 2. 会話内容をログに整形
+            log_text = ""
+            for m in st.session_state.messages:
+                if m["role"] != "system":
+                    prefix = "User" if m["role"] == "user" else "GPT"
+                    log_text += f"{prefix}: {m['content']}\n"
+    
+            log_text += f"\n⏱ チャット滞在時間: {st.session_state.chat_duration}"
+    
+            # 3. GitHub に送信
+            jst = zoneinfo.ZoneInfo("Asia/Tokyo")
+            now = datetime.now(jst)
+            filename = f"log/{st.session_state.username}_{now.strftime('%Y%m%d_%H%M%S')}.txt"
+            response = push_to_github(filename, log_text)
+    
+            # 4. 成功/失敗を通知
+            if response.status_code in [200, 201]:
+                st.success(f"✅ {filename} をGitHubに保存しました！")
+            else:
+                st.error(f"❌ 送信失敗: {response.json()}")
+    
+            # 5. ページ遷移
             go_to("survey")
 
         st.button("次へ", on_click=go_survey)
@@ -336,19 +360,19 @@ def survey_page():
                 prefix = "User" if m["role"] == "user" else "GPT"
                 log_text += f"{prefix}: {m['content']}\n"
 
-        # チャット滞在時間を追加
-        if st.session_state.chat_duration:
-            log_text += f"\n⏱ チャット滞在時間: {st.session_state.chat_duration}\n"
+        # # チャット滞在時間を追加
+        # if st.session_state.chat_duration:
+        #     log_text += f"\n⏱ チャット滞在時間: {st.session_state.chat_duration}\n"
 
-        if st.button("🚀 ログを送信（GitHubに保存）"):
-            jst = zoneinfo.ZoneInfo("Asia/Tokyo")
-            now = datetime.now(jst)
-            filename = f"log/{st.session_state.username}_{now.strftime('%Y%m%d_%H%M%S')}.txt"
-            response = push_to_github(filename, log_text)
-            if response.status_code in [200, 201]:
-                st.success(f"✅ {filename} をGitHubに保存しました！")
-            else:
-                st.error(f"❌ 送信失敗: {response.json()}")
+        # if st.button("🚀 ログを送信（GitHubに保存）"):
+        #     jst = zoneinfo.ZoneInfo("Asia/Tokyo")
+        #     now = datetime.now(jst)
+        #     filename = f"log/{st.session_state.username}_{now.strftime('%Y%m%d_%H%M%S')}.txt"
+        #     response = push_to_github(filename, log_text)
+        #     if response.status_code in [200, 201]:
+        #         st.success(f"✅ {filename} をGitHubに保存しました！")
+        #     else:
+        #         st.error(f"❌ 送信失敗: {response.json()}")
 
     st.markdown("---")
     col1, col2 = st.columns(2)
