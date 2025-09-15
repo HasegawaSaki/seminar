@@ -324,6 +324,11 @@ def chat_page():
     
             # 2. 会話内容をログに整形
             log_text = ""
+            level = st.session_state.get("level", "未選択")
+            purpose = st.session_state.get("purpose", "未選択")
+            log_text += f"レベル: {level}\n"
+            log_text += f"目的: {purpose}\n"
+            
             for m in st.session_state.messages:
                 if m["role"] != "system":
                     prefix = "User" if m["role"] == "user" else "GPT"
