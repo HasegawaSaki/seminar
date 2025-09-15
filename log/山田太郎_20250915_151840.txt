@@ -1,0 +1,7 @@
+レベル: B2
+目的: 英語力の向上
+GPT: what did you think of the TED Talk about?
+User: Dreaming is important
+GPT: Dreaming is indeed important for various reasons, as the TED Talk discussed. It can help us with problem-solving, emotional processing, and even improving our skills in certain tasks. Dreaming plays a significant role in our overall well-being and cognitive function.
+
+⏱ チャット滞在時間: 0分9秒
