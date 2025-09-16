@@ -2,7 +2,6 @@ import streamlit as st
 import openai
 import requests
 import base64
-import datetimede
 from datetime import datetime
 import zoneinfo
 
@@ -13,7 +12,7 @@ def push_to_github(filename, content):
     branch = st.secrets["GITHUB_BRANCH"]
 
     url = f"https://api.github.com/repos/{repo}/contents/{filename}"
-    message = f"Addrtr chat log {filename}"
+    message = f"Add chat log {filename}"
     b64_content = base64.b64encode(content.encode("utf-8")).decode("utf-8")
 
     headers = {"Authorization": f"token {token}"}
@@ -41,6 +40,8 @@ if "chat_start_time" not in st.session_state:
     st.session_state.chat_start_time = None
 if "chat_duration" not in st.session_state:
     st.session_state.chat_duration = None
+if "chat_timer_start" not in st.session_state:
+    st.session_state.chat_timer_start = None
 
 def go_to(page, level=None, purpose=None):
     if level:
@@ -55,6 +56,7 @@ def reset_chat():
         st.session_state.messages = []
         st.session_state.username = ""
         st.session_state.chat_start_time = None
+        st.session_state.chat_timer_start = None
         st.session_state.chat_duration = None
         
 # --------プロンプト分岐--------
@@ -264,11 +266,34 @@ def explanation_page():
     with col2:
         st.button("次へ", on_click=lambda: go_to("chat"))
 
+jst = zoneinfo.ZoneInfo("Asia/Tokyo")
+
+def add_message(role, content):
+    message = {"role": role, "content": content}
+
+    if role == "user":
+        start  = st.session_state.get("chat_timer_start")
+        if start:
+            elapsed = datetime.now(jst) - start
+            minutes, seconds = divmod(int(elapsed.total_seconds()), 60)
+            message["delay"] = f"[{minutes}分{seconds}秒]"
+            st.session_state.chat_timer_start = None
+        else:
+            message["delay"] = ""
+    else:  # GPTの返答
+        st.session_state.chat_timer_start = datetime.now(jst)
+        message["delay"] = ""
+
+    st.session_state.messages.append(message)
 
 def chat_page():
     # チャットページに初めて入ったときだけ開始時間を記録
     if st.session_state.chat_start_time is None:
         st.session_state.chat_start_time = datetime.now()
+    
+    if "chat_timer_start" not in st.session_state:
+        st.session_state.chat_timer_start = None
+
         
     st.write("現在選択されている目的:", st.session_state.purpose)
     st.title(f"{st.session_state.level} - {st.session_state.purpose}")
@@ -282,6 +307,8 @@ def chat_page():
              "content": get_system_prompt(st.session_state.level, st.session_state.purpose)},
             {"role": "assistant", "content": "what did you think of the TED Talk about?"}
         ]
+        if st.session_state.chat_timer_start is None:  #初回のみ
+            st.session_state.chat_timer_start = datetime.now(jst)
     else:
         if st.session_state.messages[0]["role"] == "system":
             st.session_state.messages[0]["content"] = get_system_prompt(
@@ -296,7 +323,7 @@ def chat_page():
 
     # ユーザー入力
     if prompt := st.chat_input("質問や感想を入力してください"):
-        st.session_state.messages.append({"role": "user", "content": prompt})
+        add_message("user", prompt)  #遅延付きで保存
         with st.chat_message("user"):
             st.markdown(prompt)
 
@@ -308,7 +335,8 @@ def chat_page():
                 )
                 reply = response.choices[0].message.content
                 st.markdown(reply)
-        st.session_state.messages.append({"role": "assistant", "content": reply})
+
+        add_message("assistant", reply)  
 
     col1, col2 = st.columns(2)
     with col1:
@@ -324,6 +352,15 @@ def chat_page():
     
             # 2. 会話内容をログに整形
             log_text = ""
+
+            username = st.session_state.get("username", "名無し")
+            jst = zoneinfo.ZoneInfo("Asia/Tokyo")
+            now = datetime.now(jst)
+            log_text += f"名前: {username}\n"
+            log_text += f"保存日時: {now.strftime('%Y-%m-%d %H:%M:%S')}\n"
+
+            log_text += f"\n"
+
             level = st.session_state.get("level", "未選択")
             purpose = st.session_state.get("purpose", "未選択")
             log_text += f"レベル: {level}\n"
@@ -333,7 +370,12 @@ def chat_page():
             for m in st.session_state.messages:
                 if m["role"] != "system":
                     prefix = "User" if m["role"] == "user" else "GPT"
-                    log_text += f"{prefix}: {m['content']}\n"
+                   
+                    if m["role"] == "user":
+                        delay = f" {m['delay']}" if m.get("delay") else ""
+                    else:
+                        delay = ""
+                    log_text += f"{prefix}: {m['content']}{delay}\n"
     
             log_text += f"\n⏱ チャット滞在時間: {st.session_state.chat_duration}"
     
@@ -366,19 +408,7 @@ def survey_page():
                 prefix = "User" if m["role"] == "user" else "GPT"
                 log_text += f"{prefix}: {m['content']}\n"
 
-        # # チャット滞在時間を追加
-        # if st.session_state.chat_duration:
-        #     log_text += f"\n⏱ チャット滞在時間: {st.session_state.chat_duration}\n"
 
-        # if st.button("🚀 ログを送信（GitHubに保存）"):
-        #     jst = zoneinfo.ZoneInfo("Asia/Tokyo")
-        #     now = datetime.now(jst)
-        #     filename = f"log/{st.session_state.username}_{now.strftime('%Y%m%d_%H%M%S')}.txt"
-        #     response = push_to_github(filename, log_text)
-        #     if response.status_code in [200, 201]:
-        #         st.success(f"✅ {filename} をGitHubに保存しました！")
-        #     else:
-        #         st.error(f"❌ 送信失敗。前ページに戻り、再試行してください。: {response.json()}")
 
     st.markdown("---")
     col1, col2 = st.columns(2)
