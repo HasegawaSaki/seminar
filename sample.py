@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 import requests
 import base64
-import datetimede
+import datetime
 from datetime import datetime
 import zoneinfo
 
@@ -13,7 +13,7 @@ def push_to_github(filename, content):
     branch = st.secrets["GITHUB_BRANCH"]
 
     url = f"https://api.github.com/repos/{repo}/contents/{filename}"
-    message = f"Addrtr chat log {filename}"
+    message = f"Add chat log {filename}"
     b64_content = base64.b64encode(content.encode("utf-8")).decode("utf-8")
 
     headers = {"Authorization": f"token {token}"}
@@ -324,6 +324,13 @@ def chat_page():
     
             # 2. 会話内容をログに整形
             log_text = ""
+
+            username = st.session_state.get("username", "名無し")
+            jst = zoneinfo.ZoneInfo("Asia/Tokyo")
+            now = datetime.now(jst)
+            log_text += f"名前: {username}\n"
+            log_text += f"保存日時: {now.strftime('%Y-%m-%d %H:%M:%S')}\n"
+
             level = st.session_state.get("level", "未選択")
             purpose = st.session_state.get("purpose", "未選択")
             log_text += f"レベル: {level}\n"
