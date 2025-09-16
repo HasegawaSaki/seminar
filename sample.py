@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 import requests
 import base64
-import datetime
+import datetimede
 from datetime import datetime
 import zoneinfo
 
@@ -13,7 +13,7 @@ def push_to_github(filename, content):
     branch = st.secrets["GITHUB_BRANCH"]
 
     url = f"https://api.github.com/repos/{repo}/contents/{filename}"
-    message = f"Add chat log {filename}"
+    message = f"Addrtr chat log {filename}"
     b64_content = base64.b64encode(content.encode("utf-8")).decode("utf-8")
 
     headers = {"Authorization": f"token {token}"}
