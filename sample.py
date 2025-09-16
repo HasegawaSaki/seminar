@@ -359,6 +359,7 @@ def chat_page():
             log_text += f"名前: {username}\n"
             log_text += f"保存日時: {now.strftime('%Y-%m-%d %H:%M:%S')}\n"
 
+
             log_text += f"\n"
 
             level = st.session_state.get("level", "未選択")

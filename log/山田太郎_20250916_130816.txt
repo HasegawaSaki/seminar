@@ -1,8 +1,0 @@
-レベル: B2
-目的: 楽しく会話
-
-GPT: what did you think of the TED Talk about?
-User: I think dreaming is important for organizing memories.
-GPT: Definitely! Dreaming plays a crucial role in processing and consolidating memories. It’s fascinating how our brains sort through information during sleep. Have you noticed any specific memories becoming clearer after dreaming?
-
-⏱ チャット滞在時間: 0分8秒

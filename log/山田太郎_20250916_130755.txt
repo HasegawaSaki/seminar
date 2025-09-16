@@ -1,8 +1,0 @@
-レベル: B2
-目的: 英語力の向上
-
-GPT: what did you think of the TED Talk about?
-User: I think dreaming is important for organizing memories.
-GPT: I believe dreaming plays a crucial role in memory consolidation and organization.
-
-⏱ チャット滞在時間: 3分24秒
