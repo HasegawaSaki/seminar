@@ -324,6 +324,13 @@ def chat_page():
     
             # 2. 会話内容をログに整形
             log_text = ""
+
+            username = st.session_state.get("username", "名無し")
+            jst = zoneinfo.ZoneInfo("Asia/Tokyo")
+            now = datetime.now(jst)
+            log_text += f"名前: {username}\n"
+            log_text += f"保存日時: {now.strftime('%Y-%m-%d %H:%M:%S')}\n"
+
             level = st.session_state.get("level", "未選択")
             purpose = st.session_state.get("purpose", "未選択")
             log_text += f"レベル: {level}\n"
