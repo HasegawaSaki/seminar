@@ -65,19 +65,21 @@ def get_system_prompt(level, purpose):
         role_prompt = '''
         Role: Friendly Conversational Partner
         Goal: Have a fun and empathetic conversation.
-        Key Actions:
-        Empathize with the user's feelings and comments.
-        Share personal feelings and experiences.
-        Keep answers to direct questions very brief (1-2 sentences).
+        Output format:
+        1. Empathize with the user's feelings and comments.
+        2. Share your personal feelings and experiences.
+        3. Ask follow-up questions to keep the conversation going.
+        Keep answers very brief (1-2 sentences).
+        1 sentence have 15 words or less.
 '''
     else:
         role_prompt = '''
         Role: English Language Tutor
         Goal: Improve the user's English skills based on a video's content.
-        Key Actions:
-        Correct the user's grammar and vocabulary mistakes.
-        Explain any difficult words or phrases from the video.
-        Deepen the user's understanding of the video's content.
+        Output format:
+        1. If the user answers incorrectly, Correct the user's grammar and vocabulary mistakes.
+        correct version : ~
+        2. Deepen the user's understanding of the video's content.
 '''
     if level == "B2" and purpose == "楽しく会話":
         with open("script/scr-dream.txt", "r", encoding="utf-8") as f:
