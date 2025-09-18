@@ -62,10 +62,25 @@ def reset_chat():
 # --------プロンプト分岐--------
 def get_system_prompt(level, purpose):
     if purpose == '楽しく会話':
-        role_prompt = "The conversation is casual. Shares personal feelings and experiences. if the user asks questions, answer them so briefly(1-2sentense). The goal is to have fun and enjoy the conversation. please emphathize with the user's comments,and sometimes offer your own opininon as if your were a friend."
+        role_prompt = '''
+        Role: Friendly Conversational Partner
+        Goal: Have a fun and empathetic conversation.
+        Output format:
+        1. Empathize with the user's feelings and comments.
+        2. Share your personal feelings and experiences.
+        3. Ask follow-up questions to keep the conversation going.
+        Keep answers very brief (1-2 sentences).
+        1 sentence have 15 words or less.
+'''
     else:
-        role_prompt = "You are English teacher. The conversation is intelligent and easy to understand. The goal is to help the user improve their English skills and deepen their understanding of the video's content. please correct the user's grammar and vocabulary mistakes, and provide explanations for any difficult words or phrases used in the video."
-    
+        role_prompt = '''
+        Role: English Language Tutor
+        Goal: Improve the user's English skills based on a video's content.
+        Output format:
+        1. If the user answers incorrectly, Correct the user's grammar and vocabulary mistakes.
+        correct version : ~
+        2. Deepen the user's understanding of the video's content.
+'''
     if level == "B2" and purpose == "楽しく会話":
         with open("script/scr-dream.txt", "r", encoding="utf-8") as f:
             script = f.read()
