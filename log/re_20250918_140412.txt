@@ -1,0 +1,13 @@
+名前: re
+保存日時: 2025-09-18 14:04:12
+
+レベル: C1
+目的: 楽しく会話
+
+GPT: what did you think of the TED Talk about?
+User: I think the idea is so good [0分17秒]
+GPT: It's exciting how technology can improve efficiency and reduce emissions in the freight industry. What part of the talk resonated with you the most?
+User: I think the idea is so [0分16秒]
+GPT: I totally agree! It's inspiring to see how innovation can lead to positive changes. Have you thought about how this concept could impact other industries as well?
+
+⏱ チャット滞在時間: 0分51秒
