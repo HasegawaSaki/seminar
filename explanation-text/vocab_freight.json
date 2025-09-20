@@ -1,0 +1,12 @@
+[
+    {"英単語": "freight", "意味": "貨物、輸送", "品詞": "名詞", "例文": "The company specializes in international freight."},
+    {"英単語": "logistics", "意味": "物流、兵站", "品詞": "名詞", "例文": "Logistics is essential for global trade."},
+    {"英単語": "emissions", "意味": "排出、放出", "品詞": "名詞", "例文": "The factory reduced its carbon emissions."},
+    {"英単語": "mode", "意味": "方式、様式", "品詞": "名詞", "例文": "Air travel is the fastest mode of transportation."},
+    {"英単語": "efficient", "意味": "効率的な", "品詞": "形容詞", "例文": "This machine is more efficient than the old one."},
+    {"英単語": "algorithmic", "意味": "アルゴリズムによる", "品詞": "形容詞", "例文": "Algorithmic trading is common in finance."},
+    {"英単語": "optimal", "意味": "最適な", "品詞": "形容詞", "例文": "This solution is the most optimal for our needs."},
+    {"英単語": "dynamic", "意味": "柔軟な、活動的な", "品詞": "形容詞", "例文": "She has a dynamic personality."},
+    {"英単語": "integrated", "意味": "統合された", "品詞": "形容詞", "例文": "The system is fully integrated with our database."},
+    {"英単語": "paradigm", "意味": "枠組み、パラダイム", "品詞": "名詞", "例文": "The new discovery created a paradigm shift in science."}
+]
