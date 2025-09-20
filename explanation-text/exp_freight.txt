@@ -1,0 +1,86 @@
+**The supply chain, freight, transportation, logistics, it's a trillion dollars a year.**
+サプライチェーン、貨物、輸送、物流 ― これらは年間で1兆ドル規模の産業です。
+
+**This is hundreds of thousands, millions of loads of freight that are moving throughout the United States every year.**
+アメリカ全土では、毎年何十万、何百万もの貨物が移動しています。
+
+**In terms of source of emissions of greenhouse gases, it’s a massive producer.**
+温室効果ガスの排出源としても、非常に大きな存在です。
+
+**The global supply chain is roughly broken up into what we call modes.**
+世界のサプライチェーンは、おおまかに「モード」と呼ばれる種類に分けられています。
+
+**By far the largest mode is what we call full truckload.**
+その中で最大のモードは「フルトラックロード（大型トラックに満載で輸送する方式）」です。
+
+**That is around a 400 billion-dollar-a-year mode in the US and in theory is the most efficient way to move freight.**
+アメリカでは年間約4000億ドル規模の産業であり、理論的には貨物を運ぶ最も効率的な方法です。
+
+**But about half of the big trucks you see on the highway, they're only running half full.**
+しかし、高速道路で見かける大型トラックの約半分は、積載率が半分しかありません。
+
+**If half of those trucks are only half full we burn the same amount of fuel, the same amount of diesel, create the same amount of greenhouse gas to run a truck half full as we do completely full.**
+もしその半分のトラックが半分しか積んでいなければ、満載で走らせる場合と同じ量の燃料・ディーゼルを使い、同じだけの温室効果ガスを排出していることになります。
+
+**We're addressing that. We are getting those trucks full.**
+私たちはこの問題に取り組み、トラックを満載にすることを目指しています。
+
+**We do algorithmic carpooling of truckload freight.**
+アルゴリズムを用いて、トラック貨物の「相乗り（カーシェアリング）」を実現しているのです。
+
+**We've created a software solution where you can ride-share your freight.**
+貨物を「ライドシェア」できるソフトウェアを開発しました。
+
+**They give us a little bit of data, and they say, "I'm here today, there tomorrow." "I'm empty." "I'm a quarter empty."**
+運送業者が少しデータを入力して、「今日はここにいる、明日はそこに行く」「空車だ」「25％空いている」と伝えます。
+
+**We take that data and we create a more optimal outcome for that driver and for that carrier, which is just simply those two basic things: the shortest distance between two points and making sure the truck is full...**
+そのデータをもとに、運転手や輸送業者にとってより最適な結果を導きます。それは基本的に2つ ― 「2点間の最短距離」と「トラックを満載にすること」です。
+
+**...which also creates an income earning opportunity for the driver.**
+そしてそれは運転手にとっての収入増加にもつながります。
+
+**The driver has been paid to haul a load that's only half full.**
+これまでは半分しか積んでいない荷物でも運転手に支払いがされていました。
+
+**We can create a world in which they can have dynamic, fluid access to freight and revenue.**
+私たちは、運転手が柔軟に貨物や収入にアクセスできる世界を作ることができます。
+
+**The ability to kind of say, "I want to opt in or opt out." If I want to work a little more, I can make a little bit more.**
+「参加する／しない」を選べるようになり、少し多く働きたいならその分多く稼ぐことができるのです。
+
+**As we scale, we will fundamentally bring down the paradigm of modes and create even greater efficiency.**
+規模を拡大するにつれて、既存のモードという枠組みを根本から変え、より大きな効率性を生み出します。
+
+**The problem with these various modes, they are not integrated with one another.**
+これらの異なるモードの問題は、互いに統合されていないことです。
+
+**They don't share data, they don't share visibility.**
+データを共有せず、情報の透明性もありません。
+
+**If we could find a way to share this data, then we could create an entirely new supply chain...**
+もしデータを共有できる方法があれば、まったく新しいサプライチェーンを作れるでしょう。
+
+**...that is much, much less resource-intensive from a capital standpoint, from an infrastructure standpoint but also from a carbon standpoint.**
+それは資本面、インフラ面、さらに炭素排出の面でも、はるかに少ない資源で成り立つものになります。
+
+**You would have a world in which there were no longer any modes and everything would be placed into the river and just flows where it needs to go.**
+その世界ではモードという区別がなくなり、すべてが「川」に置かれ、必要な場所に自然に流れていくようになります。
+
+**This is a massive opportunity for whether it's greenhouse gas and sustainability or value and cost for the US supply chain.**
+これは、温室効果ガスや持続可能性の面でも、アメリカのサプライチェーンの価値やコストの面でも、大きなチャンスです。
+
+**Through more data, we have better insights, we make better decisions, we build more valuable products.**
+より多くのデータによって、より良い洞察を得て、より良い意思決定を行い、より価値ある製品を作ることができます。
+
+**Change does not typically occur quickly.**
+変化は通常、急には起こりません。
+
+**So I guess my advice to people on the planet Earth is dream bigger, have higher expectations.**
+ですから、地球にいる人々への私のアドバイスは「もっと大きな夢を持ち、より高い期待を抱くこと」です。
+
+**The next wave of innovators are going to be focused on neutralizing carbon.**
+次世代の革新者たちは、炭素を中和することに注力するでしょう。
+
+**In doing so, they'll be the beneficiaries of very valuable businesses that are also doing their part to save the world.**
+そうすることで、世界を救う一助となるだけでなく、非常に価値あるビジネスの恩恵を受けることになるのです。

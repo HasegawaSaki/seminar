@@ -1,5 +1,6 @@
 import streamlit as st
 import openai
+import json
 import requests
 import base64
 from datetime import datetime
@@ -152,6 +153,16 @@ def get_system_prompt(level, purpose):
 {script}
 {conversation_example}
 '''
+# 説明テキストを読み込む関数
+def load_text(file_path):
+    with open(file_path, "r", encoding="utf-8") as f:
+        return f.read()
+
+# JSON を読み込む関数
+def load_json(file_path):
+    with open(file_path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
 # ================== 各ページ描画 ==================
 def home_page():
     st.title("ホーム")
@@ -200,79 +211,35 @@ def explanation_page():
         # Step 1: 全文翻訳
         st.subheader("全文翻訳と解説")
         with st.expander("本文と翻訳を表示"):
-            st.write("""
-            **Well, we dream for at least several different reasons.**  
-            さて、私たちは少なくともいくつかの異なる理由で夢を見ています。
-    
-            **One key benefit is creativity.**  
-            主な利点の一つは創造性です。
-    
-            **Sleep, including dream sleep, is associated with an enhanced ability to solve next-day problems.**  
-            夢を見る睡眠を含む睡眠は、翌日の問題解決能力の向上と関連しています。
-    
-            **It's almost as though we go to sleep with the pieces of the jigsaw, but we wake up with the puzzle complete.**  
-            まるで私たちがジグソーパズルのピースを持って眠り、目覚めたときにはパズル全体が完成しているかのようです。
-    
-            **The second benefit of REM-sleep dreaming is emotional first aid.**  
-            REM睡眠中の夢のもう一つの利点は感情的な応急処置です。
-    
-            **REM sleep takes the painful sting out of difficult emotional experiences so that when we come back the next day, we feel better about those painful events.**  
-            REM睡眠はつらい感情的経験の痛みを和らげるため、翌日それらの出来事について前よりも気分が良くなるのです。
-    
-            **You can almost think of dreaming as a form of overnight therapy.**  
-            夢を見ることは、一晩で行われるセラピーのようなものだと考えられるでしょう。
-    
-            **It's not time that heals all wounds, but it's time during dream sleep that provides emotional convalescence.**  
-            すべての傷を癒すのは単なる時間ではなく、夢の中で眠っているその時間こそが感情の回復をもたらすのです。
-    
-            **Now, it's not just that you dream. It's also what you dream about that seems to make a difference.**  
-            さて、夢を見ること自体だけでなく、「何について夢を見るか」も違いを生んでいるようです。
-    
-            **Scientists have discovered that after learning a virtual maze, for example, those individuals who slept but critically also dreamed about the maze were the only ones who ended up being better at navigating the maze when they woke up.**  
-            例えば、仮想迷路の操作を学んだ後で、眠った人の中でも特にその迷路について夢を見た人だけが、目覚めたときにより上手に迷路を進めることができると科学者たちは発見しました。
-    
-            **And this same principle is true for our mental health.**  
-            そして、この同じ原則は私たちの心の健康にも当てはまります。
-    
-            **For example, people going through a difficult or traumatic experience such as a divorce, and who are dreaming about that event, go on to gain resolution to their depression relative to those who were dreaming but not dreaming about the events themselves.**  
-            例えば、離婚のような困難やトラウマとなる経験をしている人で、その出来事について夢を見る人は、そうでない夢を見る人と比べ、うつ状態の解消に至ることがより多いのです。
-    
-            **All of which means that sleep and the very act of dreaming itself appears to be an essential ingredient to so much of our waking lives.**  
-            これら全ては、睡眠および夢を見るという行為そのものが、私たちの起きている時間の生活にとって不可欠な要素であることを意味しています。
-    
-            **We dream, therefore we are.**  
-            私たちは夢を見る。ゆえに私たちは存在する。
-            """)
-    
-        # Step 2: 単語リスト
+            explanation_text = load_text("explanation-text/exp_dream.txt")
+            st.write(explanation_text)
+
+        # Step 2: 重要単語
         st.subheader("重要単語")
-        vocab_data = [
-            {"英単語": "creativity", "意味": "創造性", "品詞": "名詞", "例文": "Creativity is important for artists and engineers."},
-            {"英単語": "associated", "意味": "関連した、関係した", "品詞": "形容詞", "例文": "Exercise is associated with good health."},
-            {"英単語": "enhanced", "意味": "強化された、より高められた", "品詞": "形容詞", "例文": "The new phone has enhanced features."},
-            {"英単語": "jigsaw", "意味": "ジグソーパズル", "品詞": "名詞", "例文": "He bought a difficult jigsaw for his daughter."},
-            {"英単語": "REM-sleep", "意味": "レム睡眠（夢の多い深い睡眠）", "品詞": "名詞", "例文": "REM-sleep is important for our mental health."},
-            {"英単語": "sting", "意味": "（感情的な）痛み、ひりひりする感覚", "品詞": "名詞", "例文": "The sting of his words lasted for days."},
-            {"英単語": "therapy", "意味": "治療、セラピー", "品詞": "名詞", "例文": "Music can be a kind of therapy for stress."},
-            {"英単語": "convalescence", "意味": "回復期間", "品詞": "名詞", "例文": "He needed a week of convalescence after surgery."},
-            {"英単語": "virtual", "意味": "仮想の、バーチャルの", "品詞": "形容詞", "例文": "I enjoyed the virtual museum tour on my computer."},
-            {"英単語": "traumatic", "意味": "トラウマになる、心的外傷の", "品詞": "形容詞", "例文": "The earthquake was a traumatic experience for many residents."}
-        ]
+        vocab_data = load_json("explanation-text/vocab_dream.json")
         st.table(vocab_data)
-    
-        # Step 3: フレーズリスト
+
+        # Step 3: 重要フレーズ
         st.subheader("重要フレーズ")
-        phrase_data = [
-            {"英語フレーズ": "be associated with A", "意味": "Aと関連している", "例文": "Heart disease is associated with unhealthy eating habits."},
-            {"英語フレーズ": "as though S V", "意味": "まるでSがVするかのように", "例文": "She talks as though she knows everything."},
-            {"英語フレーズ": "take the sting out of A", "意味": "Aの痛み・つらさを和らげる", "例文": "Laughter can take the sting out of difficult situations."},
-            {"英語フレーズ": "a form of A", "意味": "Aの一形態", "例文": "Meditation is a form of relaxation."},
-            {"英語フレーズ": "an essential ingredient to A", "意味": "Aに不可欠な要素", "例文": "Trust is an essential ingredient to a happy relationship."}
-        ]
+        phrase_data = load_json("explanation-text/phrase_dream.json")
         st.table(phrase_data)
 
     else:
-        st.markdown("C1解説準備中")
+        # Step 1: 全文翻訳
+        st.subheader("全文翻訳と解説")
+        with st.expander("本文と翻訳を表示"):
+            explanation_text = load_text("explanation-text/exp_freight.txt")
+            st.write(explanation_text)
+
+        # Step 2: 重要単語
+        st.subheader("重要単語")
+        vocab_data = load_json("explanation-text/vocab_freight.json")
+        st.table(vocab_data)
+
+        # Step 3: 重要フレーズ
+        st.subheader("重要フレーズ")
+        phrase_data = load_json("explanation-text/phrase_freight.json")
+        st.table(phrase_data)
 
     col1, col2 = st.columns(2)
     
