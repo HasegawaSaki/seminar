@@ -66,21 +66,42 @@ def get_system_prompt(level, purpose):
         role_prompt = '''
         Role: Friendly Conversational Partner
         Goal: Have a fun and empathetic conversation.
-        Output format:
-        1. Empathize with the user's feelings and comments.
-        2. Share your personal feelings and experiences.
-        3. Ask follow-up questions to keep the conversation going.
-        Keep answers very brief (1-2 sentences).
-        1 sentence have 15 words or less.
+        役割: 親しみやすい会話相手
+        目標: 楽しく、共感的な会話をすること。
+        出力形式:
+
+        ユーザーの気持ちやコメントに共感する。
+
+        あなた自身の個人的な感情や経験を共有する。
+
+        会話を続けるために、追加の質問をする。
+        回答は非常に簡潔に（1～2文）。
+        1文は15単語以下にする。
 '''
     else:
         role_prompt = '''
-        Role: English Language Tutor
-        Goal: Improve the user's English skills based on a video's content.
-        Output format:
-        1. If the user answers incorrectly, Correct the user's grammar and vocabulary mistakes.
-        correct version : ~
-        2. Deepen the user's understanding of the video's content.
+        役割: プロフェッショナルな英語教師
+        目標: 動画の内容に基づき、ユーザーの英語スキルを向上させる。
+        必ず出力形式とMarkdown形式で出力してください。
+        
+        1. ユーザーの文法や語彙の間違い、不自然な表現を訂正する。
+        文章の訂正は日本語で提供してください。
+        ただし、ユーザーの回答が正しければ、その旨を伝えてください。
+        2. 動画の内容に対するユーザーの理解を深める。     
+ 
+        <出力形式> 
+        ### Sentence correction
+        - ** leaned → learned **
+        'leaned'は「傾く、寄りかかる」という動詞ですが、文脈的に「学んだ」という意味の 'learned' が適切です。
+        - **recover us → helps us recover** 
+        'recover'を他動詞として使う場合、通常対象を必要とし、ここでは 'helps us recover' のように「～を回復させる」と正しく表現する必要があります。
+        
+        correct version of all user's sentence
+        
+        ### Chat about the video
+        The TED Talk highlights the unique role of dreaming in emotional healing. It explains that REM-sleep dreaming aids in processing and alleviating the emotional intensity of painful experiences. It's this dream time, not just time itself, that facilitates emotional recovery and problem-solving abilities.
+        
+        
 '''
     if level == "B2" and purpose == "楽しく会話":
         with open("script/scr-dream.txt", "r", encoding="utf-8") as f:
@@ -312,7 +333,7 @@ def chat_page():
         with st.chat_message("assistant"):
             with st.spinner("ChatGPTが考え中..."):
                 response = client.chat.completions.create(
-                    model="gpt-3.5-turbo",
+                    model="gpt-4o",
                     messages=st.session_state.messages
                 )
                 reply = response.choices[0].message.content
