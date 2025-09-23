@@ -1,0 +1,11 @@
+名前: f
+保存日時: 2025-09-23 09:13:27
+
+レベル: B2
+目的: 楽しく会話
+
+GPT: what did you think of the TED Talk about?
+User: I learnd that it is not time that heals wounds , but it is times during dreaming that heals wounds and recover us [0分5秒]
+GPT: It's fascinating how dreams play a big role in emotional healing! It's almost like having a secret therapy session while you sleep. Do you remember any dreams that helped you gain clarity or relief?
+
+⏱ チャット滞在時間: 0分29秒
