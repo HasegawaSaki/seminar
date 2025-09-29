@@ -188,21 +188,43 @@ def load_json(file_path):
 def home_page():
     st.title("ホーム")
     st.session_state.username = st.text_input("名前を入力してください", placeholder="例）山田太郎")
+    
+    st.markdown("---")
 
-    purpose = st.radio("ディスカッションの目的を選んでください", ["楽しく会話", "英語力の向上"])
-
+    purpose = st.radio("ディスカッションの目的を選んでください", ["楽しく会話(AIは同級生役)", "英語力の向上(AIは先生役)"])
 
     def go_with_check(level):
         if not st.session_state.username.strip():
             st.warning("⚠️ 名前を入力してください")
         else:
             go_to("video", level=level, purpose=purpose)
+    
+    st.markdown("---")
 
+    
+    st.text("あなたの英語レベルを選んでください")
+    # ボタンの配置
     col1, col2 = st.columns(2)
     with col1:
-        st.button("B2レベル", on_click=lambda: go_with_check("B2"))
+        st.button("初級〜中級", on_click=lambda: go_with_check("B2"))
     with col2:
-        st.button("C1レベル", on_click=lambda: go_with_check("C1"))
+        st.button("上級", on_click=lambda: go_with_check("C1"))
+
+    # 補足としてレベルの詳細を記述
+    # st.expanderを使って、詳細情報を普段は隠し、UIをスッキリさせる方法
+    with st.expander("🎓 レベルの詳細（TOEIC/英検/CEFR）を見る"):
+        st.markdown("""
+            **【初級〜中級】**
+            - **CEFR**: A1 ~ B2
+            - **TOEIC(L&R)**: 0点 ~ 944点
+            - **英検**: 5級 ~ 準1級
+
+            **【上級】**
+            - **CEFR**: C1 ~ C2
+            - **TOEIC(L&R)**: 945点 ~ 999点
+            - **英検**: 1級
+        """)
+
 
 
 def video_page():
