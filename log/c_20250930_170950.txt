@@ -1,0 +1,11 @@
+名前: c
+保存日時: 2025-09-30 17:09:50
+
+レベル: B2
+目的: 楽しく会話
+
+GPT: What did you think of the TED Talk?
+User: drs [0分3秒]
+GPT: It seems like you found it informative! Dreaming's role in creativity and emotional healing is fascinating, right? Have you experienced creative ideas or emotional relief after dreaming?
+
+⏱ チャット滞在時間: 0分7秒
