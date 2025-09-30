@@ -112,7 +112,7 @@ def get_system_prompt(level, purpose):
         return f'''
 <Rules>
 - We had a conversation about the topic.
-- The conversation starts with the user answering the question, "what did you think of the TED Talk about ?"
+- The conversation starts with the user answering the question, "What did you think of the TED Talk?"
 - You reply shortly (2~3 sentences),
 - Keep the English clear
 <Role>
@@ -130,7 +130,7 @@ def get_system_prompt(level, purpose):
         return f'''
 <Rules>
 - We had a conversation about the topic.
-- The conversation starts with the user answering the question, "what did you think of the TED Talk about ?"
+- The conversation starts with the user answering the question, "What did you think of the TED Talk?"
 - You reply shortly (2~3 sentences),
 - Keep the English clear
 <Role>
@@ -148,7 +148,7 @@ def get_system_prompt(level, purpose):
         return f'''
 <Rules>
 - We had a conversation about the topic.
-- The conversation starts with the user answering the question, "what did you think of the TED Talk about ?"
+- The conversation starts with the user answering the question, "What did you think of the TED Talk?"
 - You reply shortly (2~3 sentences),
 - Keep the English clear
 <Role>
@@ -166,7 +166,7 @@ def get_system_prompt(level, purpose):
         return f'''
 <Rules>
 - We had a conversation about the topic.
-- The conversation starts with the user answering the question, "what did you think of the TED Talk about ?"
+- The conversation starts with the user answering the question, "What did you think of the TED Talk?"
 - You reply shortly (2~3 sentences),
 - Keep the English clear
 <Role>
@@ -187,11 +187,13 @@ def load_json(file_path):
 # ================== 各ページ描画 ==================
 def home_page():
     st.title("ホーム")
-    st.session_state.username = st.text_input("名前を入力してください", placeholder="例）山田太郎")
+    st.subheader("イニシャル＋学籍番号下二桁を入力してください")
+    st.session_state.username = st.text_input(" ", placeholder="山田太郎/学籍番号G22999の場合 → yt99")
     
     st.markdown("---")
 
-    purpose = st.radio("ディスカッションの目的を選んでください", ["楽しく会話(AIは同級生役)", "英語力の向上(AIは先生役)"])
+    st.subheader("ディスカッションの目的を選んでください") 
+    purpose = st.radio("英語の動画をご覧になった後、AIと英語でディスカッションをしていただきます", ["楽しく会話", "英語力の向上"])
 
     def go_with_check(level):
         if not st.session_state.username.strip():
@@ -202,7 +204,7 @@ def home_page():
     st.markdown("---")
 
     
-    st.text("あなたの英語レベルを選んでください")
+    st.subheader("あなたの英語レベルを選んでください")
     # ボタンの配置
     col1, col2 = st.columns(2)
     with col1:
@@ -227,11 +229,7 @@ def home_page():
 
 
 
-def video_page():
-    # 👇 選択された値を確認
-    st.write("現在選択されている目的:", st.session_state.purpose)
-    
-    
+def video_page():   
     st.title(f"{st.session_state.level} レベル - TED動画")
     if st.session_state.level == "B2":
         st.video("https://www.youtube.com/watch?v=YXn-eNPzlo8")
@@ -246,9 +244,6 @@ def video_page():
 
 
 def explanation_page():
-        # 👇 選択された値を確認
-    st.write("現在選択されている目的:", st.session_state.purpose)
-    
     st.title(f"{st.session_state.level} レベル - 解説")
     if st.session_state.level == "B2":
         # Step 1: 全文翻訳
@@ -268,14 +263,13 @@ def explanation_page():
         st.table(phrase_data)
         
         # リンクボタンを設置
+        st.text("下のボタンをクリックし、別タブで開いたクイズにご回答ください。クイズに解答後、このページに戻り、「次へ」を押してください")
         st.link_button(
-            label="📝 クイズに挑戦する (Googleフォームへ移動)",
+            label="Googleフォームへ",
             url="https://forms.gle/SWd8bWo5fcuCdGsDA",
             help="新しいタブでGoogleフォームが開きます",
             type="primary"
         )
-        st.text("👆 上のボタンをクリックし、別タブで開いたクイズにご回答ください。クイズに解答後、このページに戻り、「次へ」を押してください")
-
     else:
         # Step 1: 全文翻訳
         st.text("● 全文翻訳と解説")
@@ -294,13 +288,14 @@ def explanation_page():
         st.table(phrase_data)
         
         # リンクボタンを設置
+        st.text("下のボタンをクリックし、別タブで開いたクイズにご回答ください。クイズに解答後、このページに戻り、「次へ」を押してください")
         st.link_button(
-            label="📝 クイズに挑戦する (Googleフォームへ移動)",
+            label="Googleフォームへ)",
             url="https://forms.gle/PUh6vPFHpaMVGBvVA",
             help="新しいタブでGoogleフォームが開きます",
             type="primary"
         )
-        st.text("👆 上のボタンをクリックし、別タブで開いたクイズにご回答ください。クイズに解答後、このページに戻り、「次へ」を押してください")
+        
         
     col1, col2 = st.columns(2)
     
@@ -337,9 +332,8 @@ def chat_page():
     if "chat_timer_start" not in st.session_state:
         st.session_state.chat_timer_start = None
 
-        
-    st.write("現在選択されている目的:", st.session_state.purpose)
     st.title(f"{st.session_state.level} - {st.session_state.purpose}")
+    st.warning("２往復以上会話してください。翻訳機能を使って頂いても結構です。")
     api_key = st.secrets["API_KEY"]
     client = openai.OpenAI(api_key=api_key)
 
@@ -348,7 +342,7 @@ def chat_page():
         st.session_state.messages = [
             {"role": "system",
              "content": get_system_prompt(st.session_state.level, st.session_state.purpose)},
-            {"role": "assistant", "content": "what did you think of the TED Talk about?"}
+            {"role": "assistant", "content": "What did you think of the TED Talk?"}
         ]
         if st.session_state.chat_timer_start is None:  #初回のみ
             st.session_state.chat_timer_start = datetime.now(jst)
@@ -443,7 +437,7 @@ def chat_page():
 
 def survey_page():
     st.title("アンケート")
-    st.markdown("[Googleフォームはこちら](https://docs.google.com/forms/d/xxxxxx)")
+    st.markdown("[Googleフォームへ](https://forms.gle/qV99evkdCA97tQq18)")
 
     if st.session_state.messages:
         log_text = ""
