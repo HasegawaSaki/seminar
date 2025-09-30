@@ -252,38 +252,56 @@ def explanation_page():
     st.title(f"{st.session_state.level} レベル - 解説")
     if st.session_state.level == "B2":
         # Step 1: 全文翻訳
-        st.subheader("全文翻訳と解説")
+        st.text("全文翻訳と解説")
         with st.expander("本文と翻訳を表示"):
             explanation_text = load_text("explanation-text/exp_dream.txt")
             st.write(explanation_text)
 
         # Step 2: 重要単語
-        st.subheader("重要単語")
+        st.text("● 重要単語")
         vocab_data = load_json("explanation-text/vocab_dream.json")
         st.table(vocab_data)
 
         # Step 3: 重要フレーズ
-        st.subheader("重要フレーズ")
+        st.text("● 重要フレーズ")
         phrase_data = load_json("explanation-text/phrase_dream.json")
         st.table(phrase_data)
+        
+        # リンクボタンを設置
+        st.link_button(
+            label="📝 クイズに挑戦する (Googleフォームへ移動)",
+            url="https://forms.gle/SWd8bWo5fcuCdGsDA",
+            help="新しいタブでGoogleフォームが開きます",
+            type="primary"
+        )
+        st.text("👆 上のボタンをクリックし、別タブで開いたクイズにご回答ください。クイズに解答後、このページに戻り、「次へ」を押してください")
 
     else:
         # Step 1: 全文翻訳
-        st.subheader("全文翻訳と解説")
+        st.text("● 全文翻訳と解説")
         with st.expander("本文と翻訳を表示"):
             explanation_text = load_text("explanation-text/exp_freight.txt")
             st.write(explanation_text)
 
         # Step 2: 重要単語
-        st.subheader("重要単語")
+        st.text("● 重要単語")
         vocab_data = load_json("explanation-text/vocab_freight.json")
         st.table(vocab_data)
 
         # Step 3: 重要フレーズ
-        st.subheader("重要フレーズ")
+        st.text("● 重要フレーズ")
         phrase_data = load_json("explanation-text/phrase_freight.json")
         st.table(phrase_data)
-
+        
+        # リンクボタンを設置
+        st.link_button(
+            label="📝 クイズに挑戦する (Googleフォームへ移動)",
+            url="https://forms.gle/PUh6vPFHpaMVGBvVA",
+            help="新しいタブでGoogleフォームが開きます",
+            type="primary"
+        )
+        st.text("👆 上のボタンをクリックし、別タブで開いたクイズにご回答ください。クイズに解答後、このページに戻り、「次へ」を押してください")
+        
     col1, col2 = st.columns(2)
     
     with col1:
