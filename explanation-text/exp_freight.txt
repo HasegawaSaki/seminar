@@ -34,7 +34,7 @@
 **They give us a little bit of data, and they say, "I'm here today, there tomorrow." "I'm empty." "I'm a quarter empty."**
 運送業者が少しデータを入力して、「今日はここにいる、明日はそこに行く」「空車だ」「25％空いている」と伝えます。
 
-**We take that data and we create a more optimal outcome for that driver and for that carrier, which is just simply those two basic things: the shortest distance between two points and making sure the truck is full...**
+**We take that data and we create a more optimal outcome for that driver and for that carrier, which is just simply those two basic things: the shortest distance between two points and making sure the truck is full, ...**
 そのデータをもとに、運転手や輸送業者にとってより最適な結果を導きます。それは基本的に2つ ― 「2点間の最短距離」と「トラックを満載にすること」です。
 
 **...which also creates an income earning opportunity for the driver.**

@@ -99,7 +99,8 @@ def get_system_prompt(level, purpose):
         correct version of all user's sentence
         
         ### Chat about the video
-        The TED Talk highlights the unique role of dreaming in emotional healing. It explains that REM-sleep dreaming aids in processing and alleviating the emotional intensity of painful experiences. It's this dream time, not just time itself, that facilitates emotional recovery and problem-solving abilities.
+        The TED Talk highlights the unique role of dreaming in emotional healing. 
+        It explains that REM-sleep dreaming aids in processing and alleviating the emotional intensity of painful experiences. 
         
         
 '''
