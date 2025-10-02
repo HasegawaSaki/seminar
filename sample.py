@@ -6,6 +6,13 @@ import base64
 from datetime import datetime
 import zoneinfo
 
+# -------- 共通の定数 --------
+COMMON_RULES = '''<Rules>
+- 動画の内容に関するディスカッションを行います。
+- "What did you think of the TED Talk?"という質問にユーザーが答えるところから会話が始まります。
+- わかりやすい英語かつ2-3文で簡潔に返信してください
+'''
+
 # --------GitHub関数--------
 def push_to_github(filename, content):
     token = st.secrets["GITHUB_TOKEN"]
@@ -112,9 +119,7 @@ def get_system_prompt(level, purpose):
         
         return f'''
 <Rules>
-- 動画の内容に関するディスカッションを行います。
-- "What did you think of the TED Talk?"という質問にユーザーが答えるところから会話が始まります。
-- わかりやすい英語かつ2-3文で簡潔に返信してください
+{COMMON_RULES}
 
 <Role>
 {role_prompt}
@@ -130,9 +135,7 @@ def get_system_prompt(level, purpose):
         
         return f'''
 <Rules>
-- 動画の内容に関するディスカッションを行います。
-- "What did you think of the TED Talk?"という質問にユーザーが答えるところから会話が始まります。
-- わかりやすい英語かつ2-3文で簡潔に返信してください
+{COMMON_RULES}
 
 <Role>
 {role_prompt}
@@ -148,9 +151,7 @@ def get_system_prompt(level, purpose):
         
         return f'''
 <Rules>
-- 動画の内容に関するディスカッションを行います。
-- "What did you think of the TED Talk?"という質問にユーザーが答えるところから会話が始まります。
-- わかりやすい英語かつ2-3文で簡潔に返信してください
+{COMMON_RULES}
 
 <Role>
 {role_prompt}
@@ -166,9 +167,7 @@ def get_system_prompt(level, purpose):
         
         return f'''
 <Rules>
-- 動画の内容に関するディスカッションを行います。
-- "What did you think of the TED Talk?"という質問にユーザーが答えるところから会話が始まります。
-- わかりやすい英語かつ2-3文で簡潔に返信してください
+{COMMON_RULES}
 
 <Role>
 {role_prompt}
