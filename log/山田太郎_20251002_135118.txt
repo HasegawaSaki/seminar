@@ -1,0 +1,20 @@
+名前: 山田太郎
+保存日時: 2025-10-02 13:51:18
+
+レベル: C1
+目的: 楽しく会話
+
+GPT: What did you think of the TED Talk?
+User: i [6分30秒]
+GPT: I thought the concept of filling trucks more efficiently was brilliant. It's a practical solution to reduce emissions. Did anything specific about the TED Talk stand out to you?
+User: i [0分3秒]
+GPT: It sounds like you're processing your thoughts. Did you like the idea of algorithmic carpooling for freight?
+User: I [0分16秒]
+User: I
+GPT: It seems like the talk might have left you lost for words! What part of the TED Talk interested you the most?
+User: I [0分6秒]
+GPT: I understand if you're finding this talk thought-provoking. Are you curious about how technology like this influences other industries?
+User: I [0分49秒]
+GPT: It sounds like there's a lot to think about! Is there another TED Talk you've watched that you found inspiring?
+
+⏱ チャット滞在時間: 8分46秒
