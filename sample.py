@@ -359,23 +359,51 @@ def chat_page():
             with st.chat_message(msg["role"]):
                 st.markdown(msg["content"])
 
-    # ユーザー入力
-    if prompt := st.chat_input("テキストを入力してください"):
+    # 入力欄と送信ボタン
+    input_col, button_col = st.columns([4, 1])
+    
+    # クリアフラグの初期化
+    if "clear_input" not in st.session_state:
+        st.session_state.clear_input = False
+    
+    # クリアフラグがTrueなら空文字、それ以外は通常動作
+    default_value = "" if st.session_state.clear_input else st.session_state.get("chat_input", "")
+    
+    with input_col:
+        prompt = st.text_input(
+    "テキストを入力してください", 
+    value=default_value,
+    key="chat_input",
+    label_visibility="collapsed"
+)
+    
+    with button_col:
+        send_button = st.button("送信", use_container_width=True)
+    
+    # クリアフラグをリセット
+    if st.session_state.clear_input:
+        st.session_state.clear_input = False
+    
+    st.markdown("<br>" * 2, unsafe_allow_html=True)
+    
+    # 送信ボタンが押された、またはEnterキーで送信
+    if send_button and prompt:
         add_message("user", prompt)
-        with st.chat_message("user"):
-            st.markdown(prompt)
+        
+        with st.spinner("ChatGPTが考え中..."):
+            response = client.chat.completions.create(
+                model="gpt-4o",
+                messages=st.session_state.messages
+            )
+            reply = response.choices[0].message.content
 
-        with st.chat_message("assistant"):
-            with st.spinner("ChatGPTが考え中..."):
-                response = client.chat.completions.create(
-                    model="gpt-4o",
-                    messages=st.session_state.messages
-                )
-                reply = response.choices[0].message.content
-                st.markdown(reply)
-
-        add_message("assistant", reply)  
-
+        add_message("assistant", reply)
+        
+        # クリアフラグを立てる
+        st.session_state.clear_input = True
+        st.rerun()
+        
+    # ボタンを配置
     col1, col2 = st.columns(2)
     with col1:
         st.button("戻る", on_click=lambda: go_to("explanation"))
@@ -396,7 +424,6 @@ def chat_page():
             now = datetime.now(jst)
             log_text += f"名前: {username}\n"
             log_text += f"保存日時: {now.strftime('%Y-%m-%d %H:%M:%S')}\n"
-
 
             log_text += f"\n"
 
@@ -434,8 +461,7 @@ def chat_page():
             go_to("survey")
 
         st.button("次へ", on_click=go_survey)
-
-
+        
 def survey_page():
     st.title("アンケート")
     st.markdown("[Googleフォームへ](https://forms.gle/qV99evkdCA97tQq18)")
