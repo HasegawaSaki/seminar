@@ -185,7 +185,12 @@ def load_json(file_path):
         return json.load(f)
 
 # ================== 各ページ描画 ==================
+def display_header():
+    if st.session_state.username:
+        st.markdown(f"<p style='text-align: right;'>user: {st.session_state.username}</p>", unsafe_allow_html=True)
+
 def home_page():
+    display_header()
     st.title("ホーム")
     st.subheader("好きな文字列2文字＋好きな数字２桁を入力してください")
     st.session_state.username = st.text_input(" ", placeholder="例：hiyoko54")
@@ -230,6 +235,7 @@ def home_page():
 
 
 def video_page():   
+    display_header()
     st.title(f"{st.session_state.level} レベル - TED動画")
     if st.session_state.level == "B2":
         st.video("https://www.youtube.com/watch?v=YXn-eNPzlo8")
@@ -244,6 +250,7 @@ def video_page():
 
 
 def explanation_page():
+    display_header()
     st.title(f"{st.session_state.level} レベル - 解説")
     if st.session_state.level == "B2":
         # Step 1: 全文翻訳
@@ -325,6 +332,7 @@ def add_message(role, content):
     st.session_state.messages.append(message)
 
 def chat_page():
+    display_header()
     # チャットページに初めて入ったときだけ開始時間を記録
     if st.session_state.chat_start_time is None:
         st.session_state.chat_start_time = datetime.now()
@@ -371,10 +379,10 @@ def chat_page():
     
     with input_col:
         prompt = st.text_input(
-    "テキストを入力してください", 
-    value=default_value,
-    key="chat_input",
-    label_visibility="collapsed"
+            "テキストを入力してください", 
+            value=default_value,
+            key="chat_input",
+            label_visibility="collapsed"
 )
     
     with button_col:
@@ -463,6 +471,7 @@ def chat_page():
         st.button("次へ", on_click=go_survey)
         
 def survey_page():
+    display_header()
     st.title("アンケート")
     st.markdown("[Googleフォームへ](https://forms.gle/qV99evkdCA97tQq18)")
 
