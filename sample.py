@@ -5,6 +5,7 @@ import requests
 import base64
 from datetime import datetime
 import zoneinfo
+import streamlit.components.v1 as components
 
 # -------- 共通の定数 --------
 COMMON_RULES = '''<Rules>
@@ -245,6 +246,16 @@ def video_page():
 
 def explanation_page():
     st.title(f"{st.session_state.level} レベル - 解説")
+    form_urls = {
+    "B2": "https://docs.google.com/forms/d/e/1FAIpQLSeQ4nnfuB731SUGSUT_JjK80_3IyZuUmFuXCZCS5KJNXS4Qwg/viewform?embedded=true",
+    "C1": "https://docs.google.com/forms/d/e/1FAIpQLScQkodloIAKuZ37kWzadb6-FTzP1YleRskhrodAoS1BQROTIg/viewform?embedded=true"
+    }
+    form_html = f"""
+    <iframe src="{form_urls[st.session_state.level]}" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" scrolling="yes">
+    読み込んでいます…
+    </iframe>
+    """
+
     if st.session_state.level == "B2":
         # Step 1: 全文翻訳
         st.text("全文翻訳と解説")
@@ -261,15 +272,10 @@ def explanation_page():
         st.text("● 重要フレーズ")
         phrase_data = load_json("explanation-text/phrase_dream.json")
         st.table(phrase_data)
+
+        # アプリ内に埋め込む（iframe） 
+        components.html(form_html, height=500)
         
-        # リンクボタンを設置
-        st.text("下のボタンをクリックし、別タブで開いたクイズにご回答ください。クイズに解答後、このページに戻り、「次へ」を押してください")
-        st.link_button(
-            label="Googleフォームへ",
-            url="https://forms.gle/SWd8bWo5fcuCdGsDA",
-            help="新しいタブでGoogleフォームが開きます",
-            type="primary"
-        )
     else:
         # Step 1: 全文翻訳
         st.text("● 全文翻訳と解説")
@@ -287,15 +293,8 @@ def explanation_page():
         phrase_data = load_json("explanation-text/phrase_freight.json")
         st.table(phrase_data)
         
-        # リンクボタンを設置
-        st.text("下のボタンをクリックし、別タブで開いたクイズにご回答ください。クイズに解答後、このページに戻り、「次へ」を押してください")
-        st.link_button(
-            label="Googleフォームへ)",
-            url="https://forms.gle/PUh6vPFHpaMVGBvVA",
-            help="新しいタブでGoogleフォームが開きます",
-            type="primary"
-        )
-        
+        # アプリ内に埋め込む（iframe） 
+        components.html(form_html, height=500)
         
     col1, col2 = st.columns(2)
     
