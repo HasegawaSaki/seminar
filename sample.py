@@ -187,8 +187,8 @@ def load_json(file_path):
 # ================== 各ページ描画 ==================
 def home_page():
     st.title("ホーム")
-    st.subheader("イニシャル＋学籍番号下二桁を入力してください")
-    st.session_state.username = st.text_input(" ", placeholder="山田太郎/学籍番号G22999の場合 → yt99")
+    st.subheader("好きな文字列2文字＋好きな数字２桁を入力してください")
+    st.session_state.username = st.text_input(" ", placeholder="例：hiyoko54")
     
     st.markdown("---")
 
@@ -332,8 +332,9 @@ def chat_page():
     if "chat_timer_start" not in st.session_state:
         st.session_state.chat_timer_start = None
 
-    st.title(f"{st.session_state.level} - {st.session_state.purpose}")
-    st.warning("２往復以上会話してください。翻訳機能を使って頂いても結構です。")
+    st.title("ディスカッション")
+    st.caption(f"{st.session_state.level} - {st.session_state.purpose}")
+    st.warning("英語で２回以上、会話文を送信してください。会話の回数に上限はありません。翻訳機能を使って理解頂くことは結構です。")
     api_key = st.secrets["API_KEY"]
     client = openai.OpenAI(api_key=api_key)
 
@@ -359,8 +360,8 @@ def chat_page():
                 st.markdown(msg["content"])
 
     # ユーザー入力
-    if prompt := st.chat_input("質問や感想を入力してください"):
-        add_message("user", prompt)  #遅延付きで保存
+    if prompt := st.chat_input("テキストを入力してください"):
+        add_message("user", prompt)
         with st.chat_message("user"):
             st.markdown(prompt)
 
@@ -452,7 +453,7 @@ def survey_page():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.button("チャットに戻る", on_click=lambda: go_to("chat"))
+        st.button("ディスカッションページに戻る", on_click=lambda: go_to("chat"))
     with col2:
         # ホームに戻る際にチャットをログをリセット
         st.button("ホームに戻る", on_click=lambda: (reset_chat(), go_to("home"))) 
