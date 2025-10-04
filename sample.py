@@ -436,7 +436,7 @@ def chat_page():
 
 def survey_page():
     st.title("アンケート")
-    st.markdown("[Googleフォームへ](https://forms.gle/qV99evkdCA97tQq18)")
+    components.iframe("https://docs.google.com/forms/d/e/1FAIpQLScnrUoPQS0YD-sDT3GMvbTcsLvbeTHWcmK4tIj4cBd8aIoa8g/viewform?embedded=true", height=2800)
 
     if st.session_state.messages:
         log_text = ""
