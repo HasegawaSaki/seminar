@@ -203,7 +203,7 @@ def home_page():
 
     def go_with_check(level):
         if not st.session_state.username.strip():
-            st.warning("⚠️ 名前を入力してください")
+            st.warning("⚠️ ユーザーIDを入力してください")
         else:
             go_to("video", level=level, purpose=purpose)
     
@@ -341,7 +341,7 @@ def chat_page():
 
     st.title("ディスカッション")
     st.caption(f"{st.session_state.level} - {st.session_state.purpose}")
-    st.warning("英語で２回以上、会話文を送信してください。会話の回数に上限はありません。翻訳機能を使って理解頂くことは結構です。")
+    st.warning("英語で２回以上、会話文を送信してください。チャットは好きなだけ続けていただいて構いません。もし不快に感じたり、疲れた場合は、ご自身の判断でいつでも終了してください。翻訳機能を使って内容を理解していただいても構いません。")
     api_key = st.secrets["API_KEY"]
     client = openai.OpenAI(api_key=api_key)
 
@@ -467,13 +467,16 @@ def chat_page():
             # 5. ページ遷移
             go_to("survey")
 
-        st.button("次へ", on_click=go_survey)
+        st.button("ディスカッションを終了する", on_click=go_survey)
         
 def survey_page():
     display_header()
     st.title("アンケート")
-    components.iframe("https://docs.google.com/forms/d/e/1FAIpQLScnrUoPQS0YD-sDT3GMvbTcsLvbeTHWcmK4tIj4cBd8aIoa8g/viewform?embedded=true", height=2800)
-
+    if st.session_state.level == "B2":
+        components.iframe("https://docs.google.com/forms/d/e/1FAIpQLScnrUoPQS0YD-sDT3GMvbTcsLvbeTHWcmK4tIj4cBd8aIoa8g/viewform?embedded=true", height=3800)
+    else:
+        # ⚠️C1のクイズ+アンケートのリンクに差し替え
+        components.iframe("https://docs.google.com/forms/d/e/1FAIpQLScQkodloIAKuZ37kWzadb6-FTzP1YleRskhrodAoS1BQROTIg/viewform?embedded=true", height=3800)
     if st.session_state.messages:
         log_text = ""
         for m in st.session_state.messages:
