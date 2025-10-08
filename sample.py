@@ -193,7 +193,7 @@ def display_header():
 def home_page():
     display_header()
     st.title("ホーム")
-    st.subheader("好きな文字列2文字＋好きな数字２桁を入力してください")
+    st.subheader("指定のユーザーネームをご入力ください")
     st.session_state.username = st.text_input(" ", placeholder="例：hiyoko54")
     
     st.markdown("---")
