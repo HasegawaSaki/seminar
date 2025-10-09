@@ -1,0 +1,11 @@
+名前: hs06
+保存日時: 2025-10-09 14:00:17
+
+レベル: C1
+目的: 楽しく会話
+
+GPT: What did you think of the TED Talk?
+User: I couldn't understand anything [0分52秒]
+GPT: It was about making freight transportation more efficient to reduce emissions. Have you ever thought about how much trucks contribute to pollution?
+
+⏱ チャット滞在時間: 1分3秒
