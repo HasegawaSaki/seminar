@@ -205,7 +205,7 @@ def tutorial_video():
 
 @st.dialog("進め方")
 def tutorial_quiz():
-   st.write("①クイズ(全3問に答える)  \n②Googleフォーム内の「送信ボタン」を押す  \n③ページ右下の「次へ」ボタンを押し、ディスカッション画面に進む")
+   st.write("①クイズ(全3問)に答える  \n②Googleフォーム内の「送信」ボタンを押す  \n③ページ右下の「次へ」ボタンを押し、ディスカッション画面に進む")
    if st.button("OK"):
        st.session_state["tutorial_seen02"] = True
        st.rerun()
