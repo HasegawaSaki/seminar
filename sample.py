@@ -205,7 +205,7 @@ def tutorial_video():
 
 @st.dialog("進め方")
 def tutorial_quiz():
-   st.write("①クイズ(全3問に答える)  \n②Googleフォーム内の「送信ボタン」を押す  \n③ページ右下の「次へ」ボタンを押し、ディスカッション画面に進む")
+   st.write("①クイズ(全3問)に答える  \n②Googleフォーム内の「送信」ボタンを押す  \n③ページ右下の「次へ」ボタンを押し、ディスカッション画面に進む")
    if st.button("OK"):
        st.session_state["tutorial_seen02"] = True
        st.rerun()
@@ -378,7 +378,7 @@ def chat_page():
 
     st.title("ディスカッション")
     st.caption(f"{st.session_state.level} - {st.session_state.purpose}")
-    st.warning("英語で２回以上、会話文を送信してください。チャットは好きなだけ続けていただいて構いません。もし不快に感じたり、疲れた場合は、ご自身の判断でいつでも終了してください。翻訳機能を使って内容を理解していただいても構いません。")
+    st.warning("英語で２回以上、会話文を送信してください。チャットは好きなだけ続けていただいて構いません。  \nもし不快に感じたり、疲れた場合は、ご自身の判断でいつでも終了してください。翻訳機能を使って内容を理解していただいても構いません。")
     api_key = st.secrets["API_KEY"]
     client = openai.OpenAI(api_key=api_key)
 
