@@ -1,0 +1,13 @@
+名前: 1
+保存日時: 2025-10-10 01:02:51
+
+レベル: B2
+目的: 楽しく会話
+
+GPT: What did you think of the TED Talk?
+User: hello [0分9秒]
+GPT: Hi there! How did you find the TED Talk on the health benefits of dreaming?
+User: hi [0分18秒]
+GPT: Hello again! What are your thoughts on the TED Talk about dreaming?
+
+⏱ チャット滞在時間: 0分35秒
