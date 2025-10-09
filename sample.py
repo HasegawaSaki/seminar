@@ -213,7 +213,7 @@ def tutorial_quiz():
 def home_page():
     display_header()
     st.title("ホーム")
-    st.subheader("好きな文字列2文字＋好きな数字２桁を入力してください")
+    st.subheader("指定のユーザーネームをご入力ください")
     if st.session_state.show_warning:
         st.warning("⚠️ユーザー名を入力してください。")
     st.session_state.username = st.text_input(" ", placeholder="例：hiyoko54")
@@ -402,34 +402,26 @@ def chat_page():
     # 入力欄と送信ボタン
     input_col, button_col = st.columns([4, 1])
     
-    # クリアフラグの初期化
-    if "clear_input" not in st.session_state:
-        st.session_state.clear_input = False
-    
-    # クリアフラグがTrueなら空文字、それ以外は通常動作
-    default_value = "" if st.session_state.clear_input else st.session_state.get("chat_input", "")
-    
+    if "input_counter" not in st.session_state:
+        st.session_state.input_counter = 0
+
     with input_col:
         prompt = st.text_input(
-            "テキストを入力してください", 
-            value=default_value,
-            key="chat_input",
+            "テキストを入力してください",
+            value="",
+            key=f"chat_input_{st.session_state.input_counter}",
             label_visibility="collapsed"
-)
-    
+        )
+
     with button_col:
         send_button = st.button("送信", use_container_width=True)
-    
-    # クリアフラグをリセット
-    if st.session_state.clear_input:
-        st.session_state.clear_input = False
-    
+
     st.markdown("<br>" * 2, unsafe_allow_html=True)
-    
+
     # 送信ボタンが押された、またはEnterキーで送信
     if send_button and prompt:
         add_message("user", prompt)
-        
+
         with st.spinner("ChatGPTが考え中..."):
             response = client.chat.completions.create(
                 model="gpt-4o",
@@ -439,8 +431,7 @@ def chat_page():
 
         add_message("assistant", reply)
         
-        # クリアフラグを立てる
-        st.session_state.clear_input = True
+        st.session_state.input_counter += 1
         st.rerun()
         
     # ボタンを配置
