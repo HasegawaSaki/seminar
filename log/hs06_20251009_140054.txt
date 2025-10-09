@@ -1,0 +1,11 @@
+名前: hs06
+保存日時: 2025-10-09 14:00:54
+
+レベル: B2
+目的: 楽しく会話
+
+GPT: What did you think of the TED Talk?
+User: hello [0分14秒]
+GPT: Hi! What did you think of the TED Talk?
+
+⏱ チャット滞在時間: 4分5秒
