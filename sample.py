@@ -243,25 +243,7 @@ def video_page():
     else:
         st.video("https://www.youtube.com/watch?v=1VA4rIkpSp8")
 
-    col1, col2 = st.columns(2)
-    with col1:
-        st.button("戻る", on_click=lambda: (reset_chat(), go_to("home")))
-    with col2:
-        st.button("次へ", on_click=lambda: go_to("explanation"))
-
-
-def explanation_page():
-    display_header()
     st.title(f"{st.session_state.level} レベル - 解説")
-    form_urls = {
-    "B2": "https://docs.google.com/forms/d/e/1FAIpQLSeQ4nnfuB731SUGSUT_JjK80_3IyZuUmFuXCZCS5KJNXS4Qwg/viewform?embedded=true",
-    "C1": "https://docs.google.com/forms/d/e/1FAIpQLScQkodloIAKuZ37kWzadb6-FTzP1YleRskhrodAoS1BQROTIg/viewform?embedded=true"
-    }
-    form_html = f"""
-    <iframe src="{form_urls[st.session_state.level]}" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" scrolling="yes">
-    読み込んでいます…
-    </iframe>
-    """
 
     if st.session_state.level == "B2":
         # Step 1: 全文翻訳
@@ -280,9 +262,6 @@ def explanation_page():
         phrase_data = load_json("explanation-text/phrase_dream.json")
         st.table(phrase_data)
 
-        # アプリ内に埋め込む（iframe） 
-        components.html(form_html, height=500)
-        
     else:
         # Step 1: 全文翻訳
         st.text("● 全文翻訳と解説")
@@ -299,16 +278,38 @@ def explanation_page():
         st.text("● 重要フレーズ")
         phrase_data = load_json("explanation-text/phrase_freight.json")
         st.table(phrase_data)
-        
-        # アプリ内に埋め込む（iframe） 
-        components.html(form_html, height=500)
+    
+
+    col1, col2 = st.columns(2)
+    with col1:
+        st.button("戻る", on_click=lambda: (reset_chat(), go_to("home")))
+    with col2:
+        st.button("次へ", on_click=lambda: go_to("explanation"))
+
+
+
+def explanation_page():
+    display_header()
+    st.title(f"{st.session_state.level} レベル - クイズ")
+    form_urls = {
+    "B2": "https://docs.google.com/forms/d/e/1FAIpQLSeQ4nnfuB731SUGSUT_JjK80_3IyZuUmFuXCZCS5KJNXS4Qwg/viewform?embedded=true",
+    "C1": "https://docs.google.com/forms/d/e/1FAIpQLScQkodloIAKuZ37kWzadb6-FTzP1YleRskhrodAoS1BQROTIg/viewform?embedded=true"
+    }
+    form_html = f"""
+    <iframe src="{form_urls[st.session_state.level]}" width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0" scrolling="yes">
+    読み込んでいます…
+    </iframe>
+    """
+
+    # アプリ内に埋め込む（iframe） 
+    components.html(form_html, height=1200)
         
     col1, col2 = st.columns(2)
     
     with col1:
         st.button("戻る", on_click=lambda: go_to("video"))
     with col2:
-        st.button("次へ", on_click=lambda: go_to("chat"))
+        st.button("次へ(ディスカッションに移動する)", on_click=lambda: go_to("chat"))
 
 jst = zoneinfo.ZoneInfo("Asia/Tokyo")
 
