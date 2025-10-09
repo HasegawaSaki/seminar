@@ -475,8 +475,7 @@ def survey_page():
     if st.session_state.level == "B2":
         components.iframe("https://docs.google.com/forms/d/e/1FAIpQLScnrUoPQS0YD-sDT3GMvbTcsLvbeTHWcmK4tIj4cBd8aIoa8g/viewform?embedded=true", height=3800)
     else:
-        # ⚠️C1のクイズ+アンケートのリンクに差し替え
-        components.iframe("https://docs.google.com/forms/d/e/1FAIpQLScQkodloIAKuZ37kWzadb6-FTzP1YleRskhrodAoS1BQROTIg/viewform?embedded=true", height=3800)
+        components.iframe("https://docs.google.com/forms/d/e/1FAIpQLSfrwEok1A49dAboYeYTpbhq4XZlX7mRzdVu8W2L2BRKSttxmA/viewform?embedded=true", height=3800)
     if st.session_state.messages:
         log_text = ""
         for m in st.session_state.messages:
