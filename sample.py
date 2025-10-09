@@ -41,8 +41,6 @@ if "username" not in st.session_state:
     st.session_state.username = ""
 if "purpose" not in st.session_state:
     st.session_state.purpose = "楽しく会話"
-if "show_warning" not in st.session_state:
-    st.session_state.show_warning = False
 if "level" not in st.session_state:
     st.session_state.level = ""
 if "messages" not in st.session_state:
@@ -69,8 +67,6 @@ def reset_chat():
         st.session_state.chat_start_time = None
         st.session_state.chat_timer_start = None
         st.session_state.chat_duration = None
-        st.session_state.tutorial_seen01 = None
-        st.session_state.tutorial_seen02 = None
         
 # --------プロンプト分岐--------
 def get_system_prompt(level, purpose):
@@ -194,28 +190,10 @@ def display_header():
     if st.session_state.username:
         st.markdown(f"<p style='text-align: right;'>user: {st.session_state.username}</p>", unsafe_allow_html=True)
 
-# ---進め方のポップアップ(ページ遷移後のスクロールバーの位置の調整が難しい(ホームから移動したらいきなりページ下部の解説画面が表示されたりする)ので、ポップアップで手順がわかったほうがいいかも!?邪魔そうだったら消します)---
-@st.dialog("進め方")
-def tutorial_video():
-    st.write("①動画を視聴  \n②解説を読む  \n③ページ右下の「次へ」ボタンを押し、クイズ画面に進む")
-    if st.button("OK"):
-        st.session_state["tutorial_seen01"] = True
-        st.rerun()
-
-@st.dialog("進め方")
-def tutorial_quiz():
-    st.write("①クイズ(全3問に答える)  \n②Googleフォーム内の「送信ボタン」を押す  \n③ページ右下の「次へ」ボタンを押し、ディスカッション画面に進む")
-    if st.button("OK"):
-        st.session_state["tutorial_seen02"] = True
-        st.rerun()
-        
-
 def home_page():
     display_header()
     st.title("ホーム")
     st.subheader("指定のユーザーネームをご入力ください")
-    if st.session_state.show_warning:
-        st.warning("⚠️ユーザー名を入力してください。")
     st.session_state.username = st.text_input(" ", placeholder="例：hiyoko54")
     
     st.markdown("---")
@@ -225,9 +203,8 @@ def home_page():
 
     def go_with_check(level):
         if not st.session_state.username.strip():
-            st.session_state.show_warning = True
+            st.warning("⚠️ ユーザーIDを入力してください")
         else:
-            st.session_state.show_warning = False
             go_to("video", level=level, purpose=purpose)
     
     st.markdown("---")
@@ -260,11 +237,6 @@ def home_page():
 
 def video_page():   
     display_header()
-    if "tutorial_seen01" not in st.session_state:
-        st.session_state["tutorial_seen01"] = False
-    if not st.session_state["tutorial_seen01"]:
-        tutorial_video()
-    st.warning("動画を視聴後、解説を読んでからページ右下の「次へ」ボタンを押し、クイズ画面に進んでください。")
     st.title(f"{st.session_state.level} レベル - TED動画")
     if st.session_state.level == "B2":
         st.video("https://www.youtube.com/watch?v=YXn-eNPzlo8")
@@ -318,10 +290,6 @@ def video_page():
 
 def explanation_page():
     display_header()
-    if "tutorial_seen02" not in st.session_state:
-        st.session_state["tutorial_seen02"] = False
-    if not st.session_state["tutorial_seen02"]:
-        tutorial_quiz()
     st.title(f"{st.session_state.level} レベル - クイズ")
     form_urls = {
     "B2": "https://docs.google.com/forms/d/e/1FAIpQLSeQ4nnfuB731SUGSUT_JjK80_3IyZuUmFuXCZCS5KJNXS4Qwg/viewform?embedded=true",
@@ -374,7 +342,7 @@ def chat_page():
 
     st.title("ディスカッション")
     st.caption(f"{st.session_state.level} - {st.session_state.purpose}")
-    st.warning("英語で２回以上、会話文を送信してください。チャットは好きなだけ続けていただいて構いません。  \nもし不快に感じたり、疲れた場合は、ご自身の判断でいつでも終了してください。翻訳機能を使って内容を理解していただいても構いません。")
+    st.warning("英語で２回以上、会話文を送信してください。チャットは好きなだけ続けていただいて構いません。もし不快に感じたり、疲れた場合は、ご自身の判断でいつでも終了してください。翻訳機能を使って内容を理解していただいても構いません。")
     api_key = st.secrets["API_KEY"]
     client = openai.OpenAI(api_key=api_key)
 
