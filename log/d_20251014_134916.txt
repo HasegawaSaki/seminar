@@ -1,0 +1,11 @@
+名前: d
+保存日時: 2025-10-14 13:49:16
+
+レベル: B2
+目的: 楽しく会話
+
+GPT: What did you think of the TED Talk?
+User: hello [0分7秒]
+GPT: Hi there! Did you get a chance to watch the TED Talk on dreaming?
+
+⏱ チャット滞在時間: 0分11秒
