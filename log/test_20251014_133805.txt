@@ -1,0 +1,13 @@
+名前: test
+保存日時: 2025-10-14 13:38:05
+
+レベル: B2
+目的: 楽しく会話
+
+GPT: What did you think of the TED Talk?
+User: test [0分4秒]
+GPT: It seems like you're testing the waters! Did you have any initial thoughts on the TED Talk itself?
+User: test [0分3秒]
+GPT: No worries! If you have any thoughts on the TED Talk or want to discuss dreams, feel free to share.
+
+⏱ チャット滞在時間: 0分12秒
