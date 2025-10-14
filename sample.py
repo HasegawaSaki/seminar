@@ -323,9 +323,8 @@ def home_page():
     display_header()
     st.title("ホーム")
     st.subheader("指定のユーザーネームをご入力ください")
-    if st.session_state.show_warning:
-        st.warning("⚠️ユーザーネームを入力してください。")
-    st.session_state.username = st.text_input(" ", placeholder="例：hiyoko54")
+    
+    st.session_state.username = st.text_input(" ", placeholder="例：A1014")
     
     st.markdown("---")
 
@@ -341,7 +340,9 @@ def home_page():
     
     st.markdown("---")
 
-    
+    if st.session_state.show_warning:
+        st.warning("⚠️画面上部にあるフォームにユーザーネームを入力してください。")
+        
     st.subheader("あなたの英語レベルを選んでください")
     # ボタンの配置
     col1, col2 = st.columns(2)
