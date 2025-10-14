@@ -238,7 +238,6 @@ def welcome_page():
     .welcome-description {
         text-align: center;
         font-size: 1.3em;
-        color: #555;
         margin: 2rem 0;
         line-height: 1.6;
     }
