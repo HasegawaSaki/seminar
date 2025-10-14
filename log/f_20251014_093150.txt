@@ -1,0 +1,13 @@
+名前: f
+保存日時: 2025-10-14 09:31:50
+
+レベル: B2
+目的: 楽しく会話
+
+GPT: What did you think of the TED Talk?
+User: f [0分1秒]
+GPT: I thought it was fascinating how dreaming can enhance creativity and emotional healing. What part stood out to you the most?
+User: s [0分1秒]
+GPT: I agree, the idea of dreaming being like overnight therapy is intriguing. Did it change how you think about your own dreams?
+
+⏱ チャット滞在時間: 0分7秒
