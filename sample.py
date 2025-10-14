@@ -329,7 +329,7 @@ def home_page():
     
     st.markdown("---")
 
-    st.subheader("ディスカッションの目的を選んでください") 
+    st.subheader("学習したいディスカッションのタイプを選んでください(指定がある場合は指定のタイプを選んでください)") 
     purpose = st.radio("英語の動画をご覧になった後、AIと英語でディスカッションをしていただきます", ["楽しく会話", "英語力の向上"])
 
     def go_with_check(level):
