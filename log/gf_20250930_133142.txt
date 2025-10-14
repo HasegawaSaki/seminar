@@ -1,9 +1,0 @@
-名前: gf
-保存日時: 2025-09-30 13:31:42
-
-レベル: C1
-目的: 楽しく会話(AIは同級生役)
-
-GPT: what did you think of the TED Talk about?
-
-⏱ チャット滞在時間: 0分56秒
