@@ -1,0 +1,15 @@
+名前: Test
+保存日時: 2025-10-21 21:59:41
+
+レベル: B2
+目的: 楽しく会話
+
+GPT: What did you think of the TED Talk?
+User: I think the main topic of the movie is dreaming makes us feel good [0分39秒]
+GPT: I agree! Dreaming seems to provide emotional first aid, helping us deal with tough emotions, right? 
+User: Yes! that right! what do you have the idea any other? [2分7秒]
+GPT: Another point I noticed was that dreaming enhances our creativity and problem-solving skills. It’s like waking up with answers to problems we slept on. What do you think?
+User: I agree! in conclusion, main topic of the video is two merits. first ,dreaming provide us emotional aid , second it enhances our creativity [2分6秒]
+GPT: Exactly! I think your summary captures it well. Dreaming is beneficial for both our emotional health and our creative abilities. 
+
+⏱ チャット滞在時間: 11分26秒
