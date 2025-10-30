@@ -14,14 +14,15 @@ if "show_warning" not in st.session_state:
 # -------- ページコンテンツ --------
 display_header()
 st.title("ホーム")
-st.subheader("指定のユーザーネームをご入力ください")
-
+st.subheader("ユーザーネーム")
+st.write("指定のユーザーネームをご入力ください")
 st.session_state.username = st.text_input(" ", placeholder="例：A1014")
 
 st.markdown("---")
 
-st.subheader("学習したいディスカッションのタイプを選んでください(指定がある場合は指定のタイプを選んでください)")
-purpose = st.radio("英語の動画をご覧になった後、AIと英語でディスカッションをしていただきます", ["楽しく会話", "英語力の向上"])
+st.subheader("学習タイプ")
+st.write("学習したいディスカッションのタイプを選んでください(指定がある場合は指定のタイプを選んでください。英語の動画を見ていただいた後、AIと英語でディスカッションをしていただきます)")
+purpose = st.radio("", ["楽しく会話", "英語力の向上"])
 
 def go_with_check(level):
     if not st.session_state.username.strip():
@@ -35,7 +36,8 @@ st.markdown("---")
 if st.session_state.show_warning:
     st.warning("⚠️画面上部にあるフォームにユーザーネームを入力してください。")
 
-st.subheader("あなたの英語レベルを選んでください")
+st.subheader("英語レベル")
+st.write("ご自身の英語レベルに合ったレベルを選んでください。レベルの詳細は下記をご覧ください。")
 # ボタンの配置
 
 col1, col2 = st.columns([1, 1])
