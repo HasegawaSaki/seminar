@@ -30,9 +30,13 @@ form_html = f"""
 # アプリ内に埋め込む（iframe）
 components.html(form_html, height=1200)
 
-col1, col2, col3 = st.columns(2)
+col1, col2 = st.columns([1, 1])
 
 with col1:
-    st.button("戻る", on_click=lambda: go_to("video"))
-with col3:
-    st.button("次へ(ディスカッションに移動する)", on_click=lambda: go_to("chat"))
+    # 戻るボタン：チャットリセットしてホームに戻る
+    if st.button("戻る", use_container_width=True, type="primary"):
+        st.switch_page("pages/2_video.py")
+with col2:
+    # 次へボタン：クイズページに遷移
+    if st.button("次へ", use_container_width=True, type="primary"):
+        st.switch_page("pages/4_discussion.py")

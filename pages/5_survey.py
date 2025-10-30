@@ -27,8 +27,13 @@ if st.session_state.messages:
 st.markdown("---")
 col1, col2 = st.columns(2)
 
+col1, col2 = st.columns([1, 1])
+
 with col1:
-    st.button("ディスカッションページに戻る", on_click=lambda: go_to("chat"))
+    # 戻るボタン：チャットリセットしてホームに戻る
+    if st.button("戻る", use_container_width=True, type="primary"):
+        st.switch_page("pages/4_discussion.py")
 with col2:
-    # ホームに戻る際にチャットをログをリセット
-    st.button("ホームに戻る", on_click=lambda: (reset_chat(), go_to("home")))
+    # 次へボタン：クイズページに遷移
+    if st.button("ホームに戻る", use_container_width=True, type="primary"):
+        st.switch_page("pages/1_home.py")
