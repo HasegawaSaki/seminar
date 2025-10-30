@@ -33,11 +33,12 @@ def go_with_check(level):
 
 st.markdown("---")
 
-if st.session_state.show_warning:
-    st.warning("⚠️画面上部にあるフォームにユーザーネームを入力してください。")
+
 
 st.subheader("英語レベル")
 st.write("ご自身の英語レベルに合ったレベルを選んでください。レベルの詳細は下記をご覧ください。")
+if st.session_state.show_warning:
+    st.warning("⚠️画面上部にあるフォームにユーザーネームを入力してください。")
 # ボタンの配置
 
 col1, col2 = st.columns([1, 1])
