@@ -1,0 +1,9 @@
+名前: test
+保存日時: 2025-10-30 21:52:37
+
+レベル: B2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+
+⏱ チャット滞在時間: 0分1秒
