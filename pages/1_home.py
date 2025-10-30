@@ -41,17 +41,27 @@ st.subheader("あなたの英語レベルを選んでください")
 col1, col2 = st.columns([1, 1])
 
 with col1:
-    # 初級：go_to関数経由（ユーザー名チェック、レベル・目的保存あり）
-     if st.button("初級", use_container_width=True, type="primary"):
-        st.session_state.level = "B2"
-        st.session_state.purpose = purpose
-        st.switch_page("pages/2_video.py")
+    # 初級：ユーザー名チェックあり
+    if st.button("初級", use_container_width=True, type="primary"):
+        if not st.session_state.username.strip():
+            st.session_state.show_warning = True
+            st.rerun()
+        else:
+            st.session_state.show_warning = False
+            st.session_state.level = "B2"
+            st.session_state.purpose = purpose
+            st.switch_page("pages/2_video.py")
 with col2:
-    # 上級：直接st.switch_page（即座に遷移）
+    # 上級：ユーザー名チェックあり
     if st.button("上級", use_container_width=True, type="primary"):
-        st.session_state.level = "C1"
-        st.session_state.purpose = purpose
-        st.switch_page("pages/2_video.py")
+        if not st.session_state.username.strip():
+            st.session_state.show_warning = True
+            st.rerun()
+        else:
+            st.session_state.show_warning = False
+            st.session_state.level = "C1"
+            st.session_state.purpose = purpose
+            st.switch_page("pages/2_video.py")
 
 # 補足としてレベルの詳細を記述
 # st.expanderを使って、詳細情報を普段は隠し、UIをスッキリさせる方法
