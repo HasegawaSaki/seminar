@@ -58,8 +58,14 @@ else:
     st.table(phrase_data)
 
 
-col1, col2 = st.columns(2)
+col1, col2 = st.columns([1, 1])
+
 with col1:
-    st.button("戻る", on_click=lambda: (reset_chat(), go_to("home")))
+    # 戻るボタン：チャットリセットしてホームに戻る
+    if st.button("戻る", use_container_width=True, type="primary"):
+        reset_chat()
+        st.switch_page("pages/1_home.py")
 with col2:
-    st.button("次へ", on_click=lambda: go_to("explanation"))
+    # 次へボタン：クイズページに遷移
+    if st.button("次へ", use_container_width=True, type="primary"):
+        st.switch_page("pages/3_quiz.py")
