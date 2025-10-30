@@ -38,7 +38,19 @@ def go_to(page, level=None, purpose=None):
         st.session_state.level = level
     if purpose:
         st.session_state.purpose = purpose
-    st.session_state.page = page
+
+    # ページマッピング
+    page_mapping = {
+        "welcome": "main.py",
+        "home": "pages/1_home.py",
+        "video": "pages/2_video.py",
+        "quiz": "pages/3_quiz.py",
+        "chat": "pages/4_chat.py",
+        "survey": "pages/5_survey.py"
+    }
+
+    if page in page_mapping:
+        st.switch_page(page_mapping[page])
 
 # --------チャットリセット--------
 def reset_chat():
