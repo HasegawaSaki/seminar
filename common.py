@@ -41,7 +41,7 @@ def go_to(page, level=None, purpose=None):
 
     # ページマッピング
     page_mapping = {
-        "welcome": "main.py",
+        "welcome": "welcom.py",
         "home": "pages/1_home.py",
         "video": "pages/2_video.py",
         "quiz": "pages/3_quiz.py",
