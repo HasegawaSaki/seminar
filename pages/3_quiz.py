@@ -11,6 +11,13 @@ if "tutorial_seen02" not in st.session_state:
 # -------- ページコンテンツ --------
 display_header()
 
+# ページ読み込み時に一番上にスクロール
+components.html("""
+<script>
+    window.parent.document.querySelector('section.main').scrollTo(0, 0);
+</script>
+""", height=50)
+
 if not st.session_state["tutorial_seen02"]:
     tutorial_quiz()
 
