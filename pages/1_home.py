@@ -33,7 +33,7 @@ st.write("ご自身の英語レベルに合ったレベルを選んでくださ�
 
 # 補足としてレベルの詳細を記述
 # st.expanderを使って、詳細情報を普段は隠し、UIをスッキリさせる方法
-with st.expander("🎓 レベルの詳細（TOEIC/英検/CEFR）を見る"):
+with st.expander("レベルの詳細（TOEIC/英検/CEFR）を見る"):
     st.markdown("""
         **【初級〜中級】**
         - **CEFR**: A1 ~ B2

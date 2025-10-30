@@ -31,7 +31,7 @@ col1, col2 = st.columns([1, 1])
 
 with col1:
     # 戻るボタン：チャットリセットしてホームに戻る
-    if st.button("戻る", use_container_width=True, type="primary"):
+    if st.button("戻る", use_container_width=True):
         st.switch_page("pages/4_discussion.py")
 with col2:
     # 次へボタン：クイズページに遷移
