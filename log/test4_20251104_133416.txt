@@ -1,0 +1,26 @@
+名前: test4
+保存日時: 2025-11-04 13:34:16
+
+レベル: C1
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: hi [0分3秒]
+GPT: What did you think of the TED Talk?
+User: Hey! [0分42秒]
+GPT: What did you think of the TED Talk?
+User: I thoght [1分18秒]
+GPT: ### Language Feedback and Correction
+
+- **thoght $ \rightarrow$ thought**
+  'Thoght' is a common typo for the word 'thought'.
+
+**Corrected Sentence**: I thought
+
+***
+
+### Discussion About The Movie
+
+What did you think about the main points discussed in the TED Talk?
+
+⏱ チャット滞在時間: 2分37秒
