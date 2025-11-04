@@ -135,10 +135,12 @@ def get_system_prompt(level, purpose):
         ユーザーの発言が正しくても、このセクションは必ず含めてください。
         ユーザーの英文が完璧に場合は「文法・語彙の誤りはありませんでした！素晴らしいです。」などと記述してください。）
 
-        -   **誤り箇所 $\rightarrow$ 正しい表現 / 不自然な表現 $\rightarrow$ より自然な表現**
+        -   **❌ leaned**
+            **✅ learned**
             'leaned' は「傾く、寄りかかる」という意味で、ここでは文脈的に「学んだ」という意味の 'learned' が適切です。
 
-        -   **recover us $\rightarrow$ helps us recover**
+        -   **❌ recover us**
+            **✅ helps us recover**
             'recover' を他動詞として使う場合、通常対象を必要とし、ここでは 'helps us recover' のように「～を回復させる」と正しく表現する必要があります。
 
         **文章全体の訂正バージョン:**
