@@ -57,7 +57,7 @@ col1, col2 = st.columns([1, 1])
 with col1:
     # 戻るボタン
     if st.button("戻る", use_container_width=True):
-        st.switch_page("Welcom.py")
+        st.switch_page("welcom.py")
 with col2:
     # 次へボタン：ユーザー名チェックあり
     if st.button("次へ", use_container_width=True, type="primary"):
@@ -68,5 +68,5 @@ with col2:
             st.session_state.show_warning = False
             st.session_state.level = "B2" if level_choice == "初級" else "C1"
             st.session_state.purpose = purpose
-            st.switch_page("pages/2_Video.py")
+            st.switch_page("pages/2_video.py")
 

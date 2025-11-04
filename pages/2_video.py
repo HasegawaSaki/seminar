@@ -64,8 +64,8 @@ with col1:
     # 戻るボタン：チャットリセットしてホームに戻る
     if st.button("戻る", use_container_width=True):
         reset_chat()
-        st.switch_page("pages/1_Home.py")
+        st.switch_page("pages/1_home.py")
 with col2:
     # 次へボタン：クイズページに遷移
     if st.button("次へ", use_container_width=True, type="primary"):
-        st.switch_page("pages/3_Quiz.py")
+        st.switch_page("pages/3_quiz.py")
