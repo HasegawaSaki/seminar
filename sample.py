@@ -7,6 +7,7 @@ from datetime import datetime
 import zoneinfo
 import streamlit.components.v1 as components
 
+
 # -------- 共通の定数 --------
 COMMON_RULES = '''<Rules>
 - 動画の内容に関するディスカッションを行います。
@@ -34,9 +35,7 @@ def push_to_github(filename, content):
     response = requests.put(url, headers=headers, json=data)
     return response
 
-# --------ページ遷移管理 --------
-if "page" not in st.session_state:
-    st.session_state.page = "welcome"
+# --------セッション状態の初期化 --------
 if "username" not in st.session_state:
     st.session_state.username = ""
 if "purpose" not in st.session_state:
@@ -54,12 +53,14 @@ if "chat_timer_start" not in st.session_state:
 if "show_warning" not in st.session_state:
    st.session_state.show_warning = False
 
-def go_to(page, level=None, purpose=None):
+def go_to(page_name, level=None, purpose=None):
+    """ページ遷移関数 - st.switch_page()を使用してURLパスで遷移"""
     if level:
         st.session_state.level = level
     if purpose:
         st.session_state.purpose = purpose
-    st.session_state.page = page
+    # URLパスを使用してページ遷移
+    st.switch_page(f"/{page_name}")
 
 # --------チャットリセット--------
 def reset_chat():
@@ -87,10 +88,7 @@ def get_system_prompt(level, purpose):
             * あなたの応答は必ずMarkdown形式で、以下の3つのセクションで構成してください。
             
         3.  議論の終了(必須）:
-            * 必ず要約はユーザーに英語で要約させてください。
-            * ユーザーの入力した要約文が正しければ、以下のような文で議論を終わりにしてください。
-            "Excellent summary! You can finish the discussion now."
-
+            * ユーザーの入力した要約文が正しければ、議論を終わりにしてください。
 
         4. 話題:
             *「動画の内容について英語で要約する」というテーマ以外の話題には絶対に逸れないでください。
@@ -98,7 +96,6 @@ def get_system_prompt(level, purpose):
             * ユーザーがリラックスして会話できるように、フレンドリーでカジュアルな口調を心がけてください。
             * ユーザーの発言が間違っていても訂正しないでください。
             * 途中で議論で出た内容をまとめながら、要約文を完成させてください。
-            * もし、ユーザーがあなたの考えた要約に同意していたら、ユーザーに自分の言葉で要約をまとめるよう促してください。
         
         example: 
         user "I think the main point of the video is dreaming gave us two merits."
@@ -192,7 +189,6 @@ def get_system_prompt(level, purpose):
 {script}
 {conversation_example}
 '''
-
     elif level == "B2" and purpose == "英語力の向上":
         with open("script/scr-dream.txt", "r", encoding="utf-8") as f:
             script = f.read()
@@ -430,7 +426,7 @@ def home_page():
     st.button("戻る", on_click=lambda: go_to("welcome"))
 
 
-def video_page():   
+def video_page():
     display_header()
 
     if "tutorial_seen01" not in st.session_state:
@@ -488,7 +484,6 @@ def video_page():
         st.button("戻る", on_click=lambda: (reset_chat(), go_to("home")))
     with col2:
         st.button("次へ", on_click=lambda: go_to("explanation"))
-
 
 
 def explanation_page():
@@ -693,16 +688,14 @@ def survey_page():
         # ホームに戻る際にチャットをログをリセット
         st.button("ホームに戻る", on_click=lambda: (reset_chat(), go_to("home"))) 
 
-# -------- ページ遷移 --------
-if st.session_state.page == "welcome":
-    welcome_page()
-elif st.session_state.page == "home":
-    home_page()
-elif st.session_state.page == "video":
-    video_page()
-elif st.session_state.page == "explanation":
-    explanation_page()
-elif st.session_state.page == "chat":
-    chat_page()
-elif st.session_state.page == "survey":
-    survey_page()
+# -------- ページ定義とナビゲーション設定 --------
+welcome = st.Page(welcome_page, title="ウェルカム", url_path="welcome", default=True)
+home = st.Page(home_page, title="ホーム", url_path="home")
+video = st.Page(video_page, title="動画", url_path="video")
+explanation = st.Page(explanation_page, title="クイズ", url_path="explanation")
+chat = st.Page(chat_page, title="ディスカッション", url_path="chat")
+survey = st.Page(survey_page, title="アンケート", url_path="survey")
+
+# ナビゲーション設定（position="hidden"でナビゲーションバーを非表示）
+pg = st.navigation([welcome, home, video, explanation, chat, survey], position="hidden")
+pg.run()
