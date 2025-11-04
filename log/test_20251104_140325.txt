@@ -1,0 +1,13 @@
+名前: test
+保存日時: 2025-11-04 14:03:25
+
+レベル: B2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: hihi [0分35秒]
+GPT: Hi there! What did you think of the TED Talk?
+User: kile [0分4秒]
+GPT: I think the TED Talk highlighted the surprising health benefits of dreaming. What stood out to you the most?
+
+⏱ チャット滞在時間: 0分44秒
