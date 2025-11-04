@@ -125,4 +125,4 @@ st.markdown("<br>" * 2, unsafe_allow_html=True)
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
     if st.button("スタート", use_container_width=True, type="primary"):
-        st.switch_page("pages/1_home.py")
+        st.switch_page("pages/1_Home.py")
