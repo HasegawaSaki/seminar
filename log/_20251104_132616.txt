@@ -1,0 +1,13 @@
+名前: 
+保存日時: 2025-11-04 13:26:16
+
+レベル: B2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: hi [0分5秒]
+GPT: Hey there! What did you think of the TED Talk?
+User: no [0分4秒]
+GPT: No worries! If you have any thoughts on the video, feel free to share them. What stood out to you?
+
+⏱ チャット滞在時間: 0分41秒
