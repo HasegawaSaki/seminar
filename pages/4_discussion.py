@@ -91,6 +91,56 @@ if send_button and prompt:
     st.session_state.input_counter += 1
     st.rerun()
 
+def go_survey():
+    # 1. チャット時間を計算
+    start = st.session_state.chat_start_time
+    if start:
+        elapsed = datetime.now() - start
+        minutes, seconds = divmod(int(elapsed.total_seconds()), 60)
+        st.session_state.chat_duration = f"{minutes}分{seconds}秒"
+
+    # 2. 会話内容をログに整形
+    log_text = ""
+
+    username = st.session_state.get("username", "名無し")
+    jst = zoneinfo.ZoneInfo("Asia/Tokyo")
+    now = datetime.now(jst)
+    log_text += f"名前: {username}\n"
+    log_text += f"保存日時: {now.strftime('%Y-%m-%d %H:%M:%S')}\n"
+
+    log_text += f"\n"
+
+    level = st.session_state.get("level", "未選択")
+    purpose = st.session_state.get("purpose", "未選択")
+    log_text += f"レベル: {level}\n"
+    log_text += f"目的: {purpose}\n"
+    log_text += f"\n"
+
+    for m in st.session_state.messages:
+        if m["role"] != "system":
+            prefix = "User" if m["role"] == "user" else "GPT"
+
+            if m["role"] == "user":
+                delay = f" {m['delay']}" if m.get("delay") else ""
+            else:
+                delay = ""
+            log_text += f"{prefix}: {m['content']}{delay}\n"
+
+    log_text += f"\n⏱ チャット滞在時間: {st.session_state.chat_duration}"
+
+    # 3. GitHub に送信
+    jst = zoneinfo.ZoneInfo("Asia/Tokyo")
+    now = datetime.now(jst)
+    filename = f"log/{st.session_state.username}_{now.strftime('%Y%m%d_%H%M%S')}.txt"
+    response = push_to_github(filename, log_text)
+
+    # 4. 成功/失敗を通知
+    if response.status_code in [200, 201]:
+        st.success(f"✅ {filename} をGitHubに保存しました！")
+    else:
+        st.error(f"❌ 送信失敗: {response.json()}")
+    st.switch_page("pages/5_survey.py")
+
 # ボタンを配置
 col1, col2 = st.columns([1, 1])
 
@@ -101,56 +151,5 @@ with col1:
 with col2:
     # 次へボタン：クイズページに遷移
     if st.button("ディスカッションを終了する", use_container_width=True, type="primary"):
-        st.switch_page("pages/5_survey.py")
-        
-        def go_survey():
-            # 1. チャット時間を計算
-            start = st.session_state.chat_start_time
-            if start:
-                elapsed = datetime.now() - start
-                minutes, seconds = divmod(int(elapsed.total_seconds()), 60)
-                st.session_state.chat_duration = f"{minutes}分{seconds}秒"
-
-            # 2. 会話内容をログに整形
-            log_text = ""
-
-            username = st.session_state.get("username", "名無し")
-            jst = zoneinfo.ZoneInfo("Asia/Tokyo")
-            now = datetime.now(jst)
-            log_text += f"名前: {username}\n"
-            log_text += f"保存日時: {now.strftime('%Y-%m-%d %H:%M:%S')}\n"
-
-            log_text += f"\n"
-
-            level = st.session_state.get("level", "未選択")
-            purpose = st.session_state.get("purpose", "未選択")
-            log_text += f"レベル: {level}\n"
-            log_text += f"目的: {purpose}\n"
-            log_text += f"\n"
-
-            for m in st.session_state.messages:
-                if m["role"] != "system":
-                    prefix = "User" if m["role"] == "user" else "GPT"
-
-                    if m["role"] == "user":
-                        delay = f" {m['delay']}" if m.get("delay") else ""
-                    else:
-                        delay = ""
-                    log_text += f"{prefix}: {m['content']}{delay}\n"
-
-            log_text += f"\n⏱ チャット滞在時間: {st.session_state.chat_duration}"
-
-            # 3. GitHub に送信
-            jst = zoneinfo.ZoneInfo("Asia/Tokyo")
-            now = datetime.now(jst)
-            filename = f"log/{st.session_state.username}_{now.strftime('%Y%m%d_%H%M%S')}.txt"
-            response = push_to_github(filename, log_text)
-
-            # 4. 成功/失敗を通知
-            if response.status_code in [200, 201]:
-                st.success(f"✅ {filename} をGitHubに保存しました！")
-            else:
-                st.error(f"❌ 送信失敗: {response.json()}")
-
-            # 5. ページ遷移
-            go_to("survey")
+        # 5. ページ遷移
+        go_survey() 
