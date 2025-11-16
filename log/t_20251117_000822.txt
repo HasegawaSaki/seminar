@@ -1,0 +1,25 @@
+名前: t
+保存日時: 2025-11-17 00:08:22
+
+レベル: B1
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: I don't know [0分15秒]
+GPT: ```markdown
+### Language Feedback and Correction
+文法・語彙の誤りはありませんでした！素晴らしいです。 
+***
+
+### Discussion About The Movie
+No worries! The video features Anna sharing big news about her acting career. Can you remember what her big news was?
+User: I can't remember anything [0分41秒]
+GPT: ```markdown
+### Language Feedback and Correction
+文法・語彙の誤りはありませんでした！がんばりましょう！
+***
+
+### Discussion About The Movie
+That's okay! Anna announced that she will be acting in three movies. Can you remember what types of movies she will be starring in?
+
+⏱ チャット滞在時間: 1分16秒
