@@ -130,6 +130,10 @@ def get_system_prompt(level, purpose):
         ### 出力形式
 
         ```markdown
+        (ここでは英語のみを使用してください。)
+        [フィードバック（例: That's a great summary!）と、要約を導き出すための質問をしてください。]
+        ***
+
         ###  Language Feedback and Correction
         (訂正は必ず日本語でしてください。
         ユーザーの発言が正しくても、このセクションは必ず含めてください。
@@ -146,11 +150,8 @@ def get_system_prompt(level, purpose):
         **文章全体の訂正バージョン:**
         (Corrected version of all user's sentence)
         [ここに、ユーザーの文章を修正した、自然で正確な英文全体を記述してください。]
-        ***
-
-        ###  Discussion About The Movie
-        (ここでは英語のみを使用してください。)
-        [フィードバック（例: That's a great summary!）と、要約を導き出すための質問をしてください。]
+       
+        
 
         example1:
         user "I think the main point of the video is dreaming gave us two merits."
