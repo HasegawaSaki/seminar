@@ -49,7 +49,11 @@ if st.session_state.show_warning:
     st.warning("⚠️画面上部にあるフォームにユーザーネームを入力してください。")
 
 # レベル選択
-level_choice = st.radio("", ["初級", "上級"], label_visibility="collapsed")
+level_choice = st.radio(
+    "",
+    ["準中級（A2）", "準上級（B2）", "上級（C1）"],
+    label_visibility="collapsed"
+)
 
 # ボタンの配置
 col1, col2 = st.columns([1, 1])
@@ -66,7 +70,14 @@ with col2:
             st.rerun()
         else:
             st.session_state.show_warning = False
-            st.session_state.level = "B2" if level_choice == "初級" else "C1"
+            # --- レベル設定 ---
+            if level_choice == "準中級（A2）":
+                st.session_state.level = "A2"
+            elif level_choice == "準上級（B2）":
+                st.session_state.level = "B2"
+            else:
+                st.session_state.level = "C1"
+            
             st.session_state.purpose = purpose
             st.switch_page("pages/2_video.py")
 

@@ -187,6 +187,38 @@ def get_system_prompt(level, purpose):
 {conversation_example}
 '''
 
+    elif level == "A2" and purpose == "楽しく会話":
+        with open("script/scr-shopping.txt", "r", encoding="utf-8") as f:
+            script = f.read()
+        with open("sample-conversation/conv-shopping.txt", "r", encoding="utf-8") as f:
+            conversation_example = f.read()
+
+        return f'''
+<Rules>
+{COMMON_RULES}
+
+<Role>
+{role_prompt}
+{script}
+{conversation_example}
+'''
+
+    elif level == "A2" and purpose == "英語力の向上":
+        with open("script/scr-shopping.txt", "r", encoding="utf-8") as f:
+            script = f.read()
+        with open("sample-conversation/conv-shopping.txt", "r", encoding="utf-8") as f:
+            conversation_example = f.read()
+
+        return f'''
+<Rules>
+{COMMON_RULES}
+
+<Role>
+{role_prompt}
+{script}
+{conversation_example}
+'''
+
     elif level == "B2" and purpose == "英語力の向上":
         with open("script/scr-dream.txt", "r", encoding="utf-8") as f:
             script = f.read()

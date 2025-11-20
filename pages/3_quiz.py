@@ -24,6 +24,7 @@ if not st.session_state["tutorial_seen02"]:
 st.title(f"{st.session_state.level} レベル - クイズ")
 
 form_urls = {
+"A2": "https://docs.google.com/forms/d/e/1FAIpQLSd4X5HctpCM9yNdjARTXqGRVwEcQMHB2UY_GON6teDTjb_myg/viewform?embedded=true",
 "B2": "https://docs.google.com/forms/d/e/1FAIpQLSeQ4nnfuB731SUGSUT_JjK80_3IyZuUmFuXCZCS5KJNXS4Qwg/viewform?embedded=true",
 "C1": "https://docs.google.com/forms/d/e/1FAIpQLScQkodloIAKuZ37kWzadb6-FTzP1YleRskhrodAoS1BQROTIg/viewform?embedded=true"
 }
