@@ -1,0 +1,23 @@
+名前: test
+保存日時: 2025-11-20 23:27:57
+
+レベル: A2
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: She bought both [0分5秒]
+GPT: That's correct! In the video, Anna struggles between choosing healthy food and junk food but ultimately decides to buy both. Why do you think she made that decision?
+
+***
+
+### Language Feedback and Correction
+
+- **❌ She bought both**
+  **✅ She decided to buy both types of food**
+
+  The original sentence "She bought both" lacks clarity. Specifying what "both" refers to makes it clearer.
+
+**Corrected version of your sentence:**
+She decided to buy both types of food, embracing the idea of balance.
+
+⏱ チャット滞在時間: 0分13秒
