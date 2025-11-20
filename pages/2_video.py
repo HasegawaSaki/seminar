@@ -16,14 +16,33 @@ if not st.session_state["tutorial_seen01"]:
 st.warning("動画を視聴後、解説を読んでからページ右下の「次へ」ボタンを押し、クイズ画面に進んでください。")
 
 st.title(f"{st.session_state.level} レベル - TED動画")
-if st.session_state.level == "B2":
+if st.session_state.level == "A2":
+    st.video("https://www.youtube.com/watch?v=bfoN07GBdF8")
+elif st.session_state.level == "B2":
     st.video("https://www.youtube.com/watch?v=YXn-eNPzlo8")
 else:
     st.video("https://www.youtube.com/watch?v=1VA4rIkpSp8")
 
 st.title(f"{st.session_state.level} レベル - 解説")
 
-if st.session_state.level == "B2":
+if st.session_state.level == "A2":
+    # Step 1: 全文翻訳
+    st.text("全文翻訳と解説")
+    with st.expander("本文と翻訳を表示"):
+        explanation_text = load_text("explanation-text/exp_shopping.txt")
+        st.write(explanation_text)
+
+    # Step 2: 重要単語
+    st.text("● 重要単語")
+    vocab_data = load_json("explanation-text/vocab_shopping.json")
+    st.table(vocab_data)
+
+    # Step 3: 重要フレーズ
+    st.text("● 重要フレーズ")
+    phrase_data = load_json("explanation-text/phrase_shopping.json")
+    st.table(phrase_data)
+
+elif st.session_state.level == "B2":
     # Step 1: 全文翻訳
     st.text("全文翻訳と解説")
     with st.expander("本文と翻訳を表示"):
