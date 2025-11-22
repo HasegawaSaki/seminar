@@ -51,7 +51,7 @@ if st.session_state.show_warning:
 # レベル選択
 level_choice = st.radio(
     "",
-    ["準中級（A2）", "準上級（B2）", "上級（C1）"],
+    ["準中級（A2）", "中級（B1）", "準上級（B2）", "上級（C1）"],
     label_visibility="collapsed"
 )
 
@@ -73,6 +73,8 @@ with col2:
             # --- レベル設定 ---
             if level_choice == "準中級（A2）":
                 st.session_state.level = "A2"
+            elif level_choice == "中級（B1）":
+                st.session_state.level = "B1"
             elif level_choice == "準上級（B2）":
                 st.session_state.level = "B2"
             else:
