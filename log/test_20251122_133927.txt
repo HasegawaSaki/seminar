@@ -1,0 +1,19 @@
+名前: test
+保存日時: 2025-11-22 13:39:27
+
+レベル: B1
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: hi  [0分4秒]
+GPT: Hey there! What did you think of the TED Talk?
+User: I don't know [0分21秒]
+GPT: No worries! Let's break it down together. What parts do you remember from the talk?
+User: I dontknow [0分8秒]
+GPT: That's okay! Let's start from the beginning. Was there anything about dreaming being beneficial that stood out to you?
+User: why [1分42秒]
+GPT: We're trying to piece together the main points of the TED Talk. Maybe starting with why dreaming is important will help us summarize it. What do you think?
+User: please help [0分12秒]
+GPT: Of course! Let's work on it together. How about this: The TED Talk discusses the importance of dreaming, highlighting two key benefits. Can you think of one benefit to start with?
+
+⏱ チャット滞在時間: 2分42秒
