@@ -171,7 +171,33 @@ def get_system_prompt(level, purpose):
         user: "Yes, the first one is enhancing creativity, and the second one is recovering from stress."
         gpt: "Excellent summary! You can finish the discussion now."
 '''
-    if level == "B2" and purpose == "楽しく会話":
+    if level == "B1" and purpose == "楽しく会話":
+        with open("script/scr-acting.txt", "r", encoding="utf-8") as f:
+            script = f.read()
+
+        return f'''
+<Rules>
+{COMMON_RULES}
+
+<Role>
+{role_prompt}
+{script}
+'''
+
+    elif level == "B1" and purpose == "英語力の向上":
+        with open("script/scr-acting.txt", "r", encoding="utf-8") as f:
+            script = f.read()
+
+        return f'''
+<Rules>
+{COMMON_RULES}
+
+<Role>
+{role_prompt}
+{script}
+'''
+
+    elif level == "B2" and purpose == "楽しく会話":
         with open("script/scr-dream.txt", "r", encoding="utf-8") as f:
             script = f.read()
         with open("sample-conversation/conv-dream.txt", "r", encoding="utf-8") as f:

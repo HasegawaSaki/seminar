@@ -14,6 +14,8 @@ st.title("アンケート")
 
 if st.session_state.level == "A2":
     components.iframe("https://docs.google.com/forms/d/e/1FAIpQLScpPh7R37lcF8rnAWSX3zPDIictXRkf_RBcQSr8Pz0s-TUJrQ/viewform?embedded=true", height=4500)
+elif st.session_state.level == "B1":
+    components.iframe("https://docs.google.com/forms/d/e/1FAIpQLSeO8CZ31rY0mNmJFx5eJ0ritfvkXZE2bZVl9YJZIg9Ddye3pg/viewform?usp=dialog", height=4500)
 elif st.session_state.level == "B2":
     components.iframe("https://docs.google.com/forms/d/e/1FAIpQLScnrUoPQS0YD-sDT3GMvbTcsLvbeTHWcmK4tIj4cBd8aIoa8g/viewform?embedded=true", height=4500)
 else:
