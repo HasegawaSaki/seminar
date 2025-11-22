@@ -1,0 +1,11 @@
+名前: t
+保存日時: 2025-11-22 16:02:11
+
+レベル: B1
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: I don't remember  [0分6秒]
+GPT: No worries! The video features Anna, who shares her excitement about her acting career. Can you recall what her big news was?
+
+⏱ チャット滞在時間: 0分22秒
