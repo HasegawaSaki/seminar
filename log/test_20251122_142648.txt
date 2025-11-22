@@ -1,0 +1,11 @@
+名前: test
+保存日時: 2025-11-22 14:26:48
+
+レベル: B1
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: I think the the main topic is woman decide to live Washington for after [0分49秒]
+GPT: I agree! Anna has some exciting news related to her acting career but has chosen to continue living in Washington, D.C. What do you think motivated her decision to stay?
+
+⏱ チャット滞在時間: 1分7秒
