@@ -56,7 +56,7 @@ def go_to(page, level=None, purpose=None):
 def reset_chat():
     if "messages" in st.session_state:
         st.session_state.messages = []
-        st.session_state.username = ""
+        # st.session_state.username = ""
         st.session_state.chat_start_time = None
         st.session_state.chat_timer_start = None
         st.session_state.chat_duration = None
