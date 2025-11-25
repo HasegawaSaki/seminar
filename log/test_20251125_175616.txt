@@ -1,0 +1,17 @@
+名前: test
+保存日時: 2025-11-25 17:56:16
+
+レベル: A2
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: She bought both healthy and junky items. [0分3秒]
+GPT: That's a great summary! Can you describe the internal conflict Anna experienced during her shopping? 
+
+***
+
+### Language Feedback and Correction
+
+- 文法・語彙の誤りはありませんでした！素晴らしいです。
+
+⏱ チャット滞在時間: 0分7秒
