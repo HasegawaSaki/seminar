@@ -1,0 +1,11 @@
+名前: test
+保存日時: 2025-11-25 17:58:15
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: She bought both [0分8秒]
+GPT: Yes, Anna decided to buy both healthy and junk food in the end. She was conflicted between the two choices, but realized that while it's important to eat healthy, a little junk food in moderation is okay too. What did you think of her decision?
+
+⏱ チャット滞在時間: 0分12秒
