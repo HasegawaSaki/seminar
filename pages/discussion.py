@@ -33,8 +33,28 @@ if st.session_state.chat_start_time is None:
 
 st.title("ディスカッション")
 st.caption(f"{st.session_state.level} - {st.session_state.purpose}")
-st.warning("英語で２回以上、会話文を送信してください。チャットは好きなだけ続けていただいて構いません。  \nもし不快に感じたり、疲れた場合は、ご自身の判断でいつでも終了してください。翻訳機能を使って内容を理解していただいても構いません。")
 
+st.warning("""
+**注意事項**
+- わからない箇所を質問したり、意見を述べたりしながら、ビデオの理解を深めることを目的としています。
+- 英語で２回以上、好きなだけ会話文を送信してください。
+- 不快に感じたり疲れた場合は、いつでも終了してください。
+- 翻訳機能を使って内容を理解していただいても構いません。
+""")       
+    
+with st.expander("チャット画面の見方"):
+    col1, col2 = st.columns([0.5, 9.5])
+    with col1:
+        st.image("image/bot.png", width=30)
+    with col2:
+        st.markdown("チャットボット(会話相手)")
+    
+    col1, col2 = st.columns([0.5, 9.5])
+    with col1:
+        st.image("image/user.png", width=30)
+    with col2:
+        st.markdown("ユーザー(あなた)")
+        
 api_key = st.secrets["API_KEY"]
 client = openai.OpenAI(api_key=api_key)
 
