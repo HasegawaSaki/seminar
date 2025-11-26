@@ -81,5 +81,5 @@ with col2:
                 st.session_state.level = "C1"
             
             st.session_state.purpose = purpose
-            st.switch_page("pages/2_video.py")
+            st.switch_page("pages/video.py")
 
