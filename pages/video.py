@@ -15,7 +15,7 @@ if not st.session_state["tutorial_seen01"]:
 
 st.warning("動画を視聴後、解説を読んでからページ右下の「次へ」ボタンを押し、クイズ画面に進んでください。")
 
-st.title(f"{st.session_state.level} レベル - TED動画")
+st.title(f"{st.session_state.level} レベル - ビデオ")
 if st.session_state.level == "A2":
     st.video("https://www.youtube.com/watch?v=bfoN07GBdF8")
 elif st.session_state.level == "B1":
@@ -101,8 +101,8 @@ col1, col2 = st.columns([1, 1])
 with col1:
     # 戻るボタン：チャットリセットしてホームに戻る
     if st.button("戻る", use_container_width=True):
-        st.switch_page("pages/1_home.py")
+        st.switch_page("pages/home.py")
 with col2:
     # 次へボタン：クイズページに遷移
     if st.button("次へ", use_container_width=True, type="primary"):
-        st.switch_page("pages/3_quiz.py")
+        st.switch_page("pages/quiz.py")
