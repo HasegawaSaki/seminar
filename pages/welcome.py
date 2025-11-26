@@ -83,14 +83,13 @@ st.markdown("""
 st.markdown("""
 <div class='welcome-header'>
     <h1 class='welcome-title'>AI English Learning Tool</h1>
-    <p class='welcome-subtitle'>TED動画でディスカッション</p>
 </div>
 """, unsafe_allow_html=True)
 
 # 説明文
 st.markdown("""
 <div class='welcome-description'>
-    TED動画を視聴してAIとのディスカッションを<br>
+    英語のビデオを視聴してAIとディスカッションを<br>
     することにより英語学習をサポートします。
 </div>
 """, unsafe_allow_html=True)
@@ -100,21 +99,21 @@ st.markdown("<br>", unsafe_allow_html=True)
 # 機能紹介
 st.markdown("""
 <div class='feature-card'>
-    <div><span class='feature-icon'>📺</span><span class='feature-title'>TED動画の視聴</span></div>
-    <div class='feature-text'>レベル別に厳選されたTED Talkを視聴できます</div>
+    <div><span class='feature-title'>① ビデオの視聴</span></div>
+    <div class='feature-text'>レベル別の英語のビデオを視聴</div>
 </div>
 """, unsafe_allow_html=True)
 
 st.markdown("""
 <div class='feature-card'>
-    <div><span class='feature-icon'>📖</span><span class='feature-title'>動画の解説</span></div>
+    <div><span class='feature-title'>② 動画の解説</span></div>
     <div class='feature-text'>重要単語やフレーズの学習、全文翻訳で内容理解をサポート</div>
 </div>
 """, unsafe_allow_html=True)
 
 st.markdown("""
 <div class='feature-card'>
-    <div><span class='feature-icon'>💬</span><span class='feature-title'>AIとディスカッション</span></div>
+    <div><span class='feature-title'>③ AIとディスカッション</span></div>
     <div class='feature-text'>動画の内容について英語で会話<br>楽しく会話するモードと英語力向上モードを選択可能</div>
 </div>
 """, unsafe_allow_html=True)
@@ -125,4 +124,4 @@ st.markdown("<br>" * 2, unsafe_allow_html=True)
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
     if st.button("スタート", use_container_width=True, type="primary"):
-        st.switch_page("pages/1_home.py")
+        st.switch_page("pages/home.py")
