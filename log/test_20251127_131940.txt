@@ -1,0 +1,11 @@
+名前: test
+保存日時: 2025-11-27 13:19:40
+
+レベル: B2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: Sleep are good [0分8秒]
+GPT: Absolutely, I think dreaming during sleep offers significant benefits. Can you recall the specific advantages mentioned in the video?
+
+⏱ チャット滞在時間: 0分40秒
