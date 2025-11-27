@@ -40,4 +40,5 @@ with col1:
 with col2:
     # 次へボタン：クイズページに遷移
     if st.button("ホームに戻る", use_container_width=True, type="primary"):
+        reset_chat()
         st.switch_page("pages/home.py")
