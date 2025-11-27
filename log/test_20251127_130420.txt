@@ -1,0 +1,11 @@
+名前: test
+保存日時: 2025-11-27 13:04:20
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: She bought both healthy and junky items. [0分15秒]
+GPT: Yeah, she decided to buy both kinds of food in the end, balancing between healthy and junky options. The video showed her internal struggle between wanting to eat healthily and craving junk food. What do you think was the main takeaway from this story?
+
+⏱ チャット滞在時間: 0分20秒
