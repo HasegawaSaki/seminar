@@ -1,0 +1,22 @@
+名前: test
+保存日時: 2025-11-27 13:36:41
+
+レベル: A2
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: She bought both [0分32秒]
+GPT: That's a good observation! Anna decided to buy both healthy food and junk food. What were her reasons for making this choice?
+
+***
+
+### Language Feedback and Correction
+
+- **❌ She bought both**
+  **✅ Anna decided to buy both healthy food and junk food.**
+  When summarizing, provide a complete sentence that includes the subject “Anna” to clarify who is making the action.
+
+**文章全体の訂正バージョン:**
+Anna decided to buy both healthy food and junk food.
+
+⏱ チャット滞在時間: 0分39秒
