@@ -1,0 +1,13 @@
+名前: 1
+保存日時: 2025-12-02 13:43:12
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: I don't know [0分3秒]
+GPT: No worries! Let's break it down together. In the video, Anna is at a supermarket and her inner voices, "Healthy" and "Junky," argue about what food she should buy. What do you think is the main conflict she is facing?
+User: Yes [0分12秒]
+GPT: Great! The main conflict is between choosing healthy food and giving in to junk food cravings. What did you think Anna decided in the end?
+
+⏱ チャット滞在時間: 0分21秒
