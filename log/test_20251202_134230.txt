@@ -1,0 +1,13 @@
+名前: test
+保存日時: 2025-12-02 13:42:30
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: She bought both healthy and junky items. [0分2秒]
+GPT: That's right! The video shows Anna struggling with the choices between healthy and junk food at a supermarket. 
+
+I think the main message is about balancing different desires. What do you think?
+
+⏱ チャット滞在時間: 0分15秒
