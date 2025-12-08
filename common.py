@@ -62,6 +62,7 @@ def reset_chat():
         st.session_state.chat_duration = None
         st.session_state.tutorial_seen01 = None
         st.session_state.tutorial_seen02 = None
+        st.session_state.user_utter_index = 1
 
 # --------プロンプト分岐--------
 def get_system_prompt(level, purpose):
@@ -307,8 +308,18 @@ def tutorial_quiz():
 # チャットメッセージ追加関数
 jst = zoneinfo.ZoneInfo("Asia/Tokyo")
 
-def add_message(role, content):
+def add_message(role, content, extra=None):
+# def add_message(role, content):
+    # ---- ユーザー発言番号の初期化 ----
+    if "user_utter_index" not in st.session_state:
+        st.session_state.user_utter_index = 1
+
+
     message = {"role": role, "content": content}
+
+    # extra を正しく merge
+    if extra:
+        message.update(extra)
 
     if role == "user":
         start  = st.session_state.get("chat_timer_start")
@@ -319,6 +330,11 @@ def add_message(role, content):
             st.session_state.chat_timer_start = None
         else:
             message["delay"] = ""
+    
+     # ---- ユーザー発言にのみ番号付与 ----
+        message["index"] = st.session_state.user_utter_index
+        st.session_state.user_utter_index += 1
+
     else:  # GPTの返答
         st.session_state.chat_timer_start = datetime.now(jst)
         message["delay"] = ""
