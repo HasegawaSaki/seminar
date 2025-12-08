@@ -1,0 +1,11 @@
+名前: test
+保存日時: 2025-12-08 21:37:28
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: She bought both healthy and junky items. [0分2秒]
+GPT: That's right! Anna was torn between buying healthy foods and junk foods at the supermarket. What were the internal characters she was struggling with?
+
+⏱ チャット滞在時間: 0分5秒
