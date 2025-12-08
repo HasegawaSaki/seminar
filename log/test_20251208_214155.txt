@@ -1,0 +1,15 @@
+名前: test
+保存日時: 2025-12-08 21:41:55
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: She bought both healthy and junky items. [0分3秒]1
+GPT: Yeah, that's true! Anna was having a hard time deciding between healthy and junk foods but eventually decided to buy both. What do you think was the main message of the video?
+User: She [0分4秒]2
+GPT: It seems there's a bit missing in your sentence. Were you going to say something about what Anna learned or realized?
+User: Yes [0分2秒]3
+GPT: Great! So what do you think Anna realized at the end?
+
+⏱ チャット滞在時間: 0分20秒
