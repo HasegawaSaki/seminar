@@ -1,0 +1,13 @@
+名前: test_log
+保存日時: 2025-12-08 21:51:09
+
+レベル: B1
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: Umm [0分8秒]1
+GPT: No worries! What do you think is the main point of the video?
+User: Umm [0分3秒]2
+GPT: That's okay! Let me start: I think the main point is that Anna achieved something big by becoming an actress. What do you think?
+
+⏱ チャット滞在時間: 0分15秒
