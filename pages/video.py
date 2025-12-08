@@ -17,7 +17,21 @@ st.warning("動画を視聴後、解説を読んでからページ右下の「�
 
 st.title(f"{st.session_state.level} レベル - ビデオ")
 if st.session_state.level == "A2":
-    st.video("https://www.youtube.com/watch?v=bfoN07GBdF8")
+   st.markdown(
+   """
+   <iframe title="vimeo-player"
+       src="https://player.vimeo.com/video/1057708086?h=118a6450d4"
+       width="640"
+       height="360"
+       frameborder="0"
+       referrerpolicy="strict-origin-when-cross-origin"
+       allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+       allowfullscreen>
+   </iframe>
+   """,
+   unsafe_allow_html=True
+)
+
 elif st.session_state.level == "B1":
     st.video("https://www.youtube.com/watch?v=vJPvOYb1K10")
 elif st.session_state.level == "B2":
@@ -31,17 +45,17 @@ if st.session_state.level == "A2":
     # Step 1: 全文翻訳
     st.text("全文翻訳と解説")
     with st.expander("本文と翻訳を表示"):
-        explanation_text = load_text("explanation-text/exp_shopping.txt")
+        explanation_text = load_text("explanation-text/exp_beach.txt")
         st.write(explanation_text)
 
     # Step 2: 重要単語
     st.text("● 重要単語")
-    vocab_data = load_json("explanation-text/vocab_shopping.json")
+    vocab_data = load_json("explanation-text/vocab_beach.json")
     st.table(vocab_data)
 
     # Step 3: 重要フレーズ
     st.text("● 重要フレーズ")
-    phrase_data = load_json("explanation-text/phrase_shopping.json")
+    phrase_data = load_json("explanation-text/phrase_beach.json")
     st.table(phrase_data)
 
 elif st.session_state.level == "B1":

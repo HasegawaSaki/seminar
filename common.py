@@ -249,7 +249,7 @@ def get_system_prompt(level, purpose):
 {script}
 '''
     elif level == "A2" and purpose == "楽しく会話":
-        with open("script/scr-shopping.txt", "r", encoding="utf-8") as f:
+        with open("script/scr-beach.txt", "r", encoding="utf-8") as f:
             script = f.read()
 
         return f'''
@@ -262,7 +262,7 @@ def get_system_prompt(level, purpose):
 '''
 
     elif level == "A2" and purpose == "英語力の向上":
-        with open("script/scr-shopping.txt", "r", encoding="utf-8") as f:
+        with open("script/scr-beach.txt", "r", encoding="utf-8") as f:
             script = f.read()
 
         return f'''
