@@ -140,11 +140,15 @@ def go_survey():
         if m["role"] != "system":
             prefix = "User" if m["role"] == "user" else "GPT"
 
+            # --- ユーザー発言に番号を付与 ---
+            index = f"{m['index']}" if m.get("index") else ""
+
             if m["role"] == "user":
                 delay = f" {m['delay']}" if m.get("delay") else ""
             else:
                 delay = ""
-            log_text += f"{prefix}: {m['content']}{delay}\n"
+            log_text += f"{prefix}: {m['content']}{delay}{index}\n"
+            # log_text += f"{prefix}: {m['content']}{delay}\n"
 
     log_text += f"\n⏱ チャット滞在時間: {st.session_state.chat_duration}"
 
