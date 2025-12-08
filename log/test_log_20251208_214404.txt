@@ -1,0 +1,15 @@
+名前: test_log
+保存日時: 2025-12-08 21:44:04
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: She bought both [0分2秒]
+GPT: Yes, that's a great point! Anna decides to balance her choices by buying both healthy and junk food. What do you think the video tells us about decision-making?
+User: Ummm [0分4秒]1
+GPT: No worries, take your time! In my opinion, the video humorously highlights the internal conflict we often face when choosing between healthy and indulgent foods. What do you think?
+User: I actually don't remember the content of the video. [0分5秒]2
+GPT: That's okay! Let's piece it together. From what I gathered, Anna debates between buying healthy food and junk food, with her inner voices "Healthy" and "Junky" arguing. In the end, she decides to get both. What lesson do you think this might suggest about making food choices?
+
+⏱ チャット滞在時間: 0分18秒
