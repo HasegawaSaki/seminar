@@ -1,0 +1,13 @@
+名前: test_log
+保存日時: 2025-12-08 21:46:17
+
+レベル: A2
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: Umm [0分3秒]1
+GPT: No worries! Let's break it down together. The video is about Anna's internal debate regarding food choices. Can you describe what happens at the supermarket?
+User: She learned that a balance between healthy and junk food can be achieved [0分5秒]2
+GPT: That's a great understanding! What specific foods did Anna consider buying at the supermarket?
+
+⏱ チャット滞在時間: 0分12秒
