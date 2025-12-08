@@ -1,0 +1,13 @@
+名前: test
+保存日時: 2025-12-08 21:38:36
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: She bought both healthy and junky items. [0分3秒]1
+GPT: Yeah, that's the gist of what happened! Initially, Anna was debating between buying healthy food like celery and frozen peas, and junk food such as ice cream and donuts. 
+
+What else stood out to you in the video?
+
+⏱ チャット滞在時間: 0分6秒
