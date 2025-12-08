@@ -1,0 +1,17 @@
+名前: test_log
+保存日時: 2025-12-08 21:43:30
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: She bought both healthy and junky items. [0分3秒]1
+GPT: That's a good point! Anna was conflicted between choosing healthy food and junk food. 
+
+In my opinion, the main point of the video is about balancing the two. What do you think?
+User: She bought both [0分4秒]2
+GPT: Exactly! Anna decided to balance her choices by buying both healthy and junk food items. 
+
+So, how would you summarize the video's message in your own words?
+
+⏱ チャット滞在時間: 0分11秒
