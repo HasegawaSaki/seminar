@@ -1,0 +1,17 @@
+名前: test
+保存日時: 2025-12-08 21:40:09
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: She bought both healthy and junky items. [0分3秒]2
+GPT: I think that's right! She struggled between choosing healthy foods and junk food at the supermarket. 
+
+Do you recall what she ultimately decided to do?
+User: She struggled between choosing healthy foods and junk food at the supermarket. [0分10秒]3
+GPT: I agree! In the end, Anna decided to buy a mix of both healthy and junk food to satisfy both sides of her internal debate. 
+
+Could you summarize the video in your own words now?
+
+⏱ チャット滞在時間: 0分19秒
