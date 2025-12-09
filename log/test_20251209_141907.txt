@@ -1,0 +1,15 @@
+名前: test
+保存日時: 2025-12-09 14:19:07
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: Please summarize the content of this video? [4分20秒]1
+GPT: In my opinion, the main point of the video is that Todd loves a quiet, clean beach near his home in Japan. What did you think were his reasons for liking it?
+User: I think so too [0分18秒]2
+GPT: Great! His reasons include the beach being quiet with few people, surrounded by trees and a forest, and having little pollution or noise. Anything else you'd like to add?
+User: No [0分16秒]3
+GPT: Awesome! Could you summarize everything in your own words now?
+
+⏱ チャット滞在時間: 5分26秒
