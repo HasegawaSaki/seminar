@@ -31,17 +31,19 @@ display_header()
 if st.session_state.chat_start_time is None:
     st.session_state.chat_start_time = datetime.now()
 
-st.title("ディスカッション")
+st.title("動画の要約についてのディスカッション")
+st.text("このディスカッションの目的は英語で動画の要約文を作ることです。")
 st.caption(f"{st.session_state.level} - {st.session_state.purpose}")
 
 st.warning("""
 **注意事項**
-- わからない箇所を質問したり、意見を述べたりしながら、ビデオの理解を深めることを目的としています。
-- 英語で２回以上、好きなだけ会話文を送信してください。
-- 不快に感じたり疲れた場合は、いつでも終了してください。
-- 翻訳機能を使って内容を理解していただいても構いません。
+- わからない箇所を質問したり、意見を述べたりしながら、チャットボットと英語のディスカッションをしてください。
+- ユーザーが正しい要約文を入力すると「Excellent summary! You can finish the discussion.」と出力されることがありますが、それ以降も続けて構いません。
+- 不快に感じたり疲れた場合、十分に満足した場合など自分の判断で終了してください。
+- 出力に対して翻訳機能を使っても構いません。
+- 少なくとも２回以上、会話文を送信してください。
 """)       
-    
+
 with st.expander("チャット画面の見方"):
     col1, col2 = st.columns([0.5, 9.5])
     with col1:

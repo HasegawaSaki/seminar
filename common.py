@@ -119,7 +119,7 @@ def get_system_prompt(level, purpose):
         3.  議論の終了(必須）:
             * 必ず要約ははユーザーに英語で要約させてください。
             * ユーザーの入力した要約文が正しければ、以下のような文で議論を終わりにしてください。
-             "Excellent summary! You can finish the discussion now."
+             "Excellent summary! You can finish the discussion."
 
         4. 要約フェーズについて:
             「動画の内容について英語で要約する」というテーマ以外の話題には絶対に逸れないでください。
