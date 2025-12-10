@@ -15,13 +15,14 @@ if "show_warning" not in st.session_state:
 display_header()
 st.title("ホーム")
 st.subheader("ユーザーネーム")
-st.write("指定のユーザーネームをご入力ください")
+st.write("指定のユーザーネームをご入力ください。")
 st.session_state.username = st.text_input(" ", placeholder="例：A1014")
 
 st.markdown("---")
 
 st.subheader("学習タイプ")
-st.write("学習したいディスカッションのタイプを選んでください(指定がある場合は指定のタイプを選んでください。英語の動画を見ていただいた後、AIと英語でディスカッションをしていただきます)")
+st.write("学習したいディスカッションのタイプを選んでください。(指定がある場合は指定のタイプを選んでください。)")
+st.caption("英語の動画を視聴後、チャットボットと英語でディスカッションをします。")
 purpose = st.radio("", ["楽しく会話", "英語力の向上"])
 
 st.markdown("---")
@@ -29,29 +30,18 @@ st.markdown("---")
 
 
 st.subheader("英語レベル")
-st.write("ご自身の英語レベルに合ったレベルを選んでください。レベルの詳細は下記をご覧ください。")
+st.write("ご自身の英語レベルに合ったレベルを選んでください。")
 
-# 補足としてレベルの詳細を記述
-# st.expanderを使って、詳細情報を普段は隠し、UIをスッキリさせる方法
-with st.expander("レベルの詳細（TOEIC/英検/CEFR）を見る"):
-    st.markdown("""
-        **【初級〜中級】**
-        - **CEFR**: A1 ~ B2
-        - **TOEIC(L&R)**: 0点 ~ 944点
-        - **英検**: 5級 ~ 準1級
-
-        **【上級】**
-        - **CEFR**: C1 ~ C2
-        - **TOEIC(L&R)**: 945点 ~ 999点
-        - **英検**: 1級
-    """)
 if st.session_state.show_warning:
     st.warning("⚠️画面上部にあるフォームにユーザーネームを入力してください。")
 
 # レベル選択
 level_choice = st.radio(
     "",
-    ["準中級（A2）", "中級（B1）", "準上級（B2）", "上級（C1）"],
+    ["準中級（CEFR A2 / TOEIC 225-545 / 英検 準2級 / IELTS 3.0）", 
+     "中級（CEFR B1 / TOEIC 550-784 / 英検 2級 / IELTS 4.0-5.0 / TOEFL 42-71）", 
+     "準上級（CEFR B2 / TOEIC 785-944 / 英検 準1級 / IELTS 5.5-6.5 / TOEFL 72-94）", 
+     "上級（CEFR C1 / TOEIC 945- / 英検 1級 / IELTS 7.0-8.0 / TOEFL 95-120）"],
     label_visibility="collapsed"
 )
 
