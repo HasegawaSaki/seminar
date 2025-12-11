@@ -61,11 +61,11 @@ with col2:
         else:
             st.session_state.show_warning = False
             # --- レベル設定 ---
-            if level_choice == "準中級（A2）":
+            if level_choice == "準中級（CEFR A2 / TOEIC 225-545 / 英検 準2級 / IELTS 3.0）":
                 st.session_state.level = "A2"
-            elif level_choice == "中級（B1）":
+            elif level_choice == "中級（CEFR B1 / TOEIC 550-784 / 英検 2級 / IELTS 4.0-5.0 / TOEFL 42-71）":
                 st.session_state.level = "B1"
-            elif level_choice == "準上級（B2）":
+            elif level_choice == "準上級（CEFR B2 / TOEIC 785-944 / 英検 準1級 / IELTS 5.5-6.5 / TOEFL 72-94）":
                 st.session_state.level = "B2"
             else:
                 st.session_state.level = "C1"
