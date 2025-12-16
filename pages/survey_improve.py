@@ -10,7 +10,7 @@ if "messages2" not in st.session_state:
 
 # -------- ページコンテンツ --------
 display_header()
-st.title("アンケート2")
+st.title("アンケート（英語力の向上）")
 
 if st.session_state.level == "A2":
     components.iframe("https://docs.google.com/forms/d/e/1FAIpQLScpPh7R37lcF8rnAWSX3zPDIictXRkf_RBcQSr8Pz0s-TUJrQ/viewform?embedded=true", height=4500)

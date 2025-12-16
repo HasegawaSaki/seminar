@@ -60,7 +60,7 @@ display_header()
 if st.session_state.chat_start_time2 is None:
     st.session_state.chat_start_time2 = datetime.now()
 
-st.title("ディスカッション2")
+st.title("動画要約ディスカッション")
 st.caption(f"{st.session_state.level} - {st.session_state.purpose}")
 
 st.warning("""
