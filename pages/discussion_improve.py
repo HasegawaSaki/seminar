@@ -61,8 +61,8 @@ if st.session_state.chat_start_time2 is None:
     st.session_state.chat_start_time2 = datetime.now()
 
 st.title("動画要約ディスカッション")
-st.caption(f"{st.session_state.level} - {st.session_state.purpose}")
-
+st.subheader(f"{st.session_state.purpose}モード / {st.session_state.level}レベル")
+st.markdown("このディスカッションの目的は英語で動画の要約文を作ることです。「英語力の向上」チャットボットはユーザーの入力文を添削し、英語力を向上させるためのサポートします。")
 st.warning("""
 **注意事項**
 - わからない箇所を質問したり、意見を述べたりしながら、ビデオの理解を深めることを目的としています。
