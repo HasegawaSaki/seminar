@@ -5,12 +5,12 @@ from common import display_header, reset_chat, go_to
 # --------セッション状態の初期化 --------
 if "level" not in st.session_state:
     st.session_state.level = ""
-if "messages" not in st.session_state:
-    st.session_state.messages = []
+if "messages2" not in st.session_state:
+    st.session_state.messages2 = []
 
 # -------- ページコンテンツ --------
 display_header()
-st.title("アンケート")
+st.title("アンケート2")
 
 if st.session_state.level == "A2":
     components.iframe("https://docs.google.com/forms/d/e/1FAIpQLScpPh7R37lcF8rnAWSX3zPDIictXRkf_RBcQSr8Pz0s-TUJrQ/viewform?embedded=true", height=4500)
@@ -21,9 +21,9 @@ elif st.session_state.level == "B2":
 else:
     components.iframe("https://docs.google.com/forms/d/e/1FAIpQLSfrwEok1A49dAboYeYTpbhq4XZlX7mRzdVu8W2L2BRKSttxmA/viewform?embedded=true", height=4500)
 
-if st.session_state.messages:
+if st.session_state.messages2:
     log_text = ""
-    for m in st.session_state.messages:
+    for m in st.session_state.messages2:
         if m["role"] != "system":
             prefix = "User" if m["role"] == "user" else "GPT"
             log_text += f"{prefix}: {m['content']}\n"
@@ -34,11 +34,11 @@ col1, col2 = st.columns(2)
 col1, col2 = st.columns([1, 1])
 
 with col1:
-    # 戻るボタン：チャットリセットしてホームに戻る
+    # 戻るボタン：ディスカッション2に戻る
     if st.button("戻る", use_container_width=True):
-        st.switch_page("pages/discussion.py")
+        st.switch_page("pages/discussion_improve.py")
 with col2:
-    # 次へボタン：クイズページに遷移
+    # ホームに戻るボタン：チャットリセットしてホームに戻る
     if st.button("ホームに戻る", use_container_width=True, type="primary"):
         reset_chat()
         st.switch_page("pages/home.py")

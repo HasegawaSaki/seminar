@@ -59,6 +59,7 @@ def go_to(page, level=None, purpose=None):
 
 # --------チャットリセット--------
 def reset_chat():
+    # 1つ目のディスカッションをリセット
     if "messages" in st.session_state:
         st.session_state.messages = []
         # st.session_state.username = ""
@@ -68,6 +69,15 @@ def reset_chat():
         st.session_state.tutorial_seen01 = None
         st.session_state.tutorial_seen02 = None
         st.session_state.user_utter_index = 1
+
+    # 2つ目のディスカッションをリセット
+    if "messages2" in st.session_state:
+        st.session_state.messages2 = []
+        st.session_state.chat_start_time2 = None
+        st.session_state.chat_timer_start2 = None
+        st.session_state.chat_duration2 = None
+        st.session_state.input_counter2 = 0
+        st.session_state.user_utter_index2 = 1
 
 # --------プロンプト分岐--------
 def get_system_prompt(level, purpose):
