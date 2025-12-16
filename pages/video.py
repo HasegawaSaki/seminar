@@ -31,9 +31,22 @@ if st.session_state.level == "A2":
    """,
    unsafe_allow_html=True
 )
-
+   
 elif st.session_state.level == "B1":
-    st.video("https://www.youtube.com/watch?v=vJPvOYb1K10")
+    st.markdown(
+   """
+   <iframe title="vimeo-player"
+       src="https://player.vimeo.com/video/1057779874?h=e96e0af70e"
+       width="640"
+       height="360"
+       frameborder="0"
+       referrerpolicy="strict-origin-when-cross-origin"
+       allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+       allowfullscreen>
+   </iframe>
+   """,
+   unsafe_allow_html=True
+)
 elif st.session_state.level == "B2":
     st.video("https://www.youtube.com/watch?v=YXn-eNPzlo8")
 else:
@@ -62,17 +75,17 @@ elif st.session_state.level == "B1":
     # Step 1: 全文翻訳
     st.text("全文翻訳と解説")
     with st.expander("本文と翻訳を表示"):
-        explanation_text = load_text("explanation-text/exp_acting.txt")
+        explanation_text = load_text("explanation-text/exp_embarrassing.txt")
         st.write(explanation_text)
 
     # Step 2: 重要単語
     st.text("● 重要単語")
-    vocab_data = load_json("explanation-text/vocab_acting.json")
+    vocab_data = load_json("explanation-text/vocab_embarrassing.json")
     st.table(vocab_data)
 
     # Step 3: 重要フレーズ
     st.text("● 重要フレーズ")
-    phrase_data = load_json("explanation-text/phrase_acting.json")
+    phrase_data = load_json("explanation-text/phrase_embarrassing.json")
     st.table(phrase_data)
 
 elif st.session_state.level == "B2":

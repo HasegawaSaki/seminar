@@ -171,7 +171,7 @@ def get_system_prompt(level, purpose):
 
 '''
     if level == "B1" and purpose == "楽しく会話":
-        with open("script/scr-acting.txt", "r", encoding="utf-8") as f:
+        with open("script/scr-embarrassing.txt", "r", encoding="utf-8") as f:
             script = f.read()
 
         return f'''
@@ -184,7 +184,7 @@ def get_system_prompt(level, purpose):
 '''
 
     elif level == "B1" and purpose == "英語力の向上":
-        with open("script/scr-acting.txt", "r", encoding="utf-8") as f:
+        with open("script/scr-embarrassing.txt", "r", encoding="utf-8") as f:
             script = f.read()
 
         return f'''
