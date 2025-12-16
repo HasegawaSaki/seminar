@@ -1,0 +1,11 @@
+名前: z
+保存日時: 2025-12-16 14:06:08
+
+レベル: B1
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: it is said embrace [0分28秒]1
+GPT: I see, the main idea seems to be about embracing language mistakes. The speaker thought they were saying "I'm embarrassed" in Spanish but accidentally said "I'm pregnant." What else did you notice in the video?
+
+⏱ チャット滞在時間: 0分34秒
