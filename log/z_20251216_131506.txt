@@ -1,0 +1,11 @@
+名前: z
+保存日時: 2025-12-16 13:15:06
+
+レベル: B1
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: hello [0分4秒]1
+GPT: Hi there! What did you think of the TED Talk?
+
+⏱ チャット滞在時間: 0分8秒
