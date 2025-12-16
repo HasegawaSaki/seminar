@@ -43,8 +43,9 @@ discussion_page = st.Page("pages/discussion_enjoy.py", title="ディスカッシ
 survey_page = st.Page("pages/survey_enjoy.py", title="アンケート（楽しく会話）")
 discussion2_page = st.Page("pages/discussion_improve.py", title="ディスカッション（英語力の向上）")
 survey2_page = st.Page("pages/survey_improve.py", title="アンケート（英語力の向上）")
+end_page = st.Page("pages/end.py", title="終了")
 # ナビゲーションを設定
-pg = st.navigation([welcome_page, home_page, video_page, quiz_page, discussion_page, survey_page, discussion2_page, survey2_page])
+pg = st.navigation([welcome_page, home_page, video_page, quiz_page, discussion_page, survey_page, discussion2_page, survey2_page, end_page])
 
 # 選択されたページを実行
 pg.run()

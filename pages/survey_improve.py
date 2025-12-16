@@ -38,7 +38,6 @@ with col1:
     if st.button("戻る", use_container_width=True):
         st.switch_page("pages/discussion_improve.py")
 with col2:
-    # ホームに戻るボタン：チャットリセットしてホームに戻る
-    if st.button("ホームに戻る", use_container_width=True, type="primary"):
-        reset_chat()
-        st.switch_page("pages/home.py")
+    # 終了するボタン：終了ページに遷移
+    if st.button("終了する", use_container_width=True, type="primary"):
+        st.switch_page("pages/end.py")
