@@ -6,6 +6,11 @@ import base64
 from datetime import datetime
 import zoneinfo
 import streamlit.components.v1 as components
+from pathlib import Path
+import os
+
+# Get the base directory of this file
+BASE_DIR = Path(__file__).resolve().parent
 
 
 # -------- 共通の定数 --------
@@ -238,11 +243,17 @@ def get_system_prompt(level, purpose):
 '''
 # 説明テキストを読み込む関数
 def load_text(file_path):
+    # If the path is relative, make it relative to BASE_DIR
+    if not os.path.isabs(file_path):
+        file_path = BASE_DIR / file_path
     with open(file_path, "r", encoding="utf-8") as f:
         return f.read()
 
 # JSON を読み込む関数
 def load_json(file_path):
+    # If the path is relative, make it relative to BASE_DIR
+    if not os.path.isabs(file_path):
+        file_path = BASE_DIR / file_path
     with open(file_path, "r", encoding="utf-8") as f:
         return json.load(f)
 

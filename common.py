@@ -4,6 +4,11 @@ import base64
 import json
 from datetime import datetime
 import zoneinfo
+from pathlib import Path
+import os
+
+# Get the base directory of this file
+BASE_DIR = Path(__file__).resolve().parent
 
 # -------- 共通の定数 --------
 COMMON_RULES = '''<Rules>
@@ -173,7 +178,7 @@ def get_system_prompt(level, purpose):
         gpt: "Excellent summary! You can finish the discussion now."
 '''
     if level == "B1" and purpose == "楽しく会話":
-        with open("script/scr-embarrassing.txt", "r", encoding="utf-8") as f:
+        with open(BASE_DIR / "script" / "scr-embarrassing.txt", "r", encoding="utf-8") as f:
             script = f.read()
 
         return f'''
@@ -186,7 +191,7 @@ def get_system_prompt(level, purpose):
 '''
 
     elif level == "B1" and purpose == "英語力の向上":
-        with open("script/scr-embarrassing.txt", "r", encoding="utf-8") as f:
+        with open(BASE_DIR / "script" / "scr-embarrassing.txt", "r", encoding="utf-8") as f:
             script = f.read()
 
         return f'''
@@ -199,7 +204,7 @@ def get_system_prompt(level, purpose):
 '''
 
     elif level == "B2" and purpose == "楽しく会話":
-        with open("script/scr-dream.txt", "r", encoding="utf-8") as f:
+        with open(BASE_DIR / "script" / "scr-dream.txt", "r", encoding="utf-8") as f:
             script = f.read()
 
         return f'''
@@ -212,7 +217,7 @@ def get_system_prompt(level, purpose):
 '''
 
     elif level == "B2" and purpose == "英語力の向上":
-        with open("script/scr-dream.txt", "r", encoding="utf-8") as f:
+        with open(BASE_DIR / "script" / "scr-dream.txt", "r", encoding="utf-8") as f:
             script = f.read()
 
         return f'''
@@ -225,7 +230,7 @@ def get_system_prompt(level, purpose):
 '''
 
     elif level == "C1" and purpose == "楽しく会話":
-        with open("script/scr-freight.txt", "r", encoding="utf-8") as f:
+        with open(BASE_DIR / "script" / "scr-freight.txt", "r", encoding="utf-8") as f:
             script = f.read()
 
         return f'''
@@ -238,7 +243,7 @@ def get_system_prompt(level, purpose):
 '''
 
     elif level == "C1" and purpose == "英語力の向上":
-        with open("script/scr-freight.txt", "r", encoding="utf-8") as f:
+        with open(BASE_DIR / "script" / "scr-freight.txt", "r", encoding="utf-8") as f:
             script = f.read()
 
         return f'''
@@ -250,7 +255,7 @@ def get_system_prompt(level, purpose):
 {script}
 '''
     elif level == "A2" and purpose == "楽しく会話":
-        with open("script/scr-beach.txt", "r", encoding="utf-8") as f:
+        with open(BASE_DIR / "script" / "scr-beach.txt", "r", encoding="utf-8") as f:
             script = f.read()
 
         return f'''
@@ -263,7 +268,7 @@ def get_system_prompt(level, purpose):
 '''
 
     elif level == "A2" and purpose == "英語力の向上":
-        with open("script/scr-beach.txt", "r", encoding="utf-8") as f:
+        with open(BASE_DIR / "script" / "scr-beach.txt", "r", encoding="utf-8") as f:
             script = f.read()
 
         return f'''
@@ -277,11 +282,17 @@ def get_system_prompt(level, purpose):
 
 # 説明テキストを読み込む関数
 def load_text(file_path):
+    # If the path is relative, make it relative to BASE_DIR
+    if not os.path.isabs(file_path):
+        file_path = BASE_DIR / file_path
     with open(file_path, "r", encoding="utf-8") as f:
         return f.read()
 
 # JSON を読み込む関数
 def load_json(file_path):
+    # If the path is relative, make it relative to BASE_DIR
+    if not os.path.isabs(file_path):
+        file_path = BASE_DIR / file_path
     with open(file_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
