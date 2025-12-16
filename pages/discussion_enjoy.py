@@ -32,8 +32,9 @@ if st.session_state.chat_start_time is None:
     st.session_state.chat_start_time = datetime.now()
 
 st.title("動画要約ディスカッション")
-st.text("このディスカッションの目的は英語で動画の要約文を作ることです。")
-st.caption(f"{st.session_state.level} - {st.session_state.purpose}")
+st.subheader(f"{st.session_state.purpose}モード / {st.session_state.level}レベル")
+st.markdown("このディスカッションの目的は英語で動画の要約文を作ることです。「楽しく会話」チャットボットはユーザーが楽しく気軽に会話できるようにサポートします。")
+
 
 st.warning("""
 **注意事項**
