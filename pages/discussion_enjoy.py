@@ -163,7 +163,7 @@ def go_survey():
         st.success(f"✅ {filename} をGitHubに保存しました！")
     else:
         st.error(f"❌ 送信失敗: {response.json()}")
-    st.switch_page("pages/survey.py")
+    st.switch_page("pages/survey_enjoy.py")
 
 # ボタンを配置
 col1, col2 = st.columns([1, 1])

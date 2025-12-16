@@ -48,4 +48,4 @@ with col1:
 with col2:
     # 次へボタン：クイズページに遷移
     if st.button("次へ", use_container_width=True, type="primary"):
-        st.switch_page("pages/discussion.py")
+        st.switch_page("pages/discussion_enjoy.py")
