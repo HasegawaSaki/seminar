@@ -1,0 +1,13 @@
+名前: 1217test_log
+保存日時: 2025-12-17 23:09:02
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: test [0分4秒]1
+GPT: What did you think of the TED Talk?
+User: test [0分3秒]2
+GPT: It seems like you're testing the conversation. Would you like to start discussing a TED Talk or have any specific video in mind to talk about?
+
+⏱ チャット滞在時間: 3分19秒
