@@ -1,0 +1,15 @@
+名前: 1217_test1
+保存日時: 2025-12-17 23:18:41
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: test [0分3秒]1
+GPT: What did you think of the TED Talk?
+User: She bought both [0分6秒]2
+GPT: Great! So was she talking about how buying things affects her life in different ways?
+User: Yes [0分12秒]3
+GPT: Interesting! Did she mention any specific benefits or downsides of buying those things?
+
+⏱ チャット滞在時間: 4分5秒
