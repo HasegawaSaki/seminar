@@ -17,8 +17,10 @@ if "input_counter2" not in st.session_state:
     st.session_state.input_counter2 = 0
 if "level" not in st.session_state:
     st.session_state.level = ""
-if "purpose" not in st.session_state:
-    st.session_state.purpose = "楽しく会話"
+# if "purpose" not in st.session_state:
+#     st.session_state.purpose = "楽しく会話"
+if st.session_state.purpose == "楽しく会話":
+    st.session_state.purpose = "英語力の向上"
 if "chat_duration2" not in st.session_state:
     st.session_state.chat_duration2 = None
 if "username" not in st.session_state:

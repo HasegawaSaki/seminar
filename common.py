@@ -66,8 +66,8 @@ def reset_chat():
         st.session_state.chat_start_time = None
         st.session_state.chat_timer_start = None
         st.session_state.chat_duration = None
-        st.session_state.tutorial_seen01 = None
-        st.session_state.tutorial_seen02 = None
+        # st.session_state.tutorial_seen01 = None
+        # st.session_state.tutorial_seen02 = None
         st.session_state.user_utter_index = 1
 
     # 2つ目のディスカッションをリセット
