@@ -1,0 +1,11 @@
+名前: 1217_test1
+保存日時: 2025-12-17 23:22:41
+
+レベル: A2
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: She bought both [0分5秒]1
+GPT: It seems like your response isn't directly related to the video we're discussing. The video is about Todd's favorite beach and why he loves it. Could you mention some points why Todd likes this beach?
+
+⏱ チャット滞在時間: 3分25秒
