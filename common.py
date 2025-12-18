@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent
 # -------- 共通の定数 --------
 COMMON_RULES = '''<Rules>
 - 動画の内容に関するディスカッションを行います。
-- "What did you think of the TED Talk?"という質問にユーザーが答えるところから会話が始まります。
+- "Please summarize the content of this video?"という質問にユーザーが答えるところから会話が始まります。
 - わかりやすい英語かつ2-3文で簡潔に返信してください
 '''
 
