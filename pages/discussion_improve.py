@@ -11,8 +11,13 @@ if "chat_start_time2" not in st.session_state:
     st.session_state.chat_start_time2 = None
 if "chat_timer_start2" not in st.session_state:
     st.session_state.chat_timer_start2 = None
-if "messages2" not in st.session_state:
-    st.session_state.messages2 = []
+
+# messages2を強制的にリセット（修正後のプロンプトを使用するため）
+# 実験後、この行を削除して元に戻してください
+st.session_state.messages2 = []
+
+# if "messages2" not in st.session_state:
+#     st.session_state.messages2 = []
 if "input_counter2" not in st.session_state:
     st.session_state.input_counter2 = 0
 if "level" not in st.session_state:
