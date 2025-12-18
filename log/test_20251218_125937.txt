@@ -1,0 +1,11 @@
+名前: test
+保存日時: 2025-12-18 12:59:37
+
+レベル: B1
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: test [2分35秒]1
+GPT: I think you might be testing the response. Could you please share your thoughts on the TED Talk, so we can discuss and summarize it together?
+
+⏱ チャット滞在時間: 2分40秒
