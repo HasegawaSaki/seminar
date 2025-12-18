@@ -1,0 +1,11 @@
+名前: test
+保存日時: 2025-12-18 21:10:35
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: No [380分34秒]1
+GPT: That's okay! We can keep it short and simple. What did you think of the TED Talk?
+
+⏱ チャット滞在時間: 380分39秒
