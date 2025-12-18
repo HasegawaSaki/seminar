@@ -1,0 +1,11 @@
+名前: test
+保存日時: 2025-12-18 22:13:42
+
+レベル: A2
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: test [0分10秒]1
+GPT: That's a test, but could you please summarize the content of the video?
+
+⏱ チャット滞在時間: 0分14秒
