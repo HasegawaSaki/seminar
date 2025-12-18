@@ -1,0 +1,11 @@
+名前: test
+保存日時: 2025-12-18 22:12:37
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: I can't. [0分8秒]1
+GPT: No worries! Let's work on it together. What do you think the main idea of the video is?
+
+⏱ チャット滞在時間: 0分11秒
