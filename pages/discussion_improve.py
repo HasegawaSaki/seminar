@@ -21,6 +21,8 @@ if "level" not in st.session_state:
 #     st.session_state.purpose = "楽しく会話"
 if st.session_state.purpose == "楽しく会話":
     st.session_state.purpose = "英語力の向上"
+elif st.session_state.purpose == "英語力の向上":
+    st.session_state.purpose = "楽しく会話"
 if "chat_duration2" not in st.session_state:
     st.session_state.chat_duration2 = None
 if "username" not in st.session_state:
@@ -63,14 +65,17 @@ if st.session_state.chat_start_time2 is None:
     st.session_state.chat_start_time2 = datetime.now()
 
 st.title("動画要約ディスカッション")
-st.subheader(f"{st.session_state.purpose}モード / {st.session_state.level}レベル")
-st.markdown("このディスカッションの目的は英語で動画の要約文を作ることです。「英語力の向上」チャットボットはユーザーの入力文を添削し、英語力を向上させるためのサポートします。")
+# st.subheader(f"{st.session_state.purpose}モード / {st.session_state.level}レベル")
+st.subheader(f"{st.session_state.level}レベル")
+# st.markdown("このディスカッションの目的は英語で動画の要約文を作ることです。「英語力の向上」チャットボットはユーザーの入力文を添削し、英語力を向上させるためのサポートします。")
+st.markdown("このディスカッションの目的は英語で動画の要約文を作ることです。")
 st.warning("""
 **注意事項**
-- わからない箇所を質問したり、意見を述べたりしながら、ビデオの理解を深めることを目的としています。
-- 英語で２回以上、好きなだけ会話文を送信してください。
-- 不快に感じたり疲れた場合は、いつでも終了してください。
-- 翻訳機能を使って内容を理解していただいても構いません。
+- わからない箇所を質問したり、意見を述べたりしながら、チャットボットと英語のディスカッションをしてください。
+- ユーザーが正しい要約文を入力すると「Excellent summary! You can finish the discussion.」と出力されることがありますが、それ以降も続けて構いません。
+- 不快に感じたり疲れた場合、十分に満足した場合など自分の判断で終了してください。
+- 出力に対して翻訳機能を使っても構いません。
+- 少なくとも２回以上、会話文を送信してください。
 """)
 
 with st.expander("チャット画面の見方"):
