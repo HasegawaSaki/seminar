@@ -4,13 +4,13 @@ from common import display_header
 # --------セッション状態の初期化 --------
 if "username" not in st.session_state:
     st.session_state.username = ""
-# if "purpose" not in st.session_state:
-#     st.session_state.purpose = "楽しく会話"
+if "purpose" not in st.session_state:
+    st.session_state.purpose = "楽しく会話"
 if "level" not in st.session_state:
     st.session_state.level = ""
 if "show_warning" not in st.session_state:
    st.session_state.show_warning = False
-st.session_state.purpose = "楽しく会話" #ここで固定
+# st.session_state.purpose = "楽しく会話" #ここで固定
 
 # -------- ページコンテンツ --------
 display_header()
@@ -19,12 +19,13 @@ st.subheader("ユーザーネーム")
 st.write("指定のユーザーネームをご入力ください。")
 st.session_state.username = st.text_input(" ", placeholder="例：A1014")
 
-# st.markdown("---")
+st.markdown("---")
 
-# st.subheader("学習タイプ")
-# st.write("学習したいディスカッションのタイプを選んでください。(指定がある場合は指定のタイプを選んでください。)")
-# st.caption("英語の動画を視聴後、チャットボットと英語でディスカッションをします。")
-# purpose = st.radio("", ["楽しく会話", "英語力の向上"])
+st.subheader("学習タイプ")
+st.write("ユーザーネームがAから始まる場合は「タイプA」を、Bから始まる場合は「タイプB」を選択してください")
+st.caption("英語の動画を視聴後、チャットボットと英語でディスカッションをします。")
+purpose = st.radio("", ["タイプA", "タイプB"])
+
 
 st.markdown("---")
 
@@ -71,5 +72,9 @@ with col2:
             else:
                 st.session_state.level = "C1"    
             # st.session_state.purpose = purpose
+            if purpose == "タイプA":
+                st.session_state.purpose = "楽しく会話"
+            else:
+                st.session_state.purpose = "英語力の向上"
             st.switch_page("pages/video.py")
 
