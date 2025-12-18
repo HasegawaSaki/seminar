@@ -23,6 +23,13 @@ if "chat_duration" not in st.session_state:
     st.session_state.chat_duration = None
 if "username" not in st.session_state:
     st.session_state.username = ""
+if "typeab" not in st.session_state:
+    st.session_state.typeab = "タイプA"
+
+if st.session_state.typeab == "タイプA":
+    st.session_state.purpose = "楽しく会話"
+else:
+    st.session_state.purpose = "英語力の向上"
 
 # -------- ページコンテンツ --------
 display_header()
@@ -32,8 +39,18 @@ if st.session_state.chat_start_time is None:
     st.session_state.chat_start_time = datetime.now()
 
 st.title("動画要約ディスカッション")
-# st.subheader(f"{st.session_state.purpose}モード / {st.session_state.level}レベル")
-st.subheader(f"{st.session_state.level}レベル")
+
+# ---必ず実験前に削除する---
+
+#↓st.session_state.purposeの中身確認用
+st.subheader(f"{st.session_state.purpose}モード / {st.session_state.level}レベル")
+
+#実験では↓を使う
+# st.subheader(f"{st.session_state.level}レベル")
+
+# -----------------------
+
+
 # st.markdown("このディスカッションの目的は英語で動画の要約文を作ることです。「楽しく会話」チャットボットはユーザーが楽しく気軽に会話できるようにサポートします。")
 st.markdown("このディスカッションの目的は英語で動画の要約文を作ることです。")
 

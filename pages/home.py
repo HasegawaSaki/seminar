@@ -6,6 +6,8 @@ if "username" not in st.session_state:
     st.session_state.username = ""
 if "purpose" not in st.session_state:
     st.session_state.purpose = "楽しく会話"
+if "typeab" not in st.session_state:
+    st.session_state.typeab = "タイプA"
 if "level" not in st.session_state:
     st.session_state.level = ""
 if "show_warning" not in st.session_state:
@@ -24,7 +26,8 @@ st.markdown("---")
 st.subheader("学習タイプ")
 st.write("ユーザーネームがAから始まる場合は「タイプA」を、Bから始まる場合は「タイプB」を選択してください")
 st.caption("英語の動画を視聴後、チャットボットと英語でディスカッションをします。")
-purpose = st.radio("", ["タイプA", "タイプB"])
+# purpose = st.radio("", ["タイプA", "タイプB"])
+typeab = st.radio("", ["タイプA", "タイプB"])
 
 
 st.markdown("---")
@@ -72,9 +75,11 @@ with col2:
             else:
                 st.session_state.level = "C1"    
             # st.session_state.purpose = purpose
-            if purpose == "タイプA":
+            if typeab == "タイプA":
                 st.session_state.purpose = "楽しく会話"
+                st.session_state.typeab = "タイプA"
             else:
                 st.session_state.purpose = "英語力の向上"
+                st.session_state.typeab = "タイプB"
             st.switch_page("pages/video.py")
 

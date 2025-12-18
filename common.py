@@ -81,6 +81,15 @@ def reset_chat():
 
 # --------プロンプト分岐--------
 def get_system_prompt(level, purpose):
+    
+    # ---必ず実験前に削除する---
+
+    st.write("DEBUG: get_system_prompt called")
+    st.write("DEBUG: level =", level)
+    st.write("DEBUG: purpose =", purpose)
+
+    # -----------------------
+
     if purpose == '楽しく会話':
         role_prompt = '''
         あなたは、同じ授業の同級生であり、ネイティブな英語話者です。

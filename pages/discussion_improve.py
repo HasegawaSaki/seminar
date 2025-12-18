@@ -17,16 +17,19 @@ if "input_counter2" not in st.session_state:
     st.session_state.input_counter2 = 0
 if "level" not in st.session_state:
     st.session_state.level = ""
-# if "purpose" not in st.session_state:
-#     st.session_state.purpose = "楽しく会話"
-if st.session_state.purpose == "楽しく会話":
-    st.session_state.purpose = "英語力の向上"
-elif st.session_state.purpose == "英語力の向上":
+if "purpose" not in st.session_state:
     st.session_state.purpose = "楽しく会話"
 if "chat_duration2" not in st.session_state:
     st.session_state.chat_duration2 = None
 if "username" not in st.session_state:
     st.session_state.username = ""
+if "typeab" not in st.session_state:
+    st.session_state.typeab = "タイプA"
+
+if st.session_state.typeab == "タイプA":
+    st.session_state.purpose = "英語力の向上"
+else:
+    st.session_state.purpose = "楽しく会話"
 
 # ローカル add_message2 関数
 def add_message2(role, content, extra=None):
@@ -65,8 +68,12 @@ if st.session_state.chat_start_time2 is None:
     st.session_state.chat_start_time2 = datetime.now()
 
 st.title("動画要約ディスカッション")
-# st.subheader(f"{st.session_state.purpose}モード / {st.session_state.level}レベル")
-st.subheader(f"{st.session_state.level}レベル")
+
+#↓st.session_state.purposeの中身確認用
+st.subheader(f"{st.session_state.purpose}モード / {st.session_state.level}レベル")
+#実験では↓を使う
+# st.subheader(f"{st.session_state.level}レベル")
+
 # st.markdown("このディスカッションの目的は英語で動画の要約文を作ることです。「英語力の向上」チャットボットはユーザーの入力文を添削し、英語力を向上させるためのサポートします。")
 st.markdown("このディスカッションの目的は英語で動画の要約文を作ることです。")
 st.warning("""
