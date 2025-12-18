@@ -114,7 +114,7 @@ st.markdown("""
 st.markdown("""
 <div class='feature-card'>
     <div><span class='feature-title'>③ AIとディスカッション</span></div>
-    <div class='feature-text'>動画の内容について英語で会話<br>楽しく会話するモードと英語力向上モードを選択可能</div>
+    <div class='feature-text'>動画の内容について英語で会話<br>タイプの異なる2つのディスカッションに取り組んでいただきます。</div>
 </div>
 """, unsafe_allow_html=True)
 
