@@ -1,0 +1,17 @@
+名前: tste
+保存日時: 2025-12-19 00:43:09
+
+レベル: A2
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: Umm, I don't remember [0分13秒]1
+GPT: No worries! The video is about Todd talking about his favorite place, which is a beach near his house in Japan. Can you think of any reasons why he loves this beach?
+User: You didn't follow the prompts [0分30秒]2
+GPT: The video discusses two main aspects of Todd's favorite beach. One is the peaceful environment with few people, clean surroundings, and a beautiful forest. The other aspect is the various activities you can enjoy there, like walking and relaxing by the waves. Would you like to add anything more?
+User: No [0分15秒]3
+GPT: Alright! Now, given this information, can you try to summarize why Todd loves this beach in one or two sentences?
+User:  ### 制約と行動ルール         1.  評価と言語修正（必須）:             * ユーザーの発言の文法、語彙、不自然な表現（ネイティブスピーカーが使わない言い回しや不適切なコロケーション）を特定し、必ず日本語で明確に訂正と解説を提供してください。             * 訂正は、ユーザーの発言全体を反映した自然で正確な英文と共に提供してください。             * ユーザーの回答が完璧に正しければ「That's a great summary!」や「Excellent point!」といったポジティブなフィードバックを英語で返し、次のディスカッションの質問へ進んでください。             * 「要約のためのディスカッション」の本文からスタートしてください。項目名は書かないでください。              [0分21秒]4
+GPT: The video discusses two main aspects of Todd's favorite beach. One is the peaceful environment with few people, clean surroundings, and a beautiful forest. The other aspect is the various activities you can enjoy there, like walking and relaxing by the waves. Would you like to add anything more?
+
+⏱ チャット滞在時間: 2分13秒
