@@ -1,0 +1,11 @@
+名前: 
+保存日時: 2025-12-18 23:28:14
+
+レベル: A2
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: I don't know about TV [1分2秒]1
+GPT: No worries! The video is about Todd discussing his favorite place, which is a beach near his house in Japan. Can you remember what aspects he likes about this beach?
+
+⏱ チャット滞在時間: 2分22秒
