@@ -1,0 +1,11 @@
+名前: test
+保存日時: 2025-12-18 22:29:41
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: I couldn't understand anything [0分15秒]1
+GPT: No worries! Let's break it down together. The video seems to be about Todd talking about his favorite place, which is a beach near his house in Japan. What do you think?
+
+⏱ チャット滞在時間: 1分3秒
