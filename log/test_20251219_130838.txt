@@ -1,0 +1,19 @@
+名前: test
+保存日時: 2025-12-19 13:08:38
+
+レベル: A2
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: Beach is beatiful [0分4秒]1
+GPT: I agree! It seems the video talks about a beach near Todd's home in Japan. How the beach is usually quiet, clean, and has a beautiful forest nearby. What else caught your attention?
+User: Beach is beatiful [0分50秒]2
+GPT: The beach appears to be beautiful and peaceful. It has lots of space, light, and is a great place to walk or relax. Can you mention why Todd loves this beach so much?
+
+**文章添削**  
+Beach is beatiful → The beach is beautiful.  
+- **❌ Beach is beatiful**  
+  **✅ The beach is beautiful.**  
+  'Beach'を指すとき、特定の場所を述べる場合は、必ず冠詞 'the' が必要です。また、'beatiful' のスペルは正しいものに訂正しましょう：'beautiful'。
+
+⏱ チャット滞在時間: 1分6秒
