@@ -1,0 +1,11 @@
+名前: test
+保存日時: 2025-12-19 11:02:19
+
+レベル: B1
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: I think the Spanish is difficult [0分19秒]1
+GPT: That's understandable! In the video, the speaker talks about a misunderstanding with Spanish language leading to an embarrassing moment. Can you recall how this misunderstanding occurred?
+
+⏱ チャット滞在時間: 0分26秒
