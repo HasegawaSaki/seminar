@@ -1,0 +1,24 @@
+名前: test
+保存日時: 2025-12-19 12:36:45
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: No. [2分6秒]1
+GPT: My take:
+- In my opinion, the video shows Todd at his favorite beach in Beppu, Japan, explaining why he loves it.
+
+Key points:
+- He says it’s quiet, clean, near trees and a forest, sometimes you hear planes, and it’s peaceful with simple activities like walking and listening to waves.
+
+Your turn:
+- What do you think are the top two reasons he loves this beach, and can you try a 1–2 sentence summary?
+User: I think it is difficult. [0分42秒]2
+GPT: My take: No worries—it can be hard, but we’ll keep it simple.
+
+Key points: In my opinion, he says the beach is quiet and clean, near trees and a forest, sometimes you hear planes, and it’s a peaceful spot to walk and relax.
+
+Your turn: Can you write a 1–2 sentence summary in your own words using those ideas?
+
+⏱ チャット滞在時間: 4分30秒
