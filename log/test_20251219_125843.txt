@@ -1,0 +1,11 @@
+名前: test
+保存日時: 2025-12-19 12:58:43
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: Beach is beatiful [0分2秒]1
+GPT: Absolutely! The speaker talks about why they love this beach near their home in Beppu. What reasons did they give for its beauty?
+
+⏱ チャット滞在時間: 0分6秒
