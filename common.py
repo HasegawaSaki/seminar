@@ -14,7 +14,6 @@ BASE_DIR = Path(__file__).resolve().parent
 COMMON_RULES = '''<Rules>
 - 動画の内容に関するディスカッションを行います。
 - "Please summarize the content of this video?"という質問にユーザーが答えるところから会話が始まります。
-- わかりやすい英語かつ2-3文で簡潔に返信してください
 '''
 
 # --------GitHub関数--------
@@ -167,7 +166,6 @@ def get_system_prompt(level, purpose):
                 gpt: "Almost there! The second benefit is that dreaming helps us recover from stress! Now, can you summarize both merits of dreaming mentioned in the video?"
                 user: "Yes, the first one is enhancing creativity, and the second one is recovering from stress."
                 gpt: "Excellent summary! You can finish the discussion now."
-
 
             2.2「ユーザーが入力した文章の添削」
             - ユーザーの直近の発言に対して、「最終的な訂正文」と「文法的な指摘」の2つを提供してください。
