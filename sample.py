@@ -605,7 +605,7 @@ def chat_page():
 
         with st.spinner("ChatGPTが考え中..."):
             response = client.chat.completions.create(
-                model="gpt-4o",
+                model="gpt-4o-mini",
                 messages=st.session_state.messages
             )
             reply = response.choices[0].message.content

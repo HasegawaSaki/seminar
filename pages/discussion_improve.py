@@ -144,7 +144,7 @@ if send_button and prompt:
 
     with st.spinner("ChatGPTが考え中..."):
         response = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-4o-mini",
             messages=st.session_state.messages2
         )
         reply = response.choices[0].message.content
