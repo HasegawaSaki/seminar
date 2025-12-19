@@ -1,0 +1,23 @@
+名前: test
+保存日時: 2025-12-19 12:55:17
+
+レベル: A2
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: Beach is beatiful [0分16秒]1
+User: Beach is beatiful2
+GPT: The main point is correct. The video discusses why Todd loves a specific beach near his house in Japan. Can you elaborate on why he finds it beautiful or enjoyable? 
+
+**文章添削**  
+Beach is beatiful → The beach is beautiful.
+
+- **❌ beatiful**  
+  **✅ beautiful**   
+  "Beatiful" is a misspelling. The correct spelling is "beautiful," meaning pleasing to the senses or mind.
+
+- **❌ Beach is beatiful**  
+  **✅ The beach is beautiful**   
+  In this context, you should use "the beach" to specify which beach you're talking about.
+
+⏱ チャット滞在時間: 1分43秒

@@ -1,0 +1,11 @@
+名前: test
+保存日時: 2025-12-19 13:00:22
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: Beach is beatiful [0分2秒]1
+GPT: Yeah, the video is definitely about a beautiful beach. It seems like Todd really loves it because it's quiet and peaceful, right?
+
+⏱ チャット滞在時間: 0分6秒
