@@ -12,7 +12,7 @@ if "messages2" not in st.session_state:
 display_header()
 st.title("アンケート（2回目）")
 
-components.iframe("https://docs.google.com/forms/d/e/1FAIpQLSe3xUPDVXSiCCPA9DlvuFUxAJ4CasXkhMjTq7PxKRLZTjDP3Q/viewform?usp=dialog", height=4200)
+components.iframe("https://docs.google.com/forms/d/e/1FAIpQLSe3xUPDVXSiCCPA9DlvuFUxAJ4CasXkhMjTq7PxKRLZTjDP3Q/viewform?usp=dialog", height=5500)
 # if st.session_state.level == "A2":
 #     components.iframe("https://docs.google.com/forms/d/e/1FAIpQLScpPh7R37lcF8rnAWSX3zPDIictXRkf_RBcQSr8Pz0s-TUJrQ/viewform?embedded=true", height=4500)
 # elif st.session_state.level == "B1":

@@ -26,7 +26,7 @@ st.title(f"{st.session_state.level} レベル - クイズ")
 form_urls = {
 "A2": "https://docs.google.com/forms/d/e/1FAIpQLSd4X5HctpCM9yNdjARTXqGRVwEcQMHB2UY_GON6teDTjb_myg/viewform?embedded=true",
 "B1": "https://docs.google.com/forms/d/e/1FAIpQLSckN9U6QuCFxdHZi4aVgxnU70JrUdwg5nUWyMLx2SuN-qZDRg/viewform?usp=dialog",
-"B2": "https://docs.google.com/forms/d/e/1FAIpQLSeQ4nnfuB731SUGSUT_JjK80_3IyZuUmFuXCZCS5KJNXS4Qwg/viewform?embedded=true",
+"B2": "https://docs.google.com/forms/d/e/1FAIpQLSfrnWku1ov1_scEL73baQkct5bZhRBeKrX-8zfT0Rx-GYckFw/viewform?usp=header",
 "C1": "https://docs.google.com/forms/d/e/1FAIpQLScQkodloIAKuZ37kWzadb6-FTzP1YleRskhrodAoS1BQROTIg/viewform?embedded=true"
 }
 
