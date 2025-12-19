@@ -1,0 +1,11 @@
+名前: test
+保存日時: 2025-12-19 13:47:55
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: beach is so god [0分6秒]1
+GPT: Yeah, the speaker really loves the beach! In the video, it seems like his favorite beach is quiet, clean, and surrounded by beautiful nature like trees and a forest, right?
+
+⏱ チャット滞在時間: 0分12秒
