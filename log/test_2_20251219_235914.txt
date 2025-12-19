@@ -1,0 +1,17 @@
+名前: test
+保存日時: 2025-12-19 23:59:14
+
+レベル: B1
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: Beach is beatiful [0分2秒]1
+GPT: The video definitely mentions that the beach is beautiful, but Todd also explains why he loves this place. Can you remember some of the reasons he enjoys this beach so much? For example, does he mention anything about the people or nature there?
+
+**文章添削**  
+Beach is beatiful → The beach is beautiful.  
+-  **❌ Beach is beatiful**  
+   **✅ The beach is beautiful.**  
+   “Beach”の前には通常冠詞 “the” が必要です。また、“beatiful” のスペルが間違っているので “beautiful” に正しましょう。
+
+⏱ チャット滞在時間: 26分1秒
