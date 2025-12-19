@@ -122,7 +122,7 @@ if send_button and prompt:
 
     with st.spinner("ChatGPTが考え中..."):
         response = client.chat.completions.create(
-            model="gpt-5.2",
+            model="gpt-5-chat-latest",
             messages=st.session_state.messages
         )
         reply = response.choices[0].message.content
