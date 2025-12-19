@@ -1,0 +1,20 @@
+名前: test
+保存日時: 2025-12-19 12:58:12
+
+レベル: A2
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: Beach is beatiful [0分6秒]1
+GPT: I agree! The speaker really enjoys the beach because it's quiet and peaceful, right?
+User: Beach is beatiful [0分29秒]2
+GPT: The speaker mentioned that the beach is really clean and provides a peaceful atmosphere. Would you like to elaborate more on what makes the beach beautiful according to the video? 
+
+**文章添削**  
+Beach is beatiful. → The beach is beautiful.  
+- **❌ beatiful**  
+  **✅ beautiful**  
+  'Beatiful' はスペルミスで、正しくは 'beautiful' です。
+
+
+⏱ チャット滞在時間: 0分49秒
