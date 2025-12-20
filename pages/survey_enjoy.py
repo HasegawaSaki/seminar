@@ -13,13 +13,13 @@ display_header()
 st.title("アンケート（1回目）")
 
 if st.session_state.level == "A2":
-    components.iframe("https://docs.google.com/forms/d/e/1FAIpQLScpPh7R37lcF8rnAWSX3zPDIictXRkf_RBcQSr8Pz0s-TUJrQ/viewform?embedded=true", height=5500)
+    components.iframe("https://docs.google.com/forms/d/e/1FAIpQLScpPh7R37lcF8rnAWSX3zPDIictXRkf_RBcQSr8Pz0s-TUJrQ/viewform?embedded=true", height=2300)
 elif st.session_state.level == "B1":
-    components.iframe("https://docs.google.com/forms/d/e/1FAIpQLSeO8CZ31rY0mNmJFx5eJ0ritfvkXZE2bZVl9YJZIg9Ddye3pg/viewform?usp=dialog", height=5500)
+    components.iframe("https://docs.google.com/forms/d/e/1FAIpQLSeO8CZ31rY0mNmJFx5eJ0ritfvkXZE2bZVl9YJZIg9Ddye3pg/viewform?usp=dialog", height=2300)
 elif st.session_state.level == "B2":
-    components.iframe("https://docs.google.com/forms/d/e/1FAIpQLSeiNkAVdv5YOBg1QIAo6ZFZmHoMn41A93PWQuFYALy9vFhBcw/viewform?usp=dialog", height=5500)
+    components.iframe("https://docs.google.com/forms/d/e/1FAIpQLSeiNkAVdv5YOBg1QIAo6ZFZmHoMn41A93PWQuFYALy9vFhBcw/viewform?usp=dialog", height=2300)
 else:
-    components.iframe("https://docs.google.com/forms/d/e/1FAIpQLSfrwEok1A49dAboYeYTpbhq4XZlX7mRzdVu8W2L2BRKSttxmA/viewform?embedded=true", height=5500)
+    components.iframe("https://docs.google.com/forms/d/e/1FAIpQLSfrwEok1A49dAboYeYTpbhq4XZlX7mRzdVu8W2L2BRKSttxmA/viewform?embedded=true", height=2300)
 
 if st.session_state.messages:
     log_text = ""
