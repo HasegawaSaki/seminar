@@ -1,0 +1,11 @@
+名前: z
+保存日時: 2025-12-21 14:45:28
+
+レベル: C1
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: I don't know [0分46秒]1
+GPT: No worries! 😊 I think the video talks about how the freight and supply chain industry is very big but also inefficient, especially because trucks often move only half full. In my opinion, the main idea is about using technology to make trucks more efficient by sharing loads, which helps reduce costs and greenhouse gases. What do you think?
+
+⏱ チャット滞在時間: 0分59秒
