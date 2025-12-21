@@ -1,0 +1,9 @@
+名前: test
+保存日時: 2025-12-21 22:58:54
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+
+⏱ チャット滞在時間: 0分6秒
