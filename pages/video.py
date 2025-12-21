@@ -56,10 +56,23 @@ st.title(f"{st.session_state.level} レベル - 解説")
 
 if st.session_state.level == "A2":
     # Step 1: 全文翻訳
-    st.text("全文翻訳と解説")
-    with st.expander("本文と翻訳を表示"):
-        explanation_text = load_text("explanation-text/exp_beach.txt")
-        st.write(explanation_text)
+    st.text("● 全文翻訳と解説")
+    # with st.expander("本文と翻訳を表示"):
+    explanation_text = load_text("explanation-text/exp_beach.txt")
+    # st.write(explanation_text)
+
+    st.markdown(
+    f"""
+    <div style="
+        border:1px solid #999;
+        padding:15px;
+        border-radius:5px;
+    ">
+    {explanation_text}
+    </div>
+    """,
+    unsafe_allow_html=True
+    )
 
     # Step 2: 重要単語
     st.text("● 重要単語")
@@ -73,10 +86,22 @@ if st.session_state.level == "A2":
 
 elif st.session_state.level == "B1":
     # Step 1: 全文翻訳
-    st.text("全文翻訳と解説")
-    with st.expander("本文と翻訳を表示"):
-        explanation_text = load_text("explanation-text/exp_embarrassing.txt")
-        st.write(explanation_text)
+    st.text("● 全文翻訳と解説")
+    # with st.expander("本文と翻訳を表示"):
+    explanation_text = load_text("explanation-text/exp_embarrassing.txt")
+        # st.write(explanation_text)
+    st.markdown(
+    f"""
+    <div style="
+        border:1px solid #999;
+        padding:15px;
+        border-radius:5px;
+    ">
+    {explanation_text}
+    </div>
+    """,
+    unsafe_allow_html=True
+    )
 
     # Step 2: 重要単語
     st.text("● 重要単語")
@@ -90,10 +115,22 @@ elif st.session_state.level == "B1":
 
 elif st.session_state.level == "B2":
     # Step 1: 全文翻訳
-    st.text("全文翻訳と解説")
-    with st.expander("本文と翻訳を表示"):
-        explanation_text = load_text("explanation-text/exp_dream.txt")
-        st.write(explanation_text)
+    st.text("● 全文翻訳と解説")
+    # with st.expander("本文と翻訳を表示"):
+    explanation_text = load_text("explanation-text/exp_dream.txt")
+        # st.write(explanation_text)
+    st.markdown(
+    f"""
+    <div style="
+        border:1px solid #999;
+        padding:15px;
+        border-radius:5px;
+    ">
+    {explanation_text}
+    </div>
+    """,
+    unsafe_allow_html=True
+    )
 
     # Step 2: 重要単語
     st.text("● 重要単語")
@@ -108,10 +145,21 @@ elif st.session_state.level == "B2":
 else:
     # Step 1: 全文翻訳
     st.text("● 全文翻訳と解説")
-    with st.expander("本文と翻訳を表示"):
-        explanation_text = load_text("explanation-text/exp_freight.txt")
-        st.write(explanation_text)
-
+    # with st.expander("本文と翻訳を表示"):
+    explanation_text = load_text("explanation-text/exp_freight.txt")
+        # st.write(explanation_text)
+    st.markdown(
+    f"""
+    <div style="
+        border:1px solid #999;
+        padding:15px;
+        border-radius:5px;
+    ">
+    {explanation_text}
+    </div>
+    """,
+    unsafe_allow_html=True
+    )
     # Step 2: 重要単語
     st.text("● 重要単語")
     vocab_data = load_json("explanation-text/vocab_freight.json")
