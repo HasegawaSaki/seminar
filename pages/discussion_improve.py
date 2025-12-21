@@ -70,9 +70,9 @@ if st.session_state.chat_start_time2 is None:
 st.title("動画要約ディスカッション")
 
 #↓st.session_state.purposeの中身確認用
-st.subheader(f"{st.session_state.purpose}モード / {st.session_state.level}レベル")
+# st.subheader(f"{st.session_state.purpose}モード / {st.session_state.level}レベル")
 #実験では↓を使う
-# st.subheader(f"{st.session_state.level}レベル")
+st.subheader(f"2回目のモード/{st.session_state.level}レベル")
 
 # st.markdown("このディスカッションの目的は英語で動画の要約文を作ることです。「英語力の向上」チャットボットはユーザーの入力文を添削し、英語力を向上させるためのサポートします。")
 st.markdown("このディスカッションの目的は英語で動画の要約文を作ることです。")

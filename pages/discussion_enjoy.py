@@ -43,10 +43,10 @@ st.title("動画要約ディスカッション")
 # ---必ず実験前に削除する---
 
 #↓st.session_state.purposeの中身確認用
-st.subheader(f"{st.session_state.purpose}モード / {st.session_state.level}レベル")
+# st.subheader(f"{st.session_state.purpose}モード / {st.session_state.level}レベル")
 
 #実験では↓を使う
-# st.subheader(f"{st.session_state.level}レベル")
+st.subheader(f"1回目のモード/{st.session_state.level}レベル")
 
 # -----------------------
 
