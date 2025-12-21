@@ -1,0 +1,23 @@
+名前: test
+保存日時: 2025-12-21 14:25:25
+
+レベル: B1
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: the speaker misunderstood between embraced [0分7秒]1
+GPT: You're close, but it seems the speaker misunderstood between "embarrassed" and "embarazada" in Spanish. Can you explain what happened when she used the wrong word, and how people reacted?
+
+> **添削アドバイス**
+>
+> 添削後の文 **The speaker misunderstood the difference between “embarrassed” and another word.**
+>
+> - **❌ embraced**
+>   **✅ embarrassed**
+>   "Embraced"は「抱きしめる」という意味ですが、動画の主旨は恥ずかしい思いをしたというもので、「embarrassed」が正しい単語です。
+> 
+> - **❌ misunderstood between embraced**
+>   **✅ misunderstood the difference between “embarrassed” and ~**
+>   "misunderstood between" は不自然なので、「the difference between」を使いましょう。
+
+⏱ チャット滞在時間: 5分5秒
