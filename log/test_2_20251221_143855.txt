@@ -1,0 +1,11 @@
+名前: test
+保存日時: 2025-12-21 14:38:55
+
+レベル: B2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: the dreaming makes me feel happy [0分7秒]1
+GPT: Yeah, I get what you mean! 😊 But in the video, didn't they mention that dreaming not only makes us feel happy but also helps us solve problems and recover emotionally? What do you think about that?
+
+⏱ チャット滞在時間: 0分12秒
