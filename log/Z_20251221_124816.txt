@@ -1,0 +1,13 @@
+名前: Z
+保存日時: 2025-12-21 12:48:16
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: the beach is great  [0分9秒]1
+GPT: Yeah, Todd really likes the beach! In my opinion, he said his favorite beach is quiet, clean, and peaceful. Do you remember any reasons why he loves spending time there?
+User: I don't remember [0分20秒]2
+GPT: No worries! I remember he mentioned he likes that it’s not crowded, there are lots of trees and a forest, and it's very peaceful. How about we put that together into a summary? What do you think the main point is?
+
+⏱ チャット滞在時間: 0分57秒
