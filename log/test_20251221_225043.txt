@@ -1,0 +1,11 @@
+名前: test
+保存日時: 2025-12-21 22:50:43
+
+レベル: B1
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: She mistakenly used the word pregnant for embarrassed. [0分2秒]1
+GPT: Yeah, exactly! She thought "embarazada" meant "embarrassed" in Spanish, but it actually means "pregnant." 😂 Because of this mistake, everyone thought she was announcing her pregnancy instead of saying she was embarrassed. Do you want to add anything else?
+
+⏱ チャット滞在時間: 0分6秒
