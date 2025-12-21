@@ -1,0 +1,33 @@
+名前: z
+保存日時: 2025-12-21 14:48:05
+
+レベル: C1
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: I don't know [0分10秒]1
+GPT: No problem! The video discusses problems and new solutions in freight and supply chains. Can you remember what specific issue with truckloads was highlighted in the video?
+User: this is about the freight and supply chains [0分18秒]2
+GPT: That's correct! The video focuses on freight and supply chains. Do you remember what inefficiency the video mentions about the way trucks are used?
+
+> **添削アドバイス**
+
+> 添削後の文  
+> **This is about freight and supply chains.**
+
+> - **❌ this is about the freight and supply chains**  
+> **✅ This is about freight and supply chains.**  
+> 「the」は特定のものを指す場合に使われますが、ここでは一般的な「freight and supply chains」について話しているため「the」は不要です。また、英文は大文字から始めましょう。
+User: I don't remember [0分42秒]3
+GPT: That's okay! The video mentions that many large trucks are running only half full, which is wasteful. Why is having trucks only half full a problem?
+
+> **添削アドバイス**
+
+> 添削後の文  
+> **I don't remember.**
+
+> - **❌ I don't remember**  
+> **✅ I don't remember.**  
+> 文の最後にピリオドをつけましょう。
+
+⏱ チャット滞在時間: 1分29秒
