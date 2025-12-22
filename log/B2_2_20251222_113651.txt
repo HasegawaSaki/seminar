@@ -1,0 +1,52 @@
+名前: B2
+保存日時: 2025-12-22 11:36:51
+
+レベル: B1
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: She was originally confident in her Spanish, but when she tried to say she was embarrassed, she accidentally said she was pregnant, and everyone started congratulating her, which made her even more embarrassed. [0分29秒]1
+GPT: That's a great summary of the main story! Can you explain why she made the mistake with the word “embarazado,” and what she learned was the correct Spanish word for “embarrassed”?
+
+> **添削アドバイス**
+>
+> 添削後の文  
+> **She was originally confident in her Spanish, but when she tried to say she was embarrassed, she accidentally said she was pregnant, and everyone started congratulating her, which made her even more embarrassed.**
+>
+> - **❌ She was originally confident in her Spanish**
+>   **✅ She was originally confident about her Spanish**
+>   「confident in」も使えますが、「confident about」もより自然です。ただ大きな間違いではありません。
+>
+> - **❌ when she tried to say she was embarrassed, she accidentally said she was pregnant**
+>   文法的には正しいですが、「when she tried to say she was embarrassed in Spanish」という風に「スペイン語で」という情報を入れるとより明確になります。
+>
+> - **❌ which made her even more embarrassed**
+>   文法的には問題ありませんが、この「さらに」は何度も使われているので、他の表現（for her, it was even more embarrassingなど）も考えられます。
+>
+> - 文法・語彙の誤りはほとんどありませんでした！全体的にとてもよくまとまっています。
+User: I don't know why she made the mistake with the word “embarazado,” and what she learned was the correct Spanish word for “embarrassed” [1分30秒]2
+User: I don't know why she made the mistake with the word “embarazado,” and what she learned was the correct Spanish word for “embarrassed”3
+GPT: No problem! She made the mistake because “embarazado” sounds similar to “embarrassed” but actually means “pregnant” in Spanish—a false friend. She later learned that the correct Spanish word for “embarrassed” is “avergonzado.”
+
+> **添削アドバイス**
+>
+> 添削後の文  
+> **I don't know why she made the mistake with the word “embarazado,” and what she learned was the correct Spanish word for “embarrassed.”**
+>
+> - **❌ I don't know why she made the mistake with the word “embarazado,” and what she learned was the correct Spanish word for “embarrassed”**
+>   **✅ I don't know why she made the mistake with the word "embarazado" or what the correct Spanish word for "embarrassed" is.**
+>   「and what she learned was ...」の部分が不自然です。ここでは、or what the correct ... is と並列で言うほうがスムーズです。
+>
+> - **❌ 最後の文にピリオドを追加**
+>   文章の最後にピリオド(.)を忘れずにつけましょう。
+User: I understand that. [0分42秒]4
+GPT: Great! Now that you understand, can you summarize why she felt embarrassed at the mall in one or two sentences in English?
+
+> **添削アドバイス**
+>
+> 添削後の文  
+> **I understand that.**
+>
+> - 文法・語彙の誤りはありませんでした！素晴らしいです。
+
+⏱ チャット滞在時間: 3分3秒
