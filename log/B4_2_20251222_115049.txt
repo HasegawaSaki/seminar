@@ -1,0 +1,15 @@
+名前: B4
+保存日時: 2025-12-22 11:50:49
+
+レベル: B1
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: When she moved to Mexico, she felt confident because she was mature. When she was at shopping mall, she saw a man, who told her that he wanted her to invited to play on the stage. She tried to say embarrassed in Spanish but she mistakenly said pregnant, which led to confusion. [2分48秒]1
+GPT: Nice summary! 😄 I think the main point is that she confused the Spanish word for "embarrassed" with "pregnant," so everyone thought she was saying she was pregnant, not embarrassed. What do you think—is there anything you’d add?
+User: Yes, that need to be added. [0分54秒]2
+GPT: Great! How about this: She wanted to say she was embarrassed in Spanish, but accidentally said she was pregnant, which made everyone think she was announcing a pregnancy instead of her feelings. 😆 Do you want to try putting the whole summary together in your own words?
+User: Yes off course, thank you [0分26秒]3
+GPT: Go ahead and write your summary in English! I’ll check it for you 😊
+
+⏱ チャット滞在時間: 4分24秒
