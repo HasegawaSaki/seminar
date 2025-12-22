@@ -1,0 +1,15 @@
+名前: B5
+保存日時: 2025-12-22 11:38:59
+
+レベル: B2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: Dreams can heal peoples' pain. [1分55秒]1
+GPT: Yeah, I agree! 😄 The video said that dreaming, especially during REM sleep, helps us deal with emotional pain and acts like overnight therapy. Did you catch the part where dreaming also boosts creativity?
+User: Yes. [0分21秒]2
+GPT: Nice! 😊 So, to sum up, the video says dreaming helps us solve problems more creatively and heals emotional pain like a kind of therapy. Want to try putting this summary in your own words?
+User: Yes. [0分24秒]3
+GPT: Great! Go ahead and write your summary in English. 😊
+
+⏱ チャット滞在時間: 2分49秒
