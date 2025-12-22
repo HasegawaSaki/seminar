@@ -1,0 +1,30 @@
+名前: A8
+保存日時: 2025-12-22 10:56:18
+
+レベル: A2
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: sorry, I can't summarize [1分37秒]1
+GPT: No problem! In the video, Todd talks about his favorite place, which is a quiet and clean beach near his house in Japan. Can you try to mention one reason why he likes the beach?
+User: The beach is quiet and clean. [0分22秒]2
+GPT: That's correct! The beach is quiet and clean, which is one of the reasons Todd enjoys it. Can you add another detail—what can people do at the beach, according to Todd?
+User: walking [0分15秒]3
+GPT: Great! Walking is one activity Todd mentions. Can you add one more activity that people can do at the beach, based on what he said?
+User: activety [0分10秒]4
+GPT: It looks like you wrote "activety"—do you mean "activity"? Could you try to give an example of another activity Todd mentioned, like relaxing on the beach or listening to the waves? 
+
+Can you try to make a full sentence like, "People can walk or listen to the waves"?
+
+> **添削アドバイス**
+>
+> 添削後の文  
+> **activity**
+>
+> - **❌ activety**  
+>   **✅ activity**  
+>   スペルミスです。"activity"が正しいスペリングです。
+>
+> 文章として成立していないため（単語だけを送信しています）、例文のようにフルセンテンスを目指しましょう。
+
+⏱ チャット滞在時間: 2分43秒
