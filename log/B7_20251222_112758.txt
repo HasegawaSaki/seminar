@@ -1,0 +1,15 @@
+名前: B7
+保存日時: 2025-12-22 11:27:58
+
+レベル: B1
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: She explain about her own experience. [0分54秒]1
+GPT: That's correct! Can you describe what experience she talks about in the video?
+User: The story in the Mexico, and she missed the word at that time.That experience made her embaressing. [1分31秒]2
+GPT: You're on the right track! Can you explain which word she mixed up, and what happened because of that mistake?
+User: She wanted to say embaresing however, the meaning of the word she said was pregnant. [1分35秒]3
+GPT: Exactly! Can you now summarize the main situation in two or three sentences? Try to include where she was, what she tried to say, and what misunderstanding happened.
+
+⏱ チャット滞在時間: 4分8秒
