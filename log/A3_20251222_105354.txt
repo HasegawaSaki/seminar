@@ -1,0 +1,17 @@
+名前: A3
+保存日時: 2025-12-22 10:53:54
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: Todd talks about his favorite beach in Beppu. He has some reasons. He can relax in there. He likes this place very much. [2分34秒]1
+GPT: Yeah, I agree! He said he likes the beach because it’s peaceful, clean, and not crowded. 🌊 He also enjoys walking by the trees and listening to the waves. Do you think we should add anything else?
+User: He has other reasons I think. This place is quiet. [1分10秒]2
+GPT: Definitely! He mentioned the beach is usually quiet and there isn’t much noise, except sometimes from airplanes. 😄 So, should our summary say it’s peaceful, clean, and quiet, and that Todd really loves spending time there?
+User: There aren't many people so, it is quiet. In addition, he can see many planes. [1分15秒]3
+GPT: Yeah, good point! Because there aren't many people, it's quiet, and he sometimes sees planes landing nearby. 😊 Should we try putting all that together into one summary sentence?
+User: That's all [0分21秒]4
+GPT: Great! Could you summarize the video in your own words in one or two English sentences? 😊
+
+⏱ チャット滞在時間: 5分33秒
