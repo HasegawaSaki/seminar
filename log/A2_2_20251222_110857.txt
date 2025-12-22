@@ -1,0 +1,32 @@
+名前: A2
+保存日時: 2025-12-22 11:08:57
+
+レベル: B1
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: The woman's story? [0分23秒]1
+GPT: That's right! The video is about a woman's story. Can you summarize what embarrassing situation she experienced and why it happened?
+User: The fact she is not pregnant. [1分19秒]2
+GPT: That's a part of it! Can you explain why people thought she was pregnant, and what mistake she made when speaking Spanish? Try to write your answer in 2-3 sentences.
+User: She believed she can use Spanish well.  But she remember different meaning.  So it made mistake. [1分28秒]3
+GPT: You're on the right track! Can you add what word she got wrong, and what happened as a result of her mistake? Try to include these details in your summary.
+
+> **添削アドバイス**
+>
+> 添削後の文  
+> **She believed she could use Spanish well, but she remembered the meaning incorrectly, so she made a mistake.**
+>
+> - **❌ She believed she can use Spanish well.**  
+> **✅ She believed she could use Spanish well.**  
+> 「believed」の後は時制を一致させるため「could」が必要です。
+>
+> - **❌ But she remember different meaning.**  
+> **✅ but she remembered the meaning incorrectly.**  
+> 「remember」の時制が過去形にする必要があります。また、「different meaning」よりも「the meaning incorrectly」の方が自然です。
+>
+> - **❌ So it made mistake.**  
+> **✅ so she made a mistake.**  
+> 「It made mistake」は不自然なので、主語を「she」にして「she made a mistake.」が正しいです。
+
+⏱ チャット滞在時間: 3分39秒
