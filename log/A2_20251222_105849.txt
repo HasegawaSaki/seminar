@@ -1,0 +1,15 @@
+名前: A2
+保存日時: 2025-12-22 10:58:49
+
+レベル: B1
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: The girl made another meaning of a word. [1分36秒]1
+GPT: Yeah, she misunderstood the meaning of the Spanish word "embarazada," thinking it meant "embarrassed" when it actually means "pregnant." 😂 Do you remember what happened as a result?
+User: She wanted to tell embarrassed meaning.  But informed that pregnant meaning. [2分15秒]2
+GPT: Exactly! Because of this mistake, everyone thought she was saying she was pregnant, when she just wanted to say she felt embarrassed. 😅 Should we put that in our summary?
+User: Yes, I think I should put in our summary. [0分59秒]3
+GPT: Alright! So maybe our summary could be: The speaker shared an embarrassing story where she confused “embarrassed” with “pregnant” in Spanish, leading people to think she was pregnant. What do you think? Do you want to try saying it in your own words?
+
+⏱ チャット滞在時間: 6分3秒
