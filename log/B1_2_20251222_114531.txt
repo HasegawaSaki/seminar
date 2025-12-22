@@ -1,0 +1,21 @@
+名前: B1
+保存日時: 2025-12-22 11:45:31
+
+レベル: B1
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: the speaker made mistake of meaning that is embarrasses, and then the man thought she pregin  [1分24秒]1
+User: the speaker made mistake of meaning that is embarrasses and then the man thought she pregin 2
+User: The speaker made mistake of meaning that is embarrassed and the the man thought she preignant  in girl3
+GPT: Yeah, that’s basically it! She tried to say she was embarrassed in Spanish but accidentally said she was pregnant, so the man at the mall congratulated her instead. 😆 In my opinion, it’s a funny example of how language mistakes can lead to confusing situations! 
+
+Could you try to put that summary in your own words in English?
+User: Yes. The speaker wanted to say to be embarrased but she does not know meaning  in Spanish [1分29秒]4
+GPT: Nice! And because she used the wrong word, the man thought she was saying she was pregnant, not embarrassed. 😅
+
+Now, can you put it all together in 1-2 sentences to summarize the video?
+User: Yes.  [0分13秒]5
+GPT: Great! Go ahead and write your final summary in English. 😊
+
+⏱ チャット滞在時間: 10分57秒
