@@ -1,0 +1,63 @@
+名前: B1
+保存日時: 2025-12-22 11:39:48
+
+レベル: B1
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: The speaker mistake of meaning of embarasses in Spanish [4分32秒]1
+GPT: That's almost correct! Can you explain more about what happened when the speaker used the wrong word in Spanish? What was the misunderstanding?
+User: the speaker wanted to say embarrasses the man thought she pregin [1分27秒]2
+GPT: Good try! Can you clarify how the misunderstanding happened and what word the speaker should have used instead?
+
+> **添削アドバイス**
+>
+> 添削後の文  
+> The speaker wanted to say "embarrassed," but the man thought she was pregnant.
+>
+> -   **❌ embarrasses**
+>     **✅ embarrassed**
+>     "embarrasses" は動詞ですが、ここでは形容詞の "embarrassed"（恥ずかしい）が必要です。
+>
+> -   **❌ pregin**
+>     **✅ pregnant**
+>     "pregin" という単語は英語にありません。"pregnant"（妊娠している）が正しい語です。
+>
+> -   **❌ the speaker mistake of meaning of embarasses in Spanish**
+>     **✅ The speaker made a mistake with the meaning of "embarrassed" in Spanish.**
+>     "mistake of meaning" という表現は不自然です。正しくは "made a mistake with the meaning of" などを使います。
+User: The man was thought that she was baby in girl. [0分24秒]3
+GPT: You're almost there! The man misunderstood her words and thought she was pregnant. Can you try to summarize the misunderstanding in one clear sentence?
+
+> **添削アドバイス**
+>
+> 添削後の文  
+> The man thought that she was pregnant.
+>
+> -   **❌ The man was thought that she was baby in girl.**
+>     **✅ The man thought that she was pregnant.**
+>     "(人) was thought" と受け身で使うと文が不自然です。また、"she was baby in girl" という表現は英語にはなく、"pregnant" を使うのが正しいです。
+User: no [0分15秒]4
+GPT: No problem! If you want to try summarizing again, remember: the speaker accidentally said she was pregnant instead of embarrassed. Can you write a short summary in English?
+
+> **添削アドバイス**
+>
+> 添削後の文  
+> No.
+>
+> -   **❌ no**
+>     **✅ No.**
+>     一言だけ返す場合でも、英語では最初の文字を大文字にして文として完結させるのが一般的です。
+User: Yes [0分15秒]5
+GPT: Great! Please try to write your summary of what happened in the video in one or two sentences.
+
+> **添削アドバイス**
+>
+> 添削後の文  
+> Yes.
+>
+> -   **❌ Yes**
+>     **✅ Yes.**
+>     一語のみの返答でも、文末にピリオド (.) をつけましょう。英語の文章では大文字で始めてピリオドで終えるのが基本です。
+
+⏱ チャット滞在時間: 7分13秒
