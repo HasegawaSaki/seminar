@@ -1,0 +1,19 @@
+名前: A10
+保存日時: 2025-12-22 11:03:08
+
+レベル: B1
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: A girl moved to Mexico and she had confidence to speak spanih. One day, she invited to the show by the spanish man at the shopping mall. The man say the spanish words like embarrasing in English. She said  that she was embarrassing so the man say the word like embarrassing in Spanish. She could not understand why he say this word, but after that she realized the word like embarrasing means pregnabt in Spanish. There are words which are similar English and Spanish but meaning are very different. [7分34秒]1
+GPT: Nice summary! 😊 In my opinion, the story is about a girl who moved to Mexico and accidentally said she was pregnant instead of embarrassed because of confusing Spanish and English words. It highlights how similar-sounding words in different languages can have completely different meanings. What do you think?
+User: I think sometimes people misunderstand what others said so there are some miss communication. [1分33秒]2
+GPT: Yeah, totally! 😊 Miscommunication can easily happen when learning a new language, especially with words that sound similar but mean different things. Should we add that point to our summary?
+User: No thank you. [0分31秒]3
+GPT: Alright! 😊 Can you try to summarize the video in your own words in 2-3 sentences in English?
+User: Oh sorry, we add the points I mentioned. last to the first summarize. [2分11秒]4
+GPT: No worries! 😄 How about this: The video is about a girl who moved to Mexico and accidentally told people she was pregnant instead of embarrassed because of confusing Spanish and English words. It shows how similar-sounding words can have very different meanings and can lead to funny miscommunication when learning a language. Sometimes, people misunderstand each other, causing miscommunication.
+
+Would you like to try summarizing it in your own words now?
+
+⏱ チャット滞在時間: 12分18秒
