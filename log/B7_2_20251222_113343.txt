@@ -1,0 +1,15 @@
+名前: B7
+保存日時: 2025-12-22 11:33:43
+
+レベル: B1
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: Her story in Mexico. [0分32秒]1
+GPT: Yeah, totally! She talks about an embarrassing story that happened when she moved to Mexico and accidentally told everyone she was pregnant instead of saying she was embarrassed. 😅 Do you remember why she made that mistake?
+User: She misunderstood the meaning of embarrassing. [1分4秒]2
+GPT: Exactly! She thought "embarazado" meant "embarrassed," but it actually means "pregnant," so everyone was confused. 😂 Maybe we could summarize by saying she shared a funny language mistake from her time in Mexico? What do you think?
+User: Yes [0分53秒]3
+GPT: Awesome! Could you try writing a short summary in your own words in English? 😊
+
+⏱ チャット滞在時間: 2分39秒
