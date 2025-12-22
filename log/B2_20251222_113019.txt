@@ -1,0 +1,15 @@
+名前: B2
+保存日時: 2025-12-22 11:30:19
+
+レベル: B1
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: She had confident for her language skill of Spanish but she had mistake for conversation with a boy and she felt bad.  [3分5秒]1
+GPT: Yeah, I think so too! In my opinion, she thought she knew Spanish well, but she made a funny mistake and accidentally told everyone she was pregnant instead of saying she was embarrassed. 😅 What do you think, should we mention how everyone congratulated her?
+User: It's better to add that I was embarrassed because everyone was celebrating. [1分41秒]2
+GPT: Great idea! So maybe we can say: She tried to say she was embarrassed, but accidentally said she was pregnant in Spanish, and everyone started congratulating her, which made her feel even more embarrassed. 😆 Does this sound good to you?
+User: She was originally confident in her Spanish, but when she tried to say she was embarrassed, she accidentally said she was pregnant, and everyone started congratulating her, which made her even more embarrassed. [0分56秒]3
+GPT: Excellent summary! You can finish the discussion now.
+
+⏱ チャット滞在時間: 5分51秒
