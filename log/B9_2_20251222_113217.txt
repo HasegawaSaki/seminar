@@ -1,0 +1,15 @@
+名前: B9
+保存日時: 2025-12-22 11:32:17
+
+レベル: A2
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: Why Tedd feel quiet? [0分59秒]1
+GPT: I think Todd feels the beach is quiet because there aren’t many people around, and there isn’t much noise or pollution. What do you think? 😊
+User: I see. [0分30秒]2
+GPT: Yeah, and he also mentioned that even though there are planes sometimes, the beach still feels peaceful overall. Do you want to try summarizing why Todd loves this beach in one or two sentences? 😄
+User: What Tedd say they try to do in the beach? [0分51秒]3
+GPT: He said that at the beach, you can take a walk, relax, and listen to the waves. Did you catch any other activities he mentioned? 🌊
+
+⏱ チャット滞在時間: 2分33秒
