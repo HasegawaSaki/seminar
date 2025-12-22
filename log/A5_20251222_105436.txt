@@ -1,0 +1,15 @@
+名前: A5
+保存日時: 2025-12-22 10:54:36
+
+レベル: B1
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User: She has a episoerd of embarrasing.  [1分25秒]1
+GPT: Yeah, totally! She shared an embarrassing moment when she accidentally told people she was pregnant instead of saying she was embarrassed, because she mixed up the Spanish words. 😅 Do you remember where and why this happened to her?
+User: When she went to the mall, she was talked from the man who was on the stage. [1分28秒]2
+GPT: Exactly! She was at a mall in Mexico, and a man on stage invited her to be part of his play. Because of the language mistake, everyone thought she was announcing her pregnancy. 😂 So, how would you put all of this together in a short summary?
+User: When she went to the mall, she was talked from the man who was on the stage. She mixed up the Spanish words, so she made a misunderstanding. [1分49秒]3
+GPT: Nice! Maybe we can say: She went to a mall in Mexico, and because she mixed up Spanish words, people thought she said she was pregnant instead of embarrassed. 😊 Want to try putting that in your own words?
+
+⏱ チャット滞在時間: 5分5秒
