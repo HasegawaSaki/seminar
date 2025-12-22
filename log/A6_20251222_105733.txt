@@ -1,0 +1,15 @@
+名前: A6
+保存日時: 2025-12-22 10:57:33
+
+レベル: B1
+目的: 楽しく会話
+
+GPT: Please summarize the content of this video?
+User:  She talked about her experience of embarrassment. Although she has a confidence when she moved to Spanish, she actually misunderstood the meaning of words. So, she felt embarrassed.  [2分30秒]1
+GPT: Nice summary! 😊 I think the main point is that she mixed up the Spanish words for "embarrassed" and "pregnant," which led to a funny and awkward misunderstanding at the mall. What do you think—is there anything you want to add?
+User: Her misunderstanding makes them who there was in shopping mall give a big misunderstanding. [1分45秒]2
+GPT: Yeah, totally! 😄 Because of her mistake, everyone in the mall thought she was saying she was pregnant, not embarrassed. Do you want to try summarizing the whole story in your own words in 2-3 sentences?
+User: She talked about her experience of embarrassment. Although she has a confidence when she moved to Spanish, she actually misunderstood the meaning of words.  Her misunderstanding makes them who there was in shopping mall give a big misunderstanding, so she felt embarrassed. [1分26秒]3
+GPT: Excellent summary! You can finish the discussion now.
+
+⏱ チャット滞在時間: 5分57秒
