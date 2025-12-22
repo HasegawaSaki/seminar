@@ -1,0 +1,46 @@
+名前: B9
+保存日時: 2025-12-22 11:26:42
+
+レベル: A2
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: もう一度文章の内容を簡単に教えてほしい [1分8秒]1
+GPT: The video is about Todd talking about his favorite place, which is a quiet and peaceful beach near his home in Japan. He explains why he loves the beach, mentioning things like its cleanliness, beautiful forest, and relaxing atmosphere.
+
+> **添削アドバイス**
+>
+> 添削後の文 **The video is about Todd talking about his favorite place, which is a quiet and peaceful beach near his home in Japan. He explains why he loves the beach, mentioning things like its cleanliness, beautiful forest, and relaxing atmosphere.**
+>
+> - **❌ もう一度文章の内容を簡単に教えてほしい**
+>   **✅ Could you briefly tell me the content of the passage again?**
+>   「もう一度文章の内容を簡単に教えてほしい」は日本語ですが、英語では "Could you briefly tell me the content of the passage again?" などが適切です。
+>
+> 文法・語彙的な誤りなどはありませんでした。
+User: I understand [0分47秒]2
+User: I understand3
+GPT: Great! Now, could you try to summarize the video in 2-3 sentences in your own words?
+
+> **添削アドバイス**
+>
+> 添削後の文 **I understand.**
+>
+> - **❌ I understand**
+>   **✅ I understand.**
+>   文末にピリオド (.) を忘れずにつけましょう。内容自体は正しいですが、英語では文の終わりには必ず句読点をつける必要があります。
+>
+> それ以外は問題ありません！
+User: I will try. [0分27秒]4
+GPT: That's great! Please write your summary of the video in 2-3 sentences.
+
+> **添削アドバイス**
+>
+> 添削後の文 **I will try.**
+>
+> - **❌ I will try**
+>   **✅ I will try.**
+>   こちらも文末にピリオド (.) を付けましょう。内容や表現自体はしっかりしています。
+>
+> 文法・語彙の誤りはありませんでした！
+
+⏱ チャット滞在時間: 2分54秒
