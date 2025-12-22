@@ -1,0 +1,15 @@
+名前: A9
+保存日時: 2025-12-22 11:03:29
+
+レベル: B1
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: This video is about woman who experience embarrass situation. [0分45秒]1
+GPT: Good start! Can you explain what happened to the woman that made the situation embarrassing?
+User: She mistook embarrass and pregnant. [0分16秒]2
+GPT: That's correct! Can you add more detail about how this misunderstanding happened and what the result was? For example, where was she and who was she talking to?
+User: She thought she spoke Spanish. [0分14秒]3
+GPT: That's right! Can you add what specific mistake she made in Spanish and how the people reacted to her words? This will help make your summary clearer.
+
+⏱ チャット滞在時間: 1分30秒
