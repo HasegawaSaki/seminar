@@ -1,0 +1,38 @@
+名前: B1
+保存日時: 2025-12-22 11:28:39
+
+レベル: B1
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: The speaker mistake of meaning of embarasses in Spanish [46分9秒]1
+User: The speaker mistake of meaning of embarasses in Spanish2
+GPT: That's a good start! Can you explain what mistake she made and what happened because of it? Try to include what the word "embarazado" really means and the reaction of the people around her.
+
+> **添削アドバイス**
+>
+> 添削後の文 **The speaker made a mistake about the meaning of 'embarrassed' in Spanish.**
+>
+> - **❌ The speaker mistake of meaning of embarasses in Spanish**
+>   **✅ The speaker made a mistake about the meaning of 'embarrassed' in Spanish.**
+>   "mistake of meaning" は不自然で、"made a mistake about the meaning" のほうが自然な表現です。また、'embarasses' ではなく 'embarrassed' が正しい単語です。
+>
+> 文法・語彙の誤りを修正し、ネイティブが使う自然な表現にしました。
+User: The man was thought that she was baby in girl. [0分42秒]3
+GPT: You're getting closer! What you want to say is that the man misunderstood her words in Spanish and thought she was pregnant. Try to rewrite your sentence using the correct words.
+
+> **添削アドバイス**
+>
+> 添削後の文 **The man thought that she was pregnant.**
+>
+> - **❌ The man was thought that she was baby in girl.**
+>   **✅ The man thought that she was pregnant.**
+>   "was thought" は受け身ですが、この文では能動態 "thought" を使うべきです。また、"baby in girl" は不自然で、「妊娠している」という意味になる "pregnant" を使いましょう。
+>
+> - **❌ she was baby in girl**
+>   **✅ she was pregnant**
+>   「彼女が妊娠していた」という意味の場合、"pregnant" だけで十分表現できます。
+>
+> より簡潔で明確な文にしましょう。
+
+⏱ チャット滞在時間: 47分24秒
