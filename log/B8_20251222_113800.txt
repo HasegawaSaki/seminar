@@ -1,0 +1,71 @@
+名前: B8
+保存日時: 2025-12-22 11:38:00
+
+レベル: B1
+目的: 英語力の向上
+
+GPT: Please summarize the content of this video?
+User: Preah who is from Belize talked about what her most embarrassing moment was. [4分11秒]1
+GPT: That's a good start! Can you add more details about what happened during her embarrassing moment? For example, what mistake did she make, and how did people react?
+User: At first, she was confident to use Sapnish. But whem she went to the mall and was invited to join an even from the spanish man, she did use wrong word to him. She wanted to say "I'm embarassed.", but she said to him,"I'm pregnaunt." [4分17秒]2
+GPT: Great job! You included the key part where she made a mistake in Spanish. Now, can you summarize how the man reacted and what Preah learned from this experience?
+
+---
+
+> **添削アドバイス**
+>
+> 添削後の文 **At first, she was confident using Spanish. But when she went to the mall and was invited to join an event by the Spanish man, she used the wrong word. She wanted to say "I'm embarrassed," but she said "I'm pregnant" to him.**
+>
+> - **❌ Sapnish**
+>   **✅ Spanish**
+>   スペルミスです。正しくは "Spanish" です。
+>
+> - **❌ At first, she was confident to use Spanish.**
+>   **✅ At first, she was confident using Spanish.**
+>   "confident to use" よりも "confident using" の方が自然な表現です。
+>
+> - **❌ an even**
+>   **✅ an event**
+>   "even" は「〜ですら」の意味なので、"event"（イベント）が正しいです。
+>
+> - **❌ Sapnish man**
+>   **✅ Spanish man**
+>   スペルミスです。
+>
+> - **❌ did use wrong word to him**
+>   **✅ used the wrong word**
+>   "did use wrong word" は不自然なので、"used the wrong word" のようにシンプルにしましょう。
+>
+> - **❌ "I'm pregnaunt."**
+>   **✅ "I'm pregnant."**
+>   スペルミスです。"pregnant"が正しいです。
+>
+> - **❌ she did use wrong word**
+>   **✅ she used the wrong word**
+>   助動詞 "did" はここでは不要なので、普通に過去形を使いましょう。
+User: The man reacted like really happy and surprised. And Preah learned that even thougt she had a confidence using Spanish, it may be able to make a mistake from this experience [2分56秒]3
+GPT: Nice effort! You explained how the man reacted and what Preah learned. Can you combine all your points into a simple 2-3 sentence summary of the video?
+
+---
+
+> **添削アドバイス**
+>
+> 添削後の文 **The man reacted by looking really happy and surprised. Preah learned that even though she was confident using Spanish, she could still make mistakes from this experience.**
+>
+> - **❌ The man reacted like really happy and surprised.**
+>   **✅ The man reacted by looking really happy and surprised.**
+>   "reacted like" は不自然です。"by looking" や "was" を使うと自然になります。
+>
+> - **❌ even thougt**
+>   **✅ even though**
+>   スペルミスです。正しくは "though" です。
+>
+> - **❌ had a confidence using Spanish**
+>   **✅ was confident using Spanish**
+>   "have confidence" の場合は "in" を使い、"confident" は形容詞なので "was confident" が正しいです。
+>
+> - **❌ it may be able to make a mistake from this experience**
+>   **✅ she could still make mistakes from this experience**
+>   主語が "she" であるため、"she could still make mistakes" と書くと自然です。また、"may be able to" はここでは不要です。
+
+⏱ チャット滞在時間: 11分43秒
